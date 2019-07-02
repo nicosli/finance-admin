@@ -8,73 +8,100 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Arca System') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ asset('/') }}">
+                <img src="{{ asset('/img/logo.png') }}" width="112" height="28">
+            </a>
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+            @if (!Auth::guest())
+            <div class="navbar-start">
+                <a class="navbar-item">Home</a>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">More</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                        About
+                        </a>
+                        <a class="navbar-item">
+                        Jobs
+                        </a>
+                        <a class="navbar-item">
+                        Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                        Report an issue
+                        </a>
+                    </div>
                 </div>
             </div>
-        </nav>
+            @endif
 
-        @yield('content')
-    </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    @if (Auth::guest())
+                    <div class="buttons">
+                        <a class="button is-light">
+                            Log in
+                        </a>
+                    </div>
+                    @else
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">{{ Auth::user()->name }}</a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                            About
+                            </a>
+                            <a class="navbar-item">
+                            Jobs
+                            </a>
+                            <a class="navbar-item">
+                            Contact
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
+                            Report an issue
+                            </a>
+                            <a class="navbar-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    @yield('outContainer')
+
+    @yield('content')
 
     <!-- Scripts -->
+    <script src="{{ asset('js/manifest.js') }}"></script>
+    <script src="{{ asset('js/vendor.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
