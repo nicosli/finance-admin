@@ -36,7 +36,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a, {
 Vue.use(__webpack_require__(13));
 Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';
 Vue.http.interceptors.push(function (request, next) {
-    request.headers.set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImIyMmZlN2U4OGQwM2M5YTExMThjYmE5MGMwNDYwYzJhOTAzZmE5ZmQ5ZTMyZmJmZjU0MzlkNzJmMzQ3OThkNTQwODgyYWNjZmJkYTNkNTFhIn0.eyJhdWQiOiIxIiwianRpIjoiYjIyZmU3ZTg4ZDAzYzlhMTExOGNiYTkwYzA0NjBjMmE5MDNmYTlmZDllMzJmYmZmNTQzOWQ3MmYzNDc5OGQ1NDA4ODJhY2NmYmRhM2Q1MWEiLCJpYXQiOjE1NjIyNTg5ODMsIm5iZiI6MTU2MjI1ODk4MywiZXhwIjoxNTkzODgxMzgzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.K_-CFs84-01UY0jjdeBRy7RxYvZaJtizCRjWYkSCEgNZbJsbkcMfq4Lv3N9Zvg7M8JJqB1qAR9c2FqvltrG7zwJycgKMpAUKJ8JpNP5sEcAjsaP-F9Nr6PA-7baLfaW7y14zdOpoxztij4aqB7OETUtAgZN5M3Q7MIlvasIAqnoxhTcUUFV0AV87-tZH2VNNKQnD6KOffTxNj2cmmqdnkIVm03ZbN9saRUJL9IMVdKsGwA_RY27rvw4vq7u-ZkSl6vzaV7777dnvYh0SJP7kTjB33tX5tNMQSNeT893Zh2_qq0BPGq7C5k6UtFG33j0XvVR67RO2PzJsgTmdXoPO6oPK0wWVC_kzAQksXEmaaBlEOruGJeuCgceVdy6VD2u8AVqDGVtNjALgJVsr1It5d1r4h72Ca7BOZQfZDk0KWcgFGuCdaywtYjiqDRe9UPn1bSSFw3JZCW0x_nGGJH24w1oK_5MDpRyO3i3dg3j5soJTMqNaTmWT5nR1K5K-nzP5G14VSh4lji5Lsxzp1SSFAdpHs9Hh4CptPzJ1IfCsZq1No0aDeSqfF8mO_lshyd4MJBkUJqWL6ARsTKHmhf_X5lIHqAnRprsYfGetVFq6kNOuujg1HwFWG_BbRwOroQbDmCAEYI4B9QgtDLU1fHNpueLn301kjNf7up6YE4VOF-U');
+    request.headers.set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijg2NTU1MzMyYTliODZhNDcxZGQ2ODZkNThhOTYwMGY1NDFhNWYwYTAzMzEyNDlhNDhlNTFmY2NlYTYwYmEzNDg2Yjc3NzUzNjMxMDA1NzA2In0.eyJhdWQiOiIxIiwianRpIjoiODY1NTUzMzJhOWI4NmE0NzFkZDY4NmQ1OGE5NjAwZjU0MWE1ZjBhMDMzMTI0OWE0OGU1MWZjY2VhNjBiYTM0ODZiNzc3NTM2MzEwMDU3MDYiLCJpYXQiOjE1NjIyODA3NjksIm5iZiI6MTU2MjI4MDc2OSwiZXhwIjoxNTkzOTAzMTY5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Ue2WCWV9pJ9qfN7LWtt2Qr6g_4McL0WUhU6NGuykYtWQxgbSqQ2lXJ6idZW4QGuSurvnro_L1anDvWVDv1Ah1yFxuNnduj0Z_d2CihuiUG098joeZAWJFVc7wim_CYw8H_jKtAy5822_wkPAU8abiqkYh85ZipNJmkocH9YMZhx0F04KdOXzDHrS-uNFgN0OFsN46edWWtrVP26kSjZmeu3c19ebqjZmV-yS3UH1ik74s8VRyrlNA8596AmWZ_qfYyHDk9kaPZv8avhcG0JpGc14yuyvBrK7djy1_JaLxS8gVtUU9UQ5hvrgJ5opRol_PKaqoureM6W8evVxRcgPrdhKkxBvHhMWZm-SeBMQCVNCbtUfhlLqMxB8ka5sxgaaLEoWVpQlCqjOX4l7kVwiW3kSw6-zCvUigcNvXwFCx1Y9fkYHWMyhtlTy_b2pFbVe1G3fjMQncFxy3FdazTAk3PNseGdv62x_lrkOBuo8gPl2fDg_csPYprE1cyfvt68vV5DJ8YSw-8-910oyI0TylmfJscQHPBQHo6jzr3eWQFAQdoqeeLs0jnY5Nm7GVKf5CBg0uCvpQuEyHAQHnMe01ipJoq_qzQdmvAdERm-7PavTRhXo66rNOVl4uhaC2VGD2DbA0_yjsEN7LIymtoCd27oADjP-1aePRktYEvTjaIM');
     request.headers.set('Content-Type', 'application/x-www-form-urlencoded');
     request.headers.set('Accept', 'application/json');
     next();
@@ -258,6 +258,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -341,87 +350,116 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("b-table", {
-        attrs: {
-          data: _vm.filteredData,
-          loading: _vm.loading,
-          paginated: "",
-          "per-page": _vm.perPage,
-          striped: true,
-          hoverable: true,
-          focusable: true
-        },
-        scopedSlots: _vm._u([
-          {
-            key: "default",
-            fn: function(props) {
-              return [
-                _c(
-                  "b-table-column",
-                  {
-                    attrs: {
-                      field: "codigo_er",
-                      label: "Fecha Fuente",
-                      sortable: ""
-                    }
-                  },
-                  [
-                    _c("span", { staticClass: "has-text-danger" }, [
+      _c(
+        "b-table",
+        {
+          attrs: {
+            data: _vm.filteredData,
+            loading: _vm.loading,
+            paginated: "",
+            "per-page": _vm.perPage,
+            striped: true,
+            hoverable: true,
+            "default-sort-direction": _vm.defaultSortOrder,
+            focusable: true
+          },
+          scopedSlots: _vm._u([
+            {
+              key: "default",
+              fn: function(props) {
+                return [
+                  _c(
+                    "b-table-column",
+                    {
+                      attrs: {
+                        field: "codigo_er",
+                        label: "Fecha Fuente",
+                        sortable: ""
+                      }
+                    },
+                    [
+                      _c("span", { staticClass: "has-text-danger" }, [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(props.row.codigo_er) +
+                            "\n                "
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-table-column",
+                    { attrs: { field: "name", label: "Nombre", sortable: "" } },
+                    [
                       _vm._v(
-                        "\n                    " +
-                          _vm._s(props.row.codigo_er) +
-                          "\n                "
+                        "\n                " +
+                          _vm._s(props.row.name) +
+                          "\n            "
                       )
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "b-table-column",
-                  { attrs: { field: "name", label: "Nombre", sortable: "" } },
-                  [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(props.row.name) +
-                        "\n            "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "b-table-column",
-                  {
-                    attrs: {
-                      field: "last_name",
-                      label: "Apellido",
-                      sortable: ""
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(props.row.last_name) +
-                        "\n            "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "b-table-column",
-                  { attrs: { field: "email", label: "Correo", sortable: "" } },
-                  [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(props.row.email) +
-                        "\n            "
-                    )
-                  ]
-                )
-              ]
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-table-column",
+                    {
+                      attrs: {
+                        field: "last_name",
+                        label: "Apellido",
+                        sortable: ""
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(props.row.last_name) +
+                          "\n            "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-table-column",
+                    {
+                      attrs: { field: "email", label: "Correo", sortable: "" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(props.row.email) +
+                          "\n            "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-table-column",
+                    [
+                      _c(
+                        "b-button",
+                        { attrs: { type: "is-info", size: "is-small" } },
+                        [_vm._v("Info")]
+                      )
+                    ],
+                    1
+                  )
+                ]
+              }
             }
-          }
-        ])
-      })
+          ])
+        },
+        [
+          _vm._v(" "),
+          !_vm.isCustom
+            ? _c("template", { slot: "footer" }, [
+                _c("div", { staticClass: "has-text-right" }, [
+                  _vm._v("\n                Tabla Pastores\n            ")
+                ])
+              ])
+            : _vm._e()
+        ],
+        2
+      )
     ],
     1
   )

@@ -43,7 +43,7 @@ class UserTableSeeder extends Seeder
             DB::table('users')->insert([
                 'name' => $faker->firstName('male'),
                 'last_name' => $faker->lastName(),
-                'codigo_er' => 'NCLE-01',
+                'codigo_er' => 'NCLE-'.rand(100,200),
                 'email' => $faker->email,
                 'mobile' => $faker->phoneNumber,
                 'id_rol' => 3,

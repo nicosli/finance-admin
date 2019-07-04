@@ -30,13 +30,13 @@
         <div id="navbarBasicExample" class="navbar-menu">
             @if (!Auth::guest())
             <div class="navbar-start">
-                <a class="navbar-item">Home</a>
+                <a class="navbar-item" href="{{asset('/home')}}">Home</a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">More</a>
                     <div class="navbar-dropdown">
-                        <a class="navbar-item">
-                        About
+                        <a class="navbar-item" href="{{asset('list/pastores')}}">
+                        Pastores
                         </a>
                         <a class="navbar-item">
                         Jobs
@@ -65,9 +65,6 @@
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">{{ Auth::user()->name }}</a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                            About
-                            </a>
                             <a class="navbar-item">
                             Jobs
                             </a>

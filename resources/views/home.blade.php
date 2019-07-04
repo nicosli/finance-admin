@@ -9,9 +9,8 @@
                     {{ session('status') }}
                 </div>
             @endif
-            <div id="app" >
-                <tabla-pastores></tabla-pastores>
-            </div>
+            Home
+            <div id="app" ></div>
         </div>
     </div>
 </div>

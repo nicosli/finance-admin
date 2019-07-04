@@ -17,6 +17,7 @@
             :per-page="perPage"
             :striped=true
             :hoverable=true
+            :default-sort-direction="defaultSortOrder"
             :focusable=true>
             <template slot-scope="props">
                 <b-table-column field="codigo_er" label="Fecha Fuente" sortable>
@@ -33,6 +34,14 @@
                 <b-table-column field="email" label="Correo" sortable>
                     {{ props.row.email }}
                 </b-table-column>
+                <b-table-column>
+                    <b-button type="is-info" size="is-small">Info</b-button>
+                </b-table-column>
+            </template>
+            <template slot="footer" v-if="!isCustom">
+                <div class="has-text-right">
+                    Tabla Pastores
+                </div>
             </template>
         </b-table>
     </div>
