@@ -234,3 +234,9 @@ So, make sure above header, otherwise, you can not get user details.
 **Details API:**
 
 ![Login description]([https://miro.medium.com/max/1050/1*ftAjiGUA-fbEKTcPBMzuAw.png](https://miro.medium.com/max/1050/1*oV63bg2V0W1x00eMhucOpQ.png)"Login")
+
+
+** IMPORTANT**
+Run this command for add a new client
+
+    php artisan passport:client --personal
