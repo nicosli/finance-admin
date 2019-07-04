@@ -218,12 +218,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            data: [],
+            sortField: 'fechaFuente',
+            sortOrder: 'desc',
+            defaultSortOrder: 'desc',
+            page: 1,
+            perPage: 25
+        };
+    },
+
+    methods: {
+        loadAsyncData: function loadAsyncData() {}
+    },
     mounted: function mounted() {
-        console.log('Tabla pastores mounted.');
+        this.loadAsyncData();
     }
 });
 
@@ -235,21 +247,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "b-message",
-        { attrs: { title: "Default", "aria-close-label": "Close message" } },
-        [
-          _vm._v(
-            "\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien laoreet elit\n    "
-          )
-        ]
-      )
-    ],
-    1
-  )
+  return _c("div")
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -1,15 +1,28 @@
 <template>
     <div>
-        <b-message title="Default" aria-close-label="Close message">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien laoreet elit
-        </b-message>
+        
     </div>
 </template>
 
 <script>
     export default {
+        data() {
+            return {
+                data: [],
+                sortField: 'fechaFuente',
+                sortOrder: 'desc',
+                defaultSortOrder: 'desc',
+				page: 1,
+				perPage: 25,
+            }
+        },
+        methods: {
+            loadAsyncData() {
+
+            }
+        },
         mounted() {
-            console.log('Tabla pastores mounted.')
+            this.loadAsyncData()
         }
     }
 </script>
