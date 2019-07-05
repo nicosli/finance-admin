@@ -1,58 +1,70 @@
 <template>
-    <div>
-        <b-field grouped position="is-right">
-            <b-input 
-                icon-pack="fas"
-                icon="search"
-                v-model="searchKeyword"
-                placeholder="búsqueda...">
-            </b-input>
-        </b-field>
+<div>
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Lista Pastores</a></li>
+        </ul>
+    </nav>
+    <div class="card">
+        <div class="card-content">
+            <b-field grouped position="is-right">
+                <b-input 
+                    icon-pack="fas"
+                    icon="search"
+                    v-model="searchKeyword"
+                    placeholder="búsqueda...">
+                </b-input>
+            </b-field>
 
-        <b-table
-            :data="filteredData"
-            :loading="loading"
-            paginated
-                        
-            :per-page="perPage"
-            :striped=true
-            :hoverable=true
-            :default-sort-direction="defaultSortOrder"
-            :focusable=true>
-            <template slot-scope="props">
-                <b-table-column field="codigo_er" label="Fecha Fuente" sortable>
-                    <span class="has-text-danger">
-                        {{ props.row.codigo_er }}
-                    </span>
-                </b-table-column>
-                <b-table-column field="name" label="Nombre" sortable>
-                        {{ props.row.name }}
-                </b-table-column>
-                <b-table-column field="last_name" label="Apellido" sortable>
-                    {{ props.row.last_name }}
-                </b-table-column>
-                <b-table-column field="email" label="Correo" sortable>
-                    <span class="has-text-info">
-                        {{ props.row.email }}
-                    </span>
-                </b-table-column>
-                <b-table-column field="nombre" label="Distrito" sortable>
-                    {{ props.row.pastor.distrito.nombre }}
-                </b-table-column>
-                <b-table-column field="iglesias" label="Iglesias" sortable>
-                    {{ props.row.pastor.distrito.iglesias.length }}
-                </b-table-column>
-                <b-table-column>
-                    <b-button type="is-info" size="is-small">Info</b-button>
-                </b-table-column>
-            </template>
-            <template slot="footer">
-                <div class="has-text-right">
-                    Tabla Pastores
-                </div>
-            </template>
-        </b-table>
+            <b-table
+                :data="filteredData"
+                :loading="loading"
+                paginated
+                            
+                :per-page="perPage"
+                :striped=true
+                :hoverable=true
+                :default-sort-direction="defaultSortOrder"
+                :focusable=true>
+                <template slot-scope="props">
+                    <b-table-column field="codigo_er" label="Fecha Fuente" sortable>
+                        <span class="has-text-danger">
+                            {{ props.row.codigo_er }}
+                        </span>
+                    </b-table-column>
+                    <b-table-column field="name" label="Nombre" sortable>
+                            {{ props.row.name }}
+                    </b-table-column>
+                    <b-table-column field="last_name" label="Apellido" sortable>
+                        {{ props.row.last_name }}
+                    </b-table-column>
+                    <b-table-column field="email" label="Correo" sortable>
+                        <span class="has-text-info">
+                            {{ props.row.email }}
+                        </span>
+                    </b-table-column>
+                    <b-table-column field="nombre" label="Distrito" sortable>
+                        {{ props.row.pastor.distrito.nombre }}
+                    </b-table-column>
+                    <b-table-column field="iglesias" label="Iglesias" sortable>
+                        {{ props.row.pastor.distrito.iglesias.length }}
+                    </b-table-column>
+                    <b-table-column>
+                        <a class="button is-link is-small" :href="'/list/pastores/'+props.row.id">
+                            Info
+                        </a>
+                    </b-table-column>
+                </template>
+                <template slot="footer">
+                    <div class="has-text-right">
+                        Tabla Pastores
+                    </div>
+                </template>
+            </b-table>
+        </div>
     </div>
+</div>    
 </template>
 
 <script>

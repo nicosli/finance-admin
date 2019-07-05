@@ -13,6 +13,16 @@ Vue.component(
     require('./components/TablaPastores.vue')
 );
 
+Vue.component(
+    'info-pastores',
+    require('./components/InfoPastores.vue')
+);
+
+Vue.component(
+    'tabla-informes',
+    require('./components/Informes.vue')
+);
+
 Vue.use(Buefy, {
     defaultIconPack: 'fa'
 })

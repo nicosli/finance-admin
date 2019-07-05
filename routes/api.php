@@ -19,4 +19,6 @@ Route::post('register', 'API\UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){
     Route::post('details', 'API\UserController@details');
     Route::get('/list/pastores', 'API\ListsController@pastores');
+    Route::get('/list/pastores/{id}', 'API\ListsController@details');
+    Route::get('/reports/pastores/{id_distrito}/{mes}', 'API\ReportsController@pastores');
 });

@@ -13,14 +13,28 @@ class ListsController extends Controller
     public $successStatus = 200;
 
     public static function pastores(){
-        // $users = User::with(['pastor' => function ($query) {
-        //     //$query->where('pastor.id_user', 'IS NOT', '');
-        // }])->get();
-        $users = User::with(['pastor', 'pastor.distrito', 'pastor.distrito.iglesias'])
+        $users = User::with([
+            'pastor', 
+            'pastor.distrito', 
+            'pastor.distrito.iglesias'
+        ])
             ->where('id_rol', '=', 3)
             ->get();
         return response()->json([
             'results' => $users
+        ]);
+    }
+
+    public static function details($id){
+        $user = User::with([
+            'pastor', 
+            'pastor.distrito', 
+            'pastor.distrito.iglesias'
+        ])
+        ->where('id', '=', $id)
+        ->first();
+        return response()->json([
+            'results' => $user
         ]);
     }
     

@@ -33,20 +33,20 @@ class InformesTableSeeder extends Seeder
                             break;
                         
                         case 2: // no puntual
-                            $fecha2[0] = date("Y-$x-".rand(10,15));
-                            $fecha2[1] = date("Y-$x-".rand(10,15));
+                            $fecha2[0] = date("Y-$x-".rand(6,10));
+                            $fecha2[1] = date("Y-$x-".rand(11,18));
                             break;
                         default:
                             # code...
                             break;
                     }
                     
+                    $fecha_final = ($caso == 1)? $fecha : $fecha2[rand(0,1)];
                     foreach($remesas as $key => $remesa){
                         $id_pastor = $pastor->id;
                         $id_remesa = $remesa->id;
                         $id_iglesia = $iglesia->id;
                         $importe = rand(1200, 15000);
-                        $fecha_final = ($caso == 1)? $fecha : $fecha2[0];
                         DB::table('informes')->insert([
                             'id_pastor' => $id_pastor,
                             'id_remesa' => $id_remesa,

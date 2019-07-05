@@ -23,4 +23,10 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/list/pastores', function(){
         return view('modulos.listaPastores');
     });
+    Route::get('/list/pastores/{id}', function($id){
+        $mes = date('m');
+        if($mes != '01')
+            $mes -= 1;
+        return view('modulos.infoPastores', ["id" => $id, "mes" => $mes]);
+    });
 });

@@ -17,4 +17,8 @@ class Iglesias extends Model
         'id_distrito', 'nombre', 'codigo_t', 'excepcion'
     ];
 
+    public function informes(){
+        return $this->hasMany('App\Informes', 'id_iglesia');
+    }
+
 }
