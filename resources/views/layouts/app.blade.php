@@ -33,10 +33,10 @@
                 <a class="navbar-item" href="{{asset('/home')}}">Home</a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">More</a>
+                    <a class="navbar-link">Mayordomía</a>
                     <div class="navbar-dropdown">
                         <a class="navbar-item" href="{{asset('list/pastores')}}">
-                        Pastores
+                        Lista de Pastores
                         </a>
                         <a class="navbar-item">
                         Jobs

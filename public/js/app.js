@@ -267,6 +267,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -393,7 +401,7 @@ var render = function() {
                     { attrs: { field: "name", label: "Nombre", sortable: "" } },
                     [
                       _vm._v(
-                        "\n                " +
+                        "\n                    " +
                           _vm._s(props.row.name) +
                           "\n            "
                       )
@@ -424,9 +432,47 @@ var render = function() {
                       attrs: { field: "email", label: "Correo", sortable: "" }
                     },
                     [
+                      _c("span", { staticClass: "has-text-info" }, [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(props.row.email) +
+                            "\n                "
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-table-column",
+                    {
+                      attrs: {
+                        field: "nombre",
+                        label: "Distrito",
+                        sortable: ""
+                      }
+                    },
+                    [
                       _vm._v(
                         "\n                " +
-                          _vm._s(props.row.email) +
+                          _vm._s(props.row.pastor.distrito.nombre) +
+                          "\n            "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-table-column",
+                    {
+                      attrs: {
+                        field: "iglesias",
+                        label: "Iglesias",
+                        sortable: ""
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(props.row.pastor.distrito.iglesias.length) +
                           "\n            "
                       )
                     ]
@@ -450,13 +496,11 @@ var render = function() {
         },
         [
           _vm._v(" "),
-          !_vm.isCustom
-            ? _c("template", { slot: "footer" }, [
-                _c("div", { staticClass: "has-text-right" }, [
-                  _vm._v("\n                Tabla Pastores\n            ")
-                ])
-              ])
-            : _vm._e()
+          _c("template", { slot: "footer" }, [
+            _c("div", { staticClass: "has-text-right" }, [
+              _vm._v("\n                Tabla Pastores\n            ")
+            ])
+          ])
         ],
         2
       )

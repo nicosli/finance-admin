@@ -26,19 +26,27 @@
                     </span>
                 </b-table-column>
                 <b-table-column field="name" label="Nombre" sortable>
-                    {{ props.row.name }}
+                        {{ props.row.name }}
                 </b-table-column>
                 <b-table-column field="last_name" label="Apellido" sortable>
                     {{ props.row.last_name }}
                 </b-table-column>
                 <b-table-column field="email" label="Correo" sortable>
-                    {{ props.row.email }}
+                    <span class="has-text-info">
+                        {{ props.row.email }}
+                    </span>
+                </b-table-column>
+                <b-table-column field="nombre" label="Distrito" sortable>
+                    {{ props.row.pastor.distrito.nombre }}
+                </b-table-column>
+                <b-table-column field="iglesias" label="Iglesias" sortable>
+                    {{ props.row.pastor.distrito.iglesias.length }}
                 </b-table-column>
                 <b-table-column>
                     <b-button type="is-info" size="is-small">Info</b-button>
                 </b-table-column>
             </template>
-            <template slot="footer" v-if="!isCustom">
+            <template slot="footer">
                 <div class="has-text-right">
                     Tabla Pastores
                 </div>
