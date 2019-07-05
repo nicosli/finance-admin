@@ -8,6 +8,13 @@
 window.Vue = require('vue');
 import Buefy from 'buefy'
 
+import jQuery from 'jquery'
+window.jQuery = jQuery
+window.$ = jQuery
+
+import Raphael from 'raphael/raphael'
+global.Raphael = Raphael
+
 Vue.component(
     'tabla-pastores',
     require('./components/TablaPastores.vue')
@@ -26,6 +33,7 @@ Vue.component(
 Vue.use(Buefy, {
     defaultIconPack: 'fa'
 })
+
 
 Vue.use(require('vue-resource'));
 Vue.http.headers.common['Access-Control-Allow-Origin'] = '*'

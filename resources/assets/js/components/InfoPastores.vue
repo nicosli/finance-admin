@@ -17,9 +17,14 @@
                     </div>
                 </div>
             </section>
-            <div class="content">
+            <div class="content" v-if="data.pastor">
                <h3 class="subtitle m-t-lg">Distrito</h3>
                <h6 class="title is-6">{{data.pastor.distrito.nombre}}</h6>
+                <line-chart
+                    id="line" :data="lineData" xkey="year" ykeys='[ "a", "b" ]' resize="true"
+                    labels='[ "Serie A", "Serie B" ]' line-colors='[ "#FF6384", "#36A2EB" ]'
+                    grid="true" grid-text-weight="bold">
+                </line-chart>
                <tabla-informes :id_distrito="data.pastor.distrito.id" :mes="mes"></tabla-informes>
             </div>
         </div>
@@ -28,6 +33,7 @@
 </template>
 
 <script>
+    import { LineChart } from 'vue-morris'    
     export default {
         data() {
             return {
@@ -38,7 +44,13 @@
                 loading: false,
                 filtered: '',
                 searchKeyword: '',
-				perPage: 10
+				perPage: 10,
+                lineData: [
+                    { year: '2013', a: 10, b: 5 },
+                    { year: '2014', a: 40, b: 15 },
+                    { year: '2015', a: 20, b: 25 },
+                    { year: '2016', a: 30, b: 20 },
+                ],
             }
         },
         methods: {
@@ -53,6 +65,9 @@
 					throw error
 				})
             }
+        },
+        components: {
+            LineChart
         },
         props: {
             id: {required:true},
