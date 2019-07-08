@@ -9,7 +9,7 @@
         </thead>
         <tbody>
             <tr v-for="iglesia in data">
-                <td>{{iglesia.nombre}}</td>
+                <td><a :href="'/list/pastores/'+id_pastor+'/informes/iglesia/'+iglesia.id">{{iglesia.nombre}}</a></td>
                 <td v-for="remesa in remesas" align="center">
                     <span v-for="informe in iglesia.informes">
                         <span v-if="remesa.id == informe.remesa.id">
@@ -95,6 +95,7 @@
         },
         props: {
             id_distrito: {required:true},
+            id_pastor: {required:true},
             mes: {required:true}
         },
         mounted() {

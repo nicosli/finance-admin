@@ -23,10 +23,20 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/list/pastores', function(){
         return view('modulos.listaPastores');
     });
-    Route::get('/list/pastores/{id}', function($id){
+    Route::get('/list/pastores/{id_pastor}', function($id_pastor){
         $mes = date('m');
         if($mes != '01')
             $mes -= 1;
-        return view('modulos.infoPastores', ["id" => $id, "mes" => $mes]);
+        return view('modulos.infoPastores', ["id_pastor" => $id_pastor, "mes" => $mes]);
+    });
+    Route::get('/list/pastores/{id_pastor}/informes/iglesia/{id_iglesia}', function($id_pastor, $id_iglesia){
+        $mes = date('m');
+        if($mes != '01')
+            $mes -= 1;
+        return view('modulos.infoIglesia', [
+            "id_pastor" => $id_pastor, 
+            "id_iglesia" => $id_iglesia,
+            "mes" => $mes
+        ]);
     });
 });

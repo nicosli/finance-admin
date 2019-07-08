@@ -17,24 +17,25 @@ class InformesTableSeeder extends Seeder
             ->where('id_rol', '=', 3)
             ->get();
         foreach ($pastores as $key => $pastor) {
-            $this->command->info($pastor->name.' - '.$pastor->id_distrito);
             $iglesias = DB::table('iglesias')
                 ->where('id_distrito', '=', $pastor->id_distrito)
                 ->get();
 
             foreach ($iglesias as $key => $iglesia) {
                 $mes = date('m');
-                $mes = ((int) date('d') < 15)? $mes-1 : $mes;
+                //$mes = ((int) date('d') < 15)? $mes-1 : $mes;
+                $mes = 12;
+                $anio = "2018";
                 for($x=1; $x<=$mes; $x++) {
                     $caso = rand(1,2);
                     switch ($caso) {
                         case 1: // puntual
-                            $fecha = date("Y-$x-".rand(1,5));
+                            $fecha = date($anio."-$x-".rand(1,5));
                             break;
                         
                         case 2: // no puntual
-                            $fecha2[0] = date("Y-$x-".rand(6,10));
-                            $fecha2[1] = date("Y-$x-".rand(11,18));
+                            $fecha2[0] = date($anio."-$x-".rand(6,10));
+                            $fecha2[1] = date($anio."-$x-".rand(11,18));
                             break;
                         default:
                             # code...

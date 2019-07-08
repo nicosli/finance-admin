@@ -26,6 +26,11 @@ Vue.component(
 );
 
 Vue.component(
+    'info-iglesia',
+    require('./components/InfoIglesia.vue')
+);
+
+Vue.component(
     'tabla-informes',
     require('./components/Informes.vue')
 );
