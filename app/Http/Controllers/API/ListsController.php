@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Distritos;
 use App\Iglesias;
+use App\Remesas;
 
 class ListsController extends Controller
 {
@@ -35,6 +36,13 @@ class ListsController extends Controller
         ->first();
         return response()->json([
             'results' => $user
+        ]);
+    }
+
+    public static function remesas(){
+        $remesas = Remesas::all();        
+        return response()->json([
+            'results' => $remesas
         ]);
     }
     

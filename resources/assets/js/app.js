@@ -8,12 +8,8 @@
 window.Vue = require('vue');
 import Buefy from 'buefy'
 
-import jQuery from 'jquery'
-window.jQuery = jQuery
-window.$ = jQuery
-
-import Raphael from 'raphael/raphael'
-global.Raphael = Raphael
+import VueApexCharts from 'vue-apexcharts'
+Vue.component('apexchart', VueApexCharts)
 
 Vue.component(
     'tabla-pastores',
@@ -28,6 +24,11 @@ Vue.component(
 Vue.component(
     'info-iglesia',
     require('./components/InfoIglesia.vue')
+);
+
+Vue.component(
+    'chart-compara',
+    require('./components/ChartCompara.vue')
 );
 
 Vue.component(
