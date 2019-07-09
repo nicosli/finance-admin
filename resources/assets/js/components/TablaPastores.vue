@@ -9,9 +9,8 @@
     <div class="card">
         <div class="card-content">
             <article class="message is-link">
-                <div class="message-body">
-                    Tabla de <strong>Pastores</strong>, este módulo
-                    muestra una lista completa de todos los pastores
+                <div class="message-body">Tabla de <strong>Pastores</strong>.
+                    Este módulo muestra una lista completa de todos los pastores
                     que están dados de alta en el sistema, para poder
                     ver los informes, hacer click en el botón "info", 
                     este link dará un informe detallado del pastor
@@ -62,8 +61,11 @@
                         {{ props.row.pastor.distrito.iglesias.length }}
                     </b-table-column>
                     <b-table-column>
-                        <a class="button is-link is-small" :href="'/list/pastores/'+props.row.id">
-                            Info
+                        <a class="button is-primary is-small" :href="'/list/pastores/'+props.row.id">
+                            <span class="icon">
+                                <i class="fas fa-angle-right"></i>
+                            </span>
+                            <span>Info</span>
                         </a>
                     </b-table-column>
                 </template>

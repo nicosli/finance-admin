@@ -12,7 +12,11 @@
         </thead>
         <tbody>
             <tr v-for="iglesia in data">
-                <td><a :href="'/list/pastores/'+id_pastor+'/informes/iglesia/'+iglesia.id">{{iglesia.nombre}}</a></td>
+                <td>
+                    <a :href="'/list/pastores/'+id_pastor+'/informes/iglesia/'+iglesia.id">
+                        <i class="fas fa-chart-line"></i> {{iglesia.nombre}}
+                    </a>
+                </td>
                 <td v-for="remesa in remesas" align="center">
                     <span v-for="informe in iglesia.informes">
                         <span v-if="remesa.id == informe.remesa.id">

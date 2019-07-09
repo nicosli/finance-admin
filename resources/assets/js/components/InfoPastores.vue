@@ -15,7 +15,7 @@
             <section class="hero is-info">
                 <div class="hero-body">
                     <div class="container">
-                        <h1 class="title">Pastor {{data.name}}</h1>
+                        <h1 class="title"><i class="fas fa-user-tie"></i> Pastor {{data.name}} {{data.last_name}}</h1>
                         <h2 class="subtitle">Distrito {{data.pastor.distrito.nombre}}</h2>
                     </div>
                 </div>
@@ -32,8 +32,11 @@
                     </div>
                 </article>
                 <h3 class="subtitle m-t-lg">Informes del mes</h3>
-                <h6 class="title is-6">por iglesia</h6>
-                <p>Para ver el informe acomlado por iglesia, click sobre el nombre</p>
+                <h6 class="title is-6 m-b-md">por iglesia</h6>
+                <p>
+                    <i class="far fa-lightbulb"></i>
+                    Para ver el informe acomlado por iglesia, click sobre el nombre
+                </p>
                 <tabla-informes 
                     :id_pastor="id_pastor"
                     :id_distrito="data.pastor.distrito.id" :mes="mes">

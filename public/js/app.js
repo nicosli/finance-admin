@@ -46323,6 +46323,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -46565,13 +46567,15 @@ var render = function() {
                         _c(
                           "a",
                           {
-                            staticClass: "button is-link is-small",
+                            staticClass: "button is-primary is-small",
                             attrs: { href: "/list/pastores/" + props.row.id }
                           },
                           [
-                            _vm._v(
-                              "\r\n                            Info\r\n                        "
-                            )
+                            _c("span", { staticClass: "icon" }, [
+                              _c("i", { staticClass: "fas fa-angle-right" })
+                            ]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("Info")])
                           ]
                         )
                       ])
@@ -46625,10 +46629,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("article", { staticClass: "message is-link" }, [
       _c("div", { staticClass: "message-body" }, [
-        _vm._v("\r\n                    Tabla de "),
+        _vm._v("Tabla de "),
         _c("strong", [_vm._v("Pastores")]),
         _vm._v(
-          ', este módulo\r\n                    muestra una lista completa de todos los pastores\r\n                    que están dados de alta en el sistema, para poder\r\n                    ver los informes, hacer click en el botón "info", \r\n                    este link dará un informe detallado del pastor\r\n                '
+          '.\r\n                    Este módulo muestra una lista completa de todos los pastores\r\n                    que están dados de alta en el sistema, para poder\r\n                    ver los informes, hacer click en el botón "info", \r\n                    este link dará un informe detallado del pastor\r\n                '
         )
       ])
     ])
@@ -46696,6 +46700,9 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -46832,7 +46839,13 @@ var render = function() {
               _c("div", { staticClass: "hero-body" }, [
                 _c("div", { staticClass: "container" }, [
                   _c("h1", { staticClass: "title" }, [
-                    _vm._v("Pastor " + _vm._s(_vm.data.name))
+                    _c("i", { staticClass: "fas fa-user-tie" }),
+                    _vm._v(
+                      " Pastor " +
+                        _vm._s(_vm.data.name) +
+                        " " +
+                        _vm._s(_vm.data.last_name)
+                    )
                   ]),
                   _vm._v(" "),
                   _c("h2", { staticClass: "subtitle" }, [
@@ -46883,15 +46896,11 @@ var render = function() {
                       _vm._v("Informes del mes")
                     ]),
                     _vm._v(" "),
-                    _c("h6", { staticClass: "title is-6" }, [
+                    _c("h6", { staticClass: "title is-6 m-b-md" }, [
                       _vm._v("por iglesia")
                     ]),
                     _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Para ver el informe acomlado por iglesia, click sobre el nombre"
-                      )
-                    ]),
+                    _vm._m(2),
                     _vm._v(" "),
                     _c("tabla-informes", {
                       attrs: {
@@ -46922,6 +46931,17 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", [
       _c("a", { attrs: { href: "/list/pastores" } }, [_vm._v("Lista Pastores")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "far fa-lightbulb" }),
+      _vm._v(
+        "\r\n                    Para ver el informe acomlado por iglesia, click sobre el nombre\r\n                "
+      )
     ])
   }
 ]
@@ -47159,15 +47179,16 @@ var render = function() {
               _c("div", { staticClass: "hero-body" }, [
                 _c("div", { staticClass: "container" }, [
                   _c("h1", { staticClass: "title" }, [
-                    _vm._v("Iglesia " + _vm._s(_vm.iglesia.nombre))
+                    _c("i", { staticClass: "fas fa-place-of-worship" }),
+                    _vm._v(" Iglesia " + _vm._s(_vm.iglesia.nombre))
                   ]),
                   _vm._v(" "),
                   _c("h2", { staticClass: "subtitle" }, [
                     _vm._v(
                       "Pastor " +
                         _vm._s(_vm.data.name) +
-                        " - Distrito " +
-                        _vm._s(_vm.data.pastor.distrito.nombre) +
+                        " " +
+                        _vm._s(_vm.data.last_name) +
                         "\r\n                        "
                     )
                   ])
@@ -49755,8 +49776,9 @@ var render = function() {
               _c("div", { staticClass: "hero-body" }, [
                 _c("div", { staticClass: "container" }, [
                   _c("h1", { staticClass: "title" }, [
+                    _c("i", { staticClass: "fas fa-landmark" }),
                     _vm._v(
-                      "Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
+                      " Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
                     )
                   ]),
                   _vm._v(" "),
@@ -49764,6 +49786,8 @@ var render = function() {
                     _vm._v(
                       "Pastor " +
                         _vm._s(_vm.data.name) +
+                        " " +
+                        _vm._s(_vm.data.last_name) +
                         "\r\n                        "
                     )
                   ])
@@ -49974,6 +49998,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 __WEBPACK_IMPORTED_MODULE_0_moment___default.a.locale('es');
@@ -50112,7 +50140,14 @@ var render = function() {
                           iglesia.id
                       }
                     },
-                    [_vm._v(_vm._s(iglesia.nombre))]
+                    [
+                      _c("i", { staticClass: "fas fa-chart-line" }),
+                      _vm._v(
+                        " " +
+                          _vm._s(iglesia.nombre) +
+                          "\r\n                    "
+                      )
+                    ]
                   )
                 ]),
                 _vm._v(" "),

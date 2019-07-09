@@ -16,8 +16,8 @@
             <section class="hero is-primary">
                 <div class="hero-body">
                     <div class="container">
-                        <h1 class="title">Iglesia {{iglesia.nombre}}</h1>
-                        <h2 class="subtitle">Pastor {{data.name}} - Distrito {{data.pastor.distrito.nombre}}
+                        <h1 class="title"><i class="fas fa-place-of-worship"></i> Iglesia {{iglesia.nombre}}</h1>
+                        <h2 class="subtitle">Pastor {{data.name}} {{data.last_name}}
                         </h2>
                     </div>
                 </div>

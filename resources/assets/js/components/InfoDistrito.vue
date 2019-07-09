@@ -16,8 +16,8 @@
             <section class="hero is-primary">
                 <div class="hero-body">
                     <div class="container">
-                        <h1 class="title">Distrito {{data.pastor.distrito.nombre}}</h1>
-                        <h2 class="subtitle">Pastor {{data.name}}
+                        <h1 class="title"><i class="fas fa-landmark"></i> Distrito {{data.pastor.distrito.nombre}}</h1>
+                        <h2 class="subtitle">Pastor {{data.name}} {{data.last_name}}
                         </h2>
                     </div>
                 </div>
