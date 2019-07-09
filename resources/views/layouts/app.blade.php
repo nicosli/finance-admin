@@ -96,6 +96,14 @@
 
     @yield('content')
 
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+            <strong>{{ config('app.name', 'Arca System') }} System</strong> by devcomer. Ver <a href="{{asset('licencia')}}" class="lc">Licencia</a>
+            </p>
+        </div>
+    </footer>
+    
     <!-- Scripts -->
     <script src="{{ asset('js/manifest.js') }}"></script>
     <script src="{{ asset('js/vendor.js') }}"></script>

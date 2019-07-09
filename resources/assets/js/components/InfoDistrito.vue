@@ -13,7 +13,7 @@
     </div>
     <div class="card">
         <div class="card-content" v-if="data.pastor">
-            <section class="hero is-warning">
+            <section class="hero is-primary">
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">Distrito {{data.pastor.distrito.nombre}}</h1>
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </section>
-            <article class="message is-warning">
+            <article class="message is-primary">
                 <div class="message-body">
                     Este módulo muestra el <strong>acoumlado anual del distrito </strong>
                     categorizado por remesa. Para poder visualizar otra categoría, click en "Selecciona Remesa"

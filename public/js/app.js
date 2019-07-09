@@ -46740,6 +46740,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -46850,8 +46852,12 @@ var render = function() {
                     _c("article", { staticClass: "message is-info" }, [
                       _c("div", { staticClass: "message-body" }, [
                         _vm._v(
-                          "\r\n                        Para ver el informe acomlado del Distrito \r\n                        "
+                          "\r\n                        Para ver el informe acomlado del Distrito\r\n                        "
                         ),
+                        _c("strong", [
+                          _vm._v(_vm._s(_vm.data.pastor.distrito.nombre))
+                        ]),
+                        _vm._v(" "),
                         _c(
                           "a",
                           {
@@ -46879,6 +46885,12 @@ var render = function() {
                     _vm._v(" "),
                     _c("h6", { staticClass: "title is-6" }, [
                       _vm._v("por iglesia")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "Para ver el informe acomlado por iglesia, click sobre el nombre"
+                      )
                     ]),
                     _vm._v(" "),
                     _c("tabla-informes", {
@@ -49739,7 +49751,7 @@ var render = function() {
     _c("div", { staticClass: "card" }, [
       _vm.data.pastor
         ? _c("div", { staticClass: "card-content" }, [
-            _c("section", { staticClass: "hero is-warning" }, [
+            _c("section", { staticClass: "hero is-primary" }, [
               _c("div", { staticClass: "hero-body" }, [
                 _c("div", { staticClass: "container" }, [
                   _c("h1", { staticClass: "title" }, [
@@ -49855,7 +49867,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("article", { staticClass: "message is-warning" }, [
+    return _c("article", { staticClass: "message is-primary" }, [
       _c("div", { staticClass: "message-body" }, [
         _vm._v("\r\n                    Este módulo muestra el "),
         _c("strong", [_vm._v("acoumlado anual del distrito ")]),

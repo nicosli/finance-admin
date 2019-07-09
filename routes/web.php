@@ -20,6 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function(){
+    Route::get('/licencia', function(){
+        return view('modulos.licencia');
+    });
     Route::get('/list/pastores', function(){
         return view('modulos.listaPastores');
     });

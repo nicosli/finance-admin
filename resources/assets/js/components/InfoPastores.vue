@@ -23,7 +23,8 @@
             <div class="content" v-if="data.pastor">
                 <article class="message is-info">
                     <div class="message-body">
-                        Para ver el informe acomlado del Distrito 
+                        Para ver el informe acomlado del Distrito
+                        <strong>{{data.pastor.distrito.nombre}}</strong>
                         <a class="button is-info is-small" 
                         :href="'/list/pastores/'+data.id+'/informes/distrito/'+data.pastor.distrito.id" >
                             Click aquí
@@ -32,6 +33,7 @@
                 </article>
                 <h3 class="subtitle m-t-lg">Informes del mes</h3>
                 <h6 class="title is-6">por iglesia</h6>
+                <p>Para ver el informe acomlado por iglesia, click sobre el nombre</p>
                 <tabla-informes 
                     :id_pastor="id_pastor"
                     :id_distrito="data.pastor.distrito.id" :mes="mes">
