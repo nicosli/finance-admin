@@ -1,5 +1,8 @@
 <template>
 <div>
+    <div v-show="loading">
+        cargando...
+    </div>
     <table class="table is-bordered is-striped is-hoverable is-responsive">
         <thead>
             <tr>
@@ -46,6 +49,7 @@
         },
         methods: {
             loadAsyncData() {
+                this.loading = true
                 this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/pastores/${this.id_distrito}/${this.mes}`)
 				.then(( {data} ) => {
                     this.data = []

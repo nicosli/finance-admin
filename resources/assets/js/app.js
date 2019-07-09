@@ -33,7 +33,7 @@ Vue.component(
 
 Vue.component(
     'tabla-informes',
-    require('./components/Informes.vue')
+    require('./components/TablaInformes.vue')
 );
 
 Vue.component(

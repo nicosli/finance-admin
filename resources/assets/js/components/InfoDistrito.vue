@@ -29,6 +29,16 @@
                 </div>
             </article>
             <div class="content" v-if="data.pastor">
+                <b-field grouped position="is-right">
+                    <b-field label="Selecciona Remesa" class="m-t-md m-b-sm">
+                    <b-select placeholder="Select a name" v-model="id_remesa" size="is-medium" :loading="loadingChart">
+                        <option v-for="remesa in remesas" :value="remesa.id" :key="remesa.nombre">
+                            {{ remesa.nombre }}
+                        </option>
+                    </b-select>
+                    </b-field>
+                </b-field>
+                
                 <tabla-remesa v-if="data.pastor" 
                 @loading="compLoading"
                 :id_distrito="data.pastor.distrito.id" 

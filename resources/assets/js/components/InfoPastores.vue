@@ -64,6 +64,7 @@
         },
         methods: {
             loadAsyncData() {
+                this.loading = true
                 this.$http.get(`http://local.mayordomia.nicosli.com/api/list/pastores/${this.id_pastor}`)
 				.then(( {data} ) => {
                     this.data = data.results

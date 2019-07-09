@@ -2,6 +2,7 @@
 <div>
     <h3 class="subtitle m-t-lg">Tabla Remesa</h3>
     <h6 class="title is-6">año anterior</h6>
+    {{id_remesa}}
 </div>
 </template>
 
