@@ -43,11 +43,6 @@
                 v-if="remesas.length > 0" 
                 :id_iglesia="iglesia.id" 
                 :id_remesa="id_remesa"></chart-compara>
-
-                <tabla-remesa v-if="data.pastor" 
-                @loading="compLoading"
-                :id_distrito="data.pastor.distrito.id" 
-                :id_remesa="id_remesa"></tabla-remesa>
             </div>
         </div>
     </div>

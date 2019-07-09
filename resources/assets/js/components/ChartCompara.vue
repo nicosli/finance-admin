@@ -3,6 +3,7 @@
     <h3 class="subtitle m-t-lg">Tabla Acomulada</h3>
     <h6 class="title is-6">año anterior</h6>
     <apexchart v-if="options.chart" width="100%" height="350" type="line" :options="options" :series="series"></apexchart>
+    <span v-show="loading">cargando...</span>
 </div>
 </template>
 

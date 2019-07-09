@@ -47026,11 +47026,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47235,16 +47230,6 @@ var render = function() {
                           },
                           on: { loading: _vm.compLoading }
                         })
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.data.pastor
-                      ? _c("tabla-remesa", {
-                          attrs: {
-                            id_distrito: _vm.data.pastor.distrito.id,
-                            id_remesa: _vm.id_remesa
-                          },
-                          on: { loading: _vm.compLoading }
-                        })
                       : _vm._e()
                   ],
                   1
@@ -47347,6 +47332,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -47473,7 +47459,22 @@ var render = function() {
               series: _vm.series
             }
           })
-        : _vm._e()
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "span",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.loading,
+              expression: "loading"
+            }
+          ]
+        },
+        [_vm._v("cargando...")]
+      )
     ],
     1
   )

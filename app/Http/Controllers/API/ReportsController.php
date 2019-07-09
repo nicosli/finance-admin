@@ -80,7 +80,7 @@ class ReportsController extends Controller
                 "type" => "column",
                 "data" => $importesActual
         ];
-
+        sleep(2);
         return response()->json([
             'options' => [
                 "xaxis" => ["categories" => $meses]
