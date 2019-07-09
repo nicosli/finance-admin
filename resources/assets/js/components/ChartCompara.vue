@@ -1,8 +1,8 @@
 <template>
 <div>
-    <h3 class="subtitle m-t-lg">Comparativo</h3>
+    <h3 class="subtitle m-t-lg">Tabla Acomulada</h3>
     <h6 class="title is-6">año anterior</h6>
-    <apexchart v-if="options.chart" width="100%" height="300" type="bar" :options="options" :series="series"></apexchart>
+    <apexchart v-if="options.chart" width="100%" height="350" type="line" :options="options" :series="series"></apexchart>
 </div>
 </template>
 
@@ -32,12 +32,24 @@
                             speed: 500
                         }
                     }
+                    this.options.stroke = {
+                        width: [1, 1, 4]
+                    }
                     this.options.yaxis = {
                         labels: {
                             formatter: function (val) {
                                 let value = (val/1).toFixed(0).replace(',', '')
                                 return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                             }
+                        },
+                        axisTicks: {
+                            show: true,
+                        },
+                        axisBorder: {
+                            show: true
+                        },
+                        tooltip: {
+                            enabled: true
                         }
                     }
                     this.options.legend = {
@@ -51,6 +63,9 @@
                     }
                     this.options.dataLabels = {
                         enabled: true,
+                        style: {
+                            colors: ['#FFF']
+                        },
                         formatter: function (val) {
                             let value = (val/1).toFixed(0).replace(',', '')
                             return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")

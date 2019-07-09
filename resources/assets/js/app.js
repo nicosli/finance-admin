@@ -36,6 +36,16 @@ Vue.component(
     require('./components/Informes.vue')
 );
 
+Vue.component(
+    'tabla-remesa',
+    require('./components/TablaRemesa.vue')
+);
+
+Vue.component(
+    'info-distrito',
+    require('./components/InfoDistrito.vue')
+);
+
 Vue.use(Buefy, {
     defaultIconPack: 'fa'
 })

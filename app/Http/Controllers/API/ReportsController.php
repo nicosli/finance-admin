@@ -72,10 +72,12 @@ class ReportsController extends Controller
         }
         $series[] = [
                 "name" => (string)$anioAnterior,
+                "type" => "column",
                 "data" => $importesAnterior
         ];
         $series[] = [
                 "name" => $anio,
+                "type" => "column",
                 "data" => $importesActual
         ];
 

@@ -7,6 +7,9 @@
             <li class="is-active"><a href="#" aria-current="page">Pastor {{data.name}}</a></li>
         </ul>
     </nav>
+    <div v-show="!data.pastor">
+        cargando...
+    </div>
     <div class="card">
         <div class="card-content" v-if="data.pastor">
             <section class="hero is-info">
@@ -18,8 +21,17 @@
                 </div>
             </section>
             <div class="content" v-if="data.pastor">
-                <h3 class="subtitle m-t-lg">Importes</h3>
-                <h6 class="title is-6">del mes</h6>
+                <article class="message is-info">
+                    <div class="message-body">
+                        Para ver el informe acomlado del Distrito 
+                        <a class="button is-info is-small" 
+                        :href="'/list/pastores/'+data.id+'/informes/distrito/'+data.pastor.distrito.id" >
+                            Click aquí
+                        </a>
+                    </div>
+                </article>
+                <h3 class="subtitle m-t-lg">Informes del mes</h3>
+                <h6 class="title is-6">por iglesia</h6>
                 <tabla-informes 
                     :id_pastor="id_pastor"
                     :id_distrito="data.pastor.distrito.id" :mes="mes">

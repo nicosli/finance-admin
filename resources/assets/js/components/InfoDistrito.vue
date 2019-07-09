@@ -5,7 +5,7 @@
             <li><a href="/home">Home</a></li>
             <li><a href="/list/pastores">Lista Pastores</a></li>
             <li><a :href="'/list/pastores/'+data.id">Pastor {{data.name}}</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Iglesia {{iglesia.nombre}}</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Distrito {{data.pastor.distrito.nombre}}</a></li>
         </ul>
     </nav>
     <div v-show="!data.pastor">
@@ -13,37 +13,22 @@
     </div>
     <div class="card">
         <div class="card-content" v-if="data.pastor">
-            <section class="hero is-primary">
+            <section class="hero is-warning">
                 <div class="hero-body">
                     <div class="container">
-                        <h1 class="title">Iglesia {{iglesia.nombre}}</h1>
-                        <h2 class="subtitle">Pastor {{data.name}} - Distrito {{data.pastor.distrito.nombre}}
+                        <h1 class="title">Distrito {{data.pastor.distrito.nombre}}</h1>
+                        <h2 class="subtitle">Pastor {{data.name}}
                         </h2>
                     </div>
                 </div>
             </section>
-            <article class="message is-link">
+            <article class="message is-warning">
                 <div class="message-body">
-                    Este módulo muestra el <strong>acoumlado anual</strong> categorizado por remesa.
-                    Para poder visualizar otra categoría, click en "Selecciona Remesa"
+                    Este módulo muestra el <strong>acoumlado anual del distrito </strong>
+                    categorizado por remesa. Para poder visualizar otra categoría, click en "Selecciona Remesa"
                 </div>
             </article>
             <div class="content" v-if="data.pastor">
-                <b-field grouped position="is-right">
-                    <b-field label="Selecciona Remesa" class="m-t-md m-b-sm">
-                    <b-select placeholder="Select a name" v-model="id_remesa" size="is-medium" :loading="loadingChart">
-                        <option v-for="remesa in remesas" :value="remesa.id" :key="remesa.nombre">
-                            {{ remesa.nombre }}
-                        </option>
-                    </b-select>
-                    </b-field>
-                </b-field>
-                <chart-compara 
-                @loading="compLoading"
-                v-if="remesas.length > 0" 
-                :id_iglesia="iglesia.id" 
-                :id_remesa="id_remesa"></chart-compara>
-
                 <tabla-remesa v-if="data.pastor" 
                 @loading="compLoading"
                 :id_distrito="data.pastor.distrito.id" 
@@ -105,7 +90,7 @@
         },
         props: {
             id_pastor: {required:true},
-            id_iglesia: {required:true},
+            id_distrito: {required:true},
             mes: {required:true}
         },
         mounted() {

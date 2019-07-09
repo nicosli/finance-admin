@@ -39,4 +39,15 @@ Route::group(['middleware' => 'auth'], function(){
             "mes" => $mes
         ]);
     });
+
+    Route::get('/list/pastores/{id_pastor}/informes/distrito/{id_distrito}', function($id_pastor, $id_distrito){
+        $mes = date('m');
+        if($mes != '01')
+            $mes -= 1;
+        return view('modulos.infoDistrito', [
+            "id_pastor" => $id_pastor, 
+            "id_distrito" => $id_distrito,
+            "mes" => $mes
+        ]);
+    });
 });

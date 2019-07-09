@@ -8,6 +8,15 @@
     </nav>
     <div class="card">
         <div class="card-content">
+            <article class="message is-link">
+                <div class="message-body">
+                    Tabla de <strong>Pastores</strong>, este módulo
+                    muestra una lista completa de todos los pastores
+                    que están dados de alta en el sistema, para poder
+                    ver los informes, hacer click en el botón "info", 
+                    este link dará un informe detallado del pastor
+                </div>
+            </article>
             <b-field grouped position="is-right">
                 <b-input 
                     icon-pack="fas"
@@ -16,7 +25,9 @@
                     placeholder="búsqueda...">
                 </b-input>
             </b-field>
-
+            <div v-show="loading">
+                cargando...
+            </div>
             <b-table
                 :data="filteredData"
                 :loading="loading"
@@ -28,7 +39,7 @@
                 :default-sort-direction="defaultSortOrder"
                 :focusable=true>
                 <template slot-scope="props">
-                    <b-table-column field="codigo_er" label="Fecha Fuente" sortable>
+                    <b-table-column field="codigo_er" label="Código" sortable>
                         <span class="has-text-danger">
                             {{ props.row.codigo_er }}
                         </span>
@@ -83,6 +94,7 @@
         },
         methods: {
             loadAsyncData() {
+                this.loading = true
                 const params = [
                     `sort_by=${this.sortField}`,
                     `sort_type=${this.sortOrder}`
