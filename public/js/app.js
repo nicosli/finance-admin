@@ -1854,7 +1854,7 @@ webpackJsonp([0],[
             try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(158)("./" + name);
+                __webpack_require__(157)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {}
         }
@@ -4605,7 +4605,7 @@ webpackJsonp([0],[
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(157)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(156)(module)))
 
 /***/ }),
 /* 1 */
@@ -16923,7 +16923,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(134);
-module.exports = __webpack_require__(162);
+module.exports = __webpack_require__(161);
 
 
 /***/ }),
@@ -16934,7 +16934,7 @@ module.exports = __webpack_require__(162);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_buefy__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_buefy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_buefy__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_apexcharts__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_apexcharts__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_apexcharts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_apexcharts__);
 
 /**
@@ -16943,27 +16943,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-window.Vue = __webpack_require__(3);
+window.Vue = __webpack_require__(2);
 
 
 
 Vue.component('apexchart', __WEBPACK_IMPORTED_MODULE_1_vue_apexcharts___default.a);
 
-Vue.component('tabla-pastores', __webpack_require__(140));
+Vue.component('tabla-pastores', __webpack_require__(142));
 
-Vue.component('info-pastores', __webpack_require__(143));
+Vue.component('info-pastores', __webpack_require__(145));
 
-Vue.component('info-iglesia', __webpack_require__(146));
+Vue.component('info-iglesia', __webpack_require__(148));
 
-Vue.component('chart-compara', __webpack_require__(149));
+Vue.component('chart-compara', __webpack_require__(151));
 
-Vue.component('tabla-informes', __webpack_require__(155));
+Vue.component('tabla-informes', __webpack_require__(154));
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a, {
     defaultIconPack: 'fa'
 });
 
-Vue.use(__webpack_require__(160));
+Vue.use(__webpack_require__(159));
 Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';
 Vue.http.interceptors.push(function (request, next) {
     request.headers.set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijg2NTU1MzMyYTliODZhNDcxZGQ2ODZkNThhOTYwMGY1NDFhNWYwYTAzMzEyNDlhNDhlNTFmY2NlYTYwYmEzNDg2Yjc3NzUzNjMxMDA1NzA2In0.eyJhdWQiOiIxIiwianRpIjoiODY1NTUzMzJhOWI4NmE0NzFkZDY4NmQ1OGE5NjAwZjU0MWE1ZjBhMDMzMTI0OWE0OGU1MWZjY2VhNjBiYTM0ODZiNzc3NTM2MzEwMDU3MDYiLCJpYXQiOjE1NjIyODA3NjksIm5iZiI6MTU2MjI4MDc2OSwiZXhwIjoxNTkzOTAzMTY5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Ue2WCWV9pJ9qfN7LWtt2Qr6g_4McL0WUhU6NGuykYtWQxgbSqQ2lXJ6idZW4QGuSurvnro_L1anDvWVDv1Ah1yFxuNnduj0Z_d2CihuiUG098joeZAWJFVc7wim_CYw8H_jKtAy5822_wkPAU8abiqkYh85ZipNJmkocH9YMZhx0F04KdOXzDHrS-uNFgN0OFsN46edWWtrVP26kSjZmeu3c19ebqjZmV-yS3UH1ik74s8VRyrlNA8596AmWZ_qfYyHDk9kaPZv8avhcG0JpGc14yuyvBrK7djy1_JaLxS8gVtUU9UQ5hvrgJ5opRol_PKaqoureM6W8evVxRcgPrdhKkxBvHhMWZm-SeBMQCVNCbtUfhlLqMxB8ka5sxgaaLEoWVpQlCqjOX4l7kVwiW3kSw6-zCvUigcNvXwFCx1Y9fkYHWMyhtlTy_b2pFbVe1G3fjMQncFxy3FdazTAk3PNseGdv62x_lrkOBuo8gPl2fDg_csPYprE1cyfvt68vV5DJ8YSw-8-910oyI0TylmfJscQHPBQHo6jzr3eWQFAQdoqeeLs0jnY5Nm7GVKf5CBg0uCvpQuEyHAQHnMe01ipJoq_qzQdmvAdERm-7PavTRhXo66rNOVl4uhaC2VGD2DbA0_yjsEN7LIymtoCd27oADjP-1aePRktYEvTjaIM');
@@ -16986,1063 +16986,255 @@ var app = new Vue({
 /* 135 */,
 /* 136 */,
 /* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(141)
-/* template */
-var __vue_template__ = __webpack_require__(142)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/TablaPastores.vue"
+(function (global, factory) {
+   true ? module.exports = factory(__webpack_require__(139)) :
+  typeof define === 'function' && define.amd ? define(['apexcharts'], factory) :
+  (global.VueApexCharts = factory(global.ApexCharts));
+}(this, (function (ApexCharts) { 'use strict';
 
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4e1710b4", Component.options)
-  } else {
-    hotAPI.reload("data-v-4e1710b4", Component.options)
+  ApexCharts = ApexCharts && ApexCharts.hasOwnProperty('default') ? ApexCharts['default'] : ApexCharts;
+
+  function _typeof(obj) {
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function (obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
   }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
 
-module.exports = Component.exports
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
 
+    return obj;
+  }
 
-/***/ }),
-/* 141 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
+  var ApexChartsComponent = {
+    props: {
+      options: {
+        type: Object
+      },
+      type: {
+        type: String,
+        default: 'line'
+      },
+      series: {
+        type: Array,
+        required: true,
+        default: function _default() {
+          return [];
+        }
+      },
+      width: {
+        default: '100%'
+      },
+      height: {
+        default: 'auto'
+      }
+    },
     data: function data() {
-        return {
-            data: [],
-            sortField: 'fechaFuente',
-            sortOrder: 'desc',
-            defaultSortOrder: 'desc',
-            loading: false,
-            filtered: '',
-            searchKeyword: '',
-            perPage: 10
-        };
+      return {
+        chart: null
+      };
     },
-
-    methods: {
-        loadAsyncData: function loadAsyncData() {
-            var _this = this;
-
-            var params = ['sort_by=' + this.sortField, 'sort_type=' + this.sortOrder].join('&');
-            this.$http.get('http://local.mayordomia.nicosli.com/api/list/pastores?' + params).then(function (_ref) {
-                var data = _ref.data;
-
-                _this.data = [];
-                data.results.forEach(function (item) {
-                    _this.data.push(item);
-                });
-                _this.loading = false;
-            }).catch(function (error) {
-                _this.loading = false;
-                throw error;
-            });
-        }
-    },
-    computed: {
-        filteredData: function filteredData() {
-            var _this2 = this;
-
-            return this.data.filter(function (item) {
-                _this2.filtered = item.codigo_er.toLowerCase().includes(_this2.searchKeyword.toLowerCase()) || item.name.toLowerCase().includes(_this2.searchKeyword.toLowerCase()) || item.last_name.toLowerCase().includes(_this2.searchKeyword.toLowerCase()) || item.email.toLowerCase().includes(_this2.searchKeyword.toLowerCase()) || item.mobile.toLowerCase().includes(_this2.searchKeyword.toLowerCase());
-
-                return _this2.filtered;
-            });
-        }
+    beforeMount: function beforeMount() {
+      window.ApexCharts = ApexCharts;
     },
     mounted: function mounted() {
-        this.loadAsyncData();
-    }
-});
+      this.init();
+    },
+    created: function created() {
+      var _this = this;
 
-/***/ }),
-/* 142 */
-/***/ (function(module, exports, __webpack_require__) {
+      this.$watch('options', function (options) {
+        if (!_this.chart && options) {
+          _this.init();
+        } else {
+          _this.chart.updateOptions(_this.options);
+        }
+      });
+      this.$watch('series', function (series) {
+        if (!_this.chart && series) {
+          _this.init();
+        } else {
+          _this.chart.updateSeries(_this.series);
+        }
+      }, {
+        deep: true
+      });
+      var watched = ['type', 'width', 'height'];
+      watched.forEach(function (prop) {
+        _this.$watch(prop, function () {
+          _this.refresh();
+        });
+      });
+    },
+    beforeDestroy: function beforeDestroy() {
+      if (!this.chart) {
+        return;
+      }
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "card" }, [
-      _c(
-        "div",
-        { staticClass: "card-content" },
-        [
-          _c(
-            "b-field",
-            { attrs: { grouped: "", position: "is-right" } },
-            [
-              _c("b-input", {
-                attrs: {
-                  "icon-pack": "fas",
-                  icon: "search",
-                  placeholder: "búsqueda..."
-                },
-                model: {
-                  value: _vm.searchKeyword,
-                  callback: function($$v) {
-                    _vm.searchKeyword = $$v
-                  },
-                  expression: "searchKeyword"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "b-table",
-            {
-              attrs: {
-                data: _vm.filteredData,
-                loading: _vm.loading,
-                paginated: "",
-                "per-page": _vm.perPage,
-                striped: true,
-                hoverable: true,
-                "default-sort-direction": _vm.defaultSortOrder,
-                focusable: true
-              },
-              scopedSlots: _vm._u([
-                {
-                  key: "default",
-                  fn: function(props) {
-                    return [
-                      _c(
-                        "b-table-column",
-                        {
-                          attrs: {
-                            field: "codigo_er",
-                            label: "Fecha Fuente",
-                            sortable: ""
-                          }
-                        },
-                        [
-                          _c("span", { staticClass: "has-text-danger" }, [
-                            _vm._v(
-                              "\r\n                            " +
-                                _vm._s(props.row.codigo_er) +
-                                "\r\n                        "
-                            )
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-table-column",
-                        {
-                          attrs: {
-                            field: "name",
-                            label: "Nombre",
-                            sortable: ""
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\r\n                            " +
-                              _vm._s(props.row.name) +
-                              "\r\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-table-column",
-                        {
-                          attrs: {
-                            field: "last_name",
-                            label: "Apellido",
-                            sortable: ""
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\r\n                        " +
-                              _vm._s(props.row.last_name) +
-                              "\r\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-table-column",
-                        {
-                          attrs: {
-                            field: "email",
-                            label: "Correo",
-                            sortable: ""
-                          }
-                        },
-                        [
-                          _c("span", { staticClass: "has-text-info" }, [
-                            _vm._v(
-                              "\r\n                            " +
-                                _vm._s(props.row.email) +
-                                "\r\n                        "
-                            )
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-table-column",
-                        {
-                          attrs: {
-                            field: "nombre",
-                            label: "Distrito",
-                            sortable: ""
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\r\n                        " +
-                              _vm._s(props.row.pastor.distrito.nombre) +
-                              "\r\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-table-column",
-                        {
-                          attrs: {
-                            field: "iglesias",
-                            label: "Iglesias",
-                            sortable: ""
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\r\n                        " +
-                              _vm._s(
-                                props.row.pastor.distrito.iglesias.length
-                              ) +
-                              "\r\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("b-table-column", [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "button is-link is-small",
-                            attrs: { href: "/list/pastores/" + props.row.id }
-                          },
-                          [
-                            _vm._v(
-                              "\r\n                            Info\r\n                        "
-                            )
-                          ]
-                        )
-                      ])
-                    ]
+      this.destroy();
+    },
+    render: function render(createElement) {
+      return createElement('div');
+    },
+    methods: {
+      init: function init() {
+        var _this2 = this;
+
+        var newOptions = {
+          chart: {
+            type: this.type,
+            height: this.height,
+            width: this.width,
+            events: {}
+          },
+          series: this.series
+        };
+        Object.keys(this.$listeners).forEach(function (evt) {
+          newOptions.chart.events[evt] = _this2.$listeners[evt];
+        });
+        var config = this.extend(this.options, newOptions);
+        this.chart = new ApexCharts(this.$el, config);
+        this.chart.render();
+      },
+      isObject: function isObject(item) {
+        return item && _typeof(item) === 'object' && !Array.isArray(item) && item != null;
+      },
+      extend: function extend(target, source) {
+        var _this3 = this;
+
+        if (typeof Object.assign !== 'function') {
+          (function () {
+            Object.assign = function (target) {
+              // We must check against these specific cases.
+              if (target === undefined || target === null) {
+                throw new TypeError('Cannot convert undefined or null to object');
+              }
+
+              var output = Object(target);
+
+              for (var index = 1; index < arguments.length; index++) {
+                var _source = arguments[index];
+
+                if (_source !== undefined && _source !== null) {
+                  for (var nextKey in _source) {
+                    if (_source.hasOwnProperty(nextKey)) {
+                      output[nextKey] = _source[nextKey];
+                    }
                   }
                 }
-              ])
-            },
-            [
-              _vm._v(" "),
-              _c("template", { slot: "footer" }, [
-                _c("div", { staticClass: "has-text-right" }, [
-                  _vm._v(
-                    "\r\n                        Tabla Pastores\r\n                    "
-                  )
-                ])
-              ])
-            ],
-            2
-          )
-        ],
-        1
-      )
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "nav",
-      { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
-      [
-        _c("ul", [
-          _c("li", [_c("a", { attrs: { href: "/home" } }, [_vm._v("Home")])]),
-          _vm._v(" "),
-          _c("li", { staticClass: "is-active" }, [
-            _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
-              _vm._v("Lista Pastores")
-            ])
-          ])
-        ])
-      ]
-    )
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4e1710b4", module.exports)
-  }
-}
+              }
 
-/***/ }),
-/* 143 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(144)
-/* template */
-var __vue_template__ = __webpack_require__(145)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/InfoPastores.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-cb337630", Component.options)
-  } else {
-    hotAPI.reload("data-v-cb337630", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 144 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            data: [],
-            sortField: 'fechaFuente',
-            sortOrder: 'desc',
-            defaultSortOrder: 'desc',
-            loading: false,
-            filtered: '',
-            searchKeyword: '',
-            perPage: 10,
-            barData: [{ year: 'Diezmos', 2018: 10, 2019: 5 }, { year: 'Ofrenda Misionera', 2018: 10, 2019: 15 }, { year: 'Plan de desarrollo', 2018: 20, 2019: 25 }, { year: 'Primicias', 2018: 30, 2019: 20 }]
-        };
-    },
-
-    methods: {
-        loadAsyncData: function loadAsyncData() {
-            var _this = this;
-
-            this.$http.get('http://local.mayordomia.nicosli.com/api/list/pastores/' + this.id_pastor).then(function (_ref) {
-                var data = _ref.data;
-
-                _this.data = data.results;
-                _this.loading = false;
-            }).catch(function (error) {
-                _this.loading = false;
-                throw error;
-            });
+              return output;
+            };
+          })();
         }
-    },
-    props: {
-        id_pastor: { required: true },
-        mes: { required: true }
-    },
-    mounted: function mounted() {
-        this.loadAsyncData();
+
+        var output = Object.assign({}, target);
+
+        if (this.isObject(target) && this.isObject(source)) {
+          Object.keys(source).forEach(function (key) {
+            if (_this3.isObject(source[key])) {
+              if (!(key in target)) {
+                Object.assign(output, _defineProperty({}, key, source[key]));
+              } else {
+                output[key] = _this3.extend(target[key], source[key]);
+              }
+            } else {
+              Object.assign(output, _defineProperty({}, key, source[key]));
+            }
+          });
+        }
+
+        return output;
+      },
+      refresh: function refresh() {
+        this.destroy();
+        this.init();
+      },
+      destroy: function destroy() {
+        this.chart.destroy();
+      },
+      updateSeries: function updateSeries(newSeries, animate) {
+        this.chart.updateSeries(newSeries, animate);
+      },
+      updateOptions: function updateOptions(newOptions, redrawPaths, animate) {
+        this.chart.updateOptions(newOptions, redrawPaths, animate);
+      },
+      toggleSeries: function toggleSeries(seriesName) {
+        this.chart.toggleSeries(seriesName);
+      },
+      resetSeries: function resetSeries() {
+        this.chart.resetSeries();
+      },
+      toggleDataPointSelection: function toggleDataPointSelection(seriesIndex, dataPointIndex) {
+        this.chart.toggleDataPointSelection(seriesIndex, dataPointIndex);
+      },
+      appendData: function appendData(newData) {
+        this.chart.appendData(newData);
+      },
+      addText: function addText(options) {
+        this.chart.addText(options);
+      },
+      dataURI: function dataURI() {
+        return this.chart.dataURI();
+      },
+      addXaxisAnnotation: function addXaxisAnnotation(options, pushToMemory) {
+        this.chart.addXaxisAnnotation(options, pushToMemory);
+      },
+      addYaxisAnnotation: function addYaxisAnnotation(options, pushToMemory) {
+        this.chart.addYaxisAnnotation(options, pushToMemory);
+      },
+      addPointAnnotation: function addPointAnnotation(options, pushToMemory) {
+        this.chart.addPointAnnotation(options, pushToMemory);
+      },
+      clearAnnotations: function clearAnnotations() {
+        this.chart.clearAnnotations();
+      }
     }
-});
+  };
 
-/***/ }),
-/* 145 */
-/***/ (function(module, exports, __webpack_require__) {
+  var VueApexCharts = ApexChartsComponent;
+  window.ApexCharts = ApexCharts;
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "nav",
-      { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
-      [
-        _c("ul", [
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _c("li", { staticClass: "is-active" }, [
-            _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
-              _vm._v("Pastor " + _vm._s(_vm.data.name))
-            ])
-          ])
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "card" }, [
-      _vm.data.pastor
-        ? _c("div", { staticClass: "card-content" }, [
-            _c("section", { staticClass: "hero is-info" }, [
-              _c("div", { staticClass: "hero-body" }, [
-                _c("div", { staticClass: "container" }, [
-                  _c("h1", { staticClass: "title" }, [
-                    _vm._v("Pastor " + _vm._s(_vm.data.name))
-                  ]),
-                  _vm._v(" "),
-                  _c("h2", { staticClass: "subtitle" }, [
-                    _vm._v(
-                      "Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _vm.data.pastor
-              ? _c(
-                  "div",
-                  { staticClass: "content" },
-                  [
-                    _c("h3", { staticClass: "subtitle m-t-lg" }, [
-                      _vm._v("Importes")
-                    ]),
-                    _vm._v(" "),
-                    _c("h6", { staticClass: "title is-6" }, [
-                      _vm._v("del mes")
-                    ]),
-                    _vm._v(" "),
-                    _c("tabla-informes", {
-                      attrs: {
-                        id_pastor: _vm.id_pastor,
-                        id_distrito: _vm.data.pastor.distrito.id,
-                        mes: _vm.mes
-                      }
-                    })
-                  ],
-                  1
-                )
-              : _vm._e()
-          ])
-        : _vm._e()
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [_c("a", { attrs: { href: "/home" } }, [_vm._v("Home")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "/list/pastores" } }, [_vm._v("Lista Pastores")])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-cb337630", module.exports)
-  }
-}
+  VueApexCharts.install = function (Vue) {
+    //adding a global method or property
+    Vue.ApexCharts = ApexCharts;
+    window.ApexCharts = ApexCharts; // add the instance method
 
-/***/ }),
-/* 146 */
-/***/ (function(module, exports, __webpack_require__) {
+    Object.defineProperty(Vue.prototype, '$apexcharts', {
+      get: function get() {
+        return ApexCharts;
+      }
+    });
+  };
 
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(147)
-/* template */
-var __vue_template__ = __webpack_require__(148)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/InfoIglesia.vue"
+  return VueApexCharts;
 
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d2c94b42", Component.options)
-  } else {
-    hotAPI.reload("data-v-d2c94b42", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
+})));
 
 
 /***/ }),
-/* 147 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            data: [],
-            remesas: [],
-            iglesia: '',
-            id_remesa: '',
-            loading: false
-        };
-    },
-
-    methods: {
-        loadAsyncData: function loadAsyncData() {
-            var _this = this;
-
-            this.$http.get('http://local.mayordomia.nicosli.com/api/list/pastores/' + this.id_pastor).then(function (_ref) {
-                var data = _ref.data;
-
-                _this.data = data.results;
-                data.results.pastor.distrito.iglesias.forEach(function (item) {
-                    if (_this.id_iglesia == item.id) _this.iglesia = item;
-                });
-                _this.loading = false;
-            }).catch(function (error) {
-                _this.loading = false;
-                throw error;
-            });
-        },
-        loadRemesas: function loadRemesas() {
-            var _this2 = this;
-
-            this.$http.get('http://local.mayordomia.nicosli.com/api/list/remesas').then(function (_ref2) {
-                var data = _ref2.data;
-
-                _this2.remesas = data.results;
-                _this2.id_remesa = _this2.remesas[0].id;
-                _this2.loading = false;
-            }).catch(function (error) {
-                _this2.loading = false;
-                throw error;
-            });
-        },
-        percentFormat: function percentFormat(val) {
-            return val + '%';
-        }
-    },
-    props: {
-        id_pastor: { required: true },
-        id_iglesia: { required: true },
-        mes: { required: true }
-    },
-    mounted: function mounted() {
-        this.loadAsyncData();
-        this.loadRemesas();
-    }
-});
-
-/***/ }),
-/* 148 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.data.id
-      ? _c(
-          "nav",
-          { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
-          [
-            _c("ul", [
-              _vm._m(0),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "/list/pastores/" + _vm.data.id } }, [
-                  _vm._v("Pastor " + _vm._s(_vm.data.name))
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "is-active" }, [
-                _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
-                  _vm._v("Iglesia " + _vm._s(_vm.iglesia.nombre))
-                ])
-              ])
-            ])
-          ]
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", { staticClass: "card" }, [
-      _vm.data.pastor
-        ? _c("div", { staticClass: "card-content" }, [
-            _c("section", { staticClass: "hero is-primary" }, [
-              _c("div", { staticClass: "hero-body" }, [
-                _c("div", { staticClass: "container" }, [
-                  _c("h1", { staticClass: "title" }, [
-                    _vm._v("Iglesia " + _vm._s(_vm.iglesia.nombre))
-                  ]),
-                  _vm._v(" "),
-                  _c("h2", { staticClass: "subtitle" }, [
-                    _vm._v(
-                      "Pastor " +
-                        _vm._s(_vm.data.name) +
-                        " - Distrito " +
-                        _vm._s(_vm.data.pastor.distrito.nombre) +
-                        "\r\n                        "
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _vm.data.pastor
-              ? _c(
-                  "div",
-                  { staticClass: "content" },
-                  [
-                    _c(
-                      "b-field",
-                      { attrs: { grouped: "", position: "is-right" } },
-                      [
-                        _c(
-                          "b-field",
-                          {
-                            staticClass: "m-t-md m-b-sm",
-                            attrs: { label: "Selecciona Remesa" }
-                          },
-                          [
-                            _c(
-                              "b-select",
-                              {
-                                attrs: {
-                                  placeholder: "Select a name",
-                                  size: "is-medium"
-                                },
-                                model: {
-                                  value: _vm.id_remesa,
-                                  callback: function($$v) {
-                                    _vm.id_remesa = $$v
-                                  },
-                                  expression: "id_remesa"
-                                }
-                              },
-                              _vm._l(_vm.remesas, function(remesa) {
-                                return _c(
-                                  "option",
-                                  {
-                                    key: remesa.nombre,
-                                    domProps: { value: remesa.id }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\r\n                            " +
-                                        _vm._s(remesa.nombre) +
-                                        "\r\n                        "
-                                    )
-                                  ]
-                                )
-                              }),
-                              0
-                            )
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _vm.remesas.length > 0
-                      ? _c("chart-compara", {
-                          attrs: {
-                            id_iglesia: _vm.iglesia.id,
-                            id_remesa: _vm.id_remesa
-                          }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                )
-              : _vm._e()
-          ])
-        : _vm._e()
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [_c("a", { attrs: { href: "/home" } }, [_vm._v("Home")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "/list/pastores" } }, [_vm._v("Lista Pastores")])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-d2c94b42", module.exports)
-  }
-}
-
-/***/ }),
-/* 149 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(150)
-/* template */
-var __vue_template__ = __webpack_require__(154)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/ChartCompara.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-54fccf5a", Component.options)
-  } else {
-    hotAPI.reload("data-v-54fccf5a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 150 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            loading: false,
-            options: [],
-            series: []
-        };
-    },
-
-    methods: {
-        loadChart: function loadChart() {
-            var _this = this;
-
-            this.loading = true;
-            this.$http.get('http://local.mayordomia.nicosli.com/api/reports/comparative/' + this.id_iglesia + '/' + this.id_remesa).then(function (_ref) {
-                var data = _ref.data;
-
-                _this.loading = false;
-                _this.options = data.options;
-                _this.options.dataLabels = {
-                    enabled: true,
-                    formatter: function formatter(val) {
-                        return "$ " + val;
-                    },
-                    style: {
-                        fontSize: '12px'
-                    }
-                }, _this.series = data.series;
-            }).catch(function (error) {
-                _this.loading = false;
-                throw error;
-            });
-        },
-        formateNumber: function formateNumber(value) {
-            var val = (value / 1).toFixed(2).replace(',', '');
-            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-    },
-    watch: {
-        id_remesa: function id_remesa(val) {
-            this.loadChart();
-        }
-    },
-    props: {
-        id_iglesia: { required: true },
-        id_remesa: { required: true }
-    },
-    mounted: function mounted() {
-        this.loadChart();
-    }
-});
-
-/***/ }),
-/* 151 */
+/* 139 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38279,7 +37471,7 @@ function () {
 
 (function (root, factory) {
   /* istanbul ignore next */
-  if (typeof define === 'function' && __webpack_require__(153)) {
+  if (typeof define === 'function' && __webpack_require__(141)) {
     define(function () {
       return factory(root, root.document);
     });
@@ -46953,10 +46145,10 @@ function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (ApexCharts$1);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4).setImmediate, __webpack_require__(152)(module)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4).setImmediate, __webpack_require__(140)(module)))
 
 /***/ }),
-/* 152 */
+/* 140 */
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -46986,7 +46178,7 @@ module.exports = function(originalModule) {
 
 
 /***/ }),
-/* 153 */
+/* 141 */
 /***/ (function(module, exports) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
@@ -46995,7 +46187,1098 @@ module.exports = __webpack_amd_options__;
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ }),
-/* 154 */
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(143)
+/* template */
+var __vue_template__ = __webpack_require__(144)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/TablaPastores.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4e1710b4", Component.options)
+  } else {
+    hotAPI.reload("data-v-4e1710b4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            data: [],
+            sortField: 'fechaFuente',
+            sortOrder: 'desc',
+            defaultSortOrder: 'desc',
+            loading: false,
+            filtered: '',
+            searchKeyword: '',
+            perPage: 10
+        };
+    },
+
+    methods: {
+        loadAsyncData: function loadAsyncData() {
+            var _this = this;
+
+            var params = ['sort_by=' + this.sortField, 'sort_type=' + this.sortOrder].join('&');
+            this.$http.get('http://local.mayordomia.nicosli.com/api/list/pastores?' + params).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.data = [];
+                data.results.forEach(function (item) {
+                    _this.data.push(item);
+                });
+                _this.loading = false;
+            }).catch(function (error) {
+                _this.loading = false;
+                throw error;
+            });
+        }
+    },
+    computed: {
+        filteredData: function filteredData() {
+            var _this2 = this;
+
+            return this.data.filter(function (item) {
+                _this2.filtered = item.codigo_er.toLowerCase().includes(_this2.searchKeyword.toLowerCase()) || item.name.toLowerCase().includes(_this2.searchKeyword.toLowerCase()) || item.last_name.toLowerCase().includes(_this2.searchKeyword.toLowerCase()) || item.email.toLowerCase().includes(_this2.searchKeyword.toLowerCase()) || item.mobile.toLowerCase().includes(_this2.searchKeyword.toLowerCase());
+
+                return _this2.filtered;
+            });
+        }
+    },
+    mounted: function mounted() {
+        this.loadAsyncData();
+    }
+});
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "card" }, [
+      _c(
+        "div",
+        { staticClass: "card-content" },
+        [
+          _c(
+            "b-field",
+            { attrs: { grouped: "", position: "is-right" } },
+            [
+              _c("b-input", {
+                attrs: {
+                  "icon-pack": "fas",
+                  icon: "search",
+                  placeholder: "búsqueda..."
+                },
+                model: {
+                  value: _vm.searchKeyword,
+                  callback: function($$v) {
+                    _vm.searchKeyword = $$v
+                  },
+                  expression: "searchKeyword"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "b-table",
+            {
+              attrs: {
+                data: _vm.filteredData,
+                loading: _vm.loading,
+                paginated: "",
+                "per-page": _vm.perPage,
+                striped: true,
+                hoverable: true,
+                "default-sort-direction": _vm.defaultSortOrder,
+                focusable: true
+              },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(props) {
+                    return [
+                      _c(
+                        "b-table-column",
+                        {
+                          attrs: {
+                            field: "codigo_er",
+                            label: "Fecha Fuente",
+                            sortable: ""
+                          }
+                        },
+                        [
+                          _c("span", { staticClass: "has-text-danger" }, [
+                            _vm._v(
+                              "\r\n                            " +
+                                _vm._s(props.row.codigo_er) +
+                                "\r\n                        "
+                            )
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-table-column",
+                        {
+                          attrs: {
+                            field: "name",
+                            label: "Nombre",
+                            sortable: ""
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                            " +
+                              _vm._s(props.row.name) +
+                              "\r\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-table-column",
+                        {
+                          attrs: {
+                            field: "last_name",
+                            label: "Apellido",
+                            sortable: ""
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                        " +
+                              _vm._s(props.row.last_name) +
+                              "\r\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-table-column",
+                        {
+                          attrs: {
+                            field: "email",
+                            label: "Correo",
+                            sortable: ""
+                          }
+                        },
+                        [
+                          _c("span", { staticClass: "has-text-info" }, [
+                            _vm._v(
+                              "\r\n                            " +
+                                _vm._s(props.row.email) +
+                                "\r\n                        "
+                            )
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-table-column",
+                        {
+                          attrs: {
+                            field: "nombre",
+                            label: "Distrito",
+                            sortable: ""
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                        " +
+                              _vm._s(props.row.pastor.distrito.nombre) +
+                              "\r\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-table-column",
+                        {
+                          attrs: {
+                            field: "iglesias",
+                            label: "Iglesias",
+                            sortable: ""
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                        " +
+                              _vm._s(
+                                props.row.pastor.distrito.iglesias.length
+                              ) +
+                              "\r\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("b-table-column", [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "button is-link is-small",
+                            attrs: { href: "/list/pastores/" + props.row.id }
+                          },
+                          [
+                            _vm._v(
+                              "\r\n                            Info\r\n                        "
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  }
+                }
+              ])
+            },
+            [
+              _vm._v(" "),
+              _c("template", { slot: "footer" }, [
+                _c("div", { staticClass: "has-text-right" }, [
+                  _vm._v(
+                    "\r\n                        Tabla Pastores\r\n                    "
+                  )
+                ])
+              ])
+            ],
+            2
+          )
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "nav",
+      { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
+      [
+        _c("ul", [
+          _c("li", [_c("a", { attrs: { href: "/home" } }, [_vm._v("Home")])]),
+          _vm._v(" "),
+          _c("li", { staticClass: "is-active" }, [
+            _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
+              _vm._v("Lista Pastores")
+            ])
+          ])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4e1710b4", module.exports)
+  }
+}
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(146)
+/* template */
+var __vue_template__ = __webpack_require__(147)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/InfoPastores.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-cb337630", Component.options)
+  } else {
+    hotAPI.reload("data-v-cb337630", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 146 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            data: [],
+            sortField: 'fechaFuente',
+            sortOrder: 'desc',
+            defaultSortOrder: 'desc',
+            loading: false,
+            filtered: '',
+            searchKeyword: '',
+            perPage: 10,
+            barData: [{ year: 'Diezmos', 2018: 10, 2019: 5 }, { year: 'Ofrenda Misionera', 2018: 10, 2019: 15 }, { year: 'Plan de desarrollo', 2018: 20, 2019: 25 }, { year: 'Primicias', 2018: 30, 2019: 20 }]
+        };
+    },
+
+    methods: {
+        loadAsyncData: function loadAsyncData() {
+            var _this = this;
+
+            this.$http.get('http://local.mayordomia.nicosli.com/api/list/pastores/' + this.id_pastor).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.data = data.results;
+                _this.loading = false;
+            }).catch(function (error) {
+                _this.loading = false;
+                throw error;
+            });
+        }
+    },
+    props: {
+        id_pastor: { required: true },
+        mes: { required: true }
+    },
+    mounted: function mounted() {
+        this.loadAsyncData();
+    }
+});
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "nav",
+      { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
+      [
+        _c("ul", [
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c("li", { staticClass: "is-active" }, [
+            _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
+              _vm._v("Pastor " + _vm._s(_vm.data.name))
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "card" }, [
+      _vm.data.pastor
+        ? _c("div", { staticClass: "card-content" }, [
+            _c("section", { staticClass: "hero is-info" }, [
+              _c("div", { staticClass: "hero-body" }, [
+                _c("div", { staticClass: "container" }, [
+                  _c("h1", { staticClass: "title" }, [
+                    _vm._v("Pastor " + _vm._s(_vm.data.name))
+                  ]),
+                  _vm._v(" "),
+                  _c("h2", { staticClass: "subtitle" }, [
+                    _vm._v(
+                      "Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm.data.pastor
+              ? _c(
+                  "div",
+                  { staticClass: "content" },
+                  [
+                    _c("h3", { staticClass: "subtitle m-t-lg" }, [
+                      _vm._v("Importes")
+                    ]),
+                    _vm._v(" "),
+                    _c("h6", { staticClass: "title is-6" }, [
+                      _vm._v("del mes")
+                    ]),
+                    _vm._v(" "),
+                    _c("tabla-informes", {
+                      attrs: {
+                        id_pastor: _vm.id_pastor,
+                        id_distrito: _vm.data.pastor.distrito.id,
+                        mes: _vm.mes
+                      }
+                    })
+                  ],
+                  1
+                )
+              : _vm._e()
+          ])
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "/home" } }, [_vm._v("Home")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/list/pastores" } }, [_vm._v("Lista Pastores")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-cb337630", module.exports)
+  }
+}
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(149)
+/* template */
+var __vue_template__ = __webpack_require__(150)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/InfoIglesia.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d2c94b42", Component.options)
+  } else {
+    hotAPI.reload("data-v-d2c94b42", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 149 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            data: [],
+            remesas: [],
+            iglesia: '',
+            id_remesa: '',
+            loading: false,
+            loadingChart: false
+        };
+    },
+
+    methods: {
+        loadAsyncData: function loadAsyncData() {
+            var _this = this;
+
+            this.loading = true;
+            this.$http.get('http://local.mayordomia.nicosli.com/api/list/pastores/' + this.id_pastor).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.data = data.results;
+                data.results.pastor.distrito.iglesias.forEach(function (item) {
+                    if (_this.id_iglesia == item.id) _this.iglesia = item;
+                });
+                _this.loading = false;
+            }).catch(function (error) {
+                _this.loading = false;
+                throw error;
+            });
+        },
+        loadRemesas: function loadRemesas() {
+            var _this2 = this;
+
+            this.loading = true;
+            this.$http.get('http://local.mayordomia.nicosli.com/api/list/remesas').then(function (_ref2) {
+                var data = _ref2.data;
+
+                _this2.remesas = data.results;
+                _this2.id_remesa = _this2.remesas[0].id;
+                _this2.loading = false;
+            }).catch(function (error) {
+                _this2.loading = false;
+                throw error;
+            });
+        },
+        percentFormat: function percentFormat(val) {
+            return val + '%';
+        },
+        charLoading: function charLoading(val) {
+            this.loadingChart = val;
+        }
+    },
+    props: {
+        id_pastor: { required: true },
+        id_iglesia: { required: true },
+        mes: { required: true }
+    },
+    mounted: function mounted() {
+        this.loadAsyncData();
+        this.loadRemesas();
+    }
+});
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm.data.id
+      ? _c(
+          "nav",
+          { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
+          [
+            _c("ul", [
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "/list/pastores/" + _vm.data.id } }, [
+                  _vm._v("Pastor " + _vm._s(_vm.data.name))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "is-active" }, [
+                _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
+                  _vm._v("Iglesia " + _vm._s(_vm.iglesia.nombre))
+                ])
+              ])
+            ])
+          ]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", { staticClass: "card" }, [
+      _vm.data.pastor
+        ? _c("div", { staticClass: "card-content" }, [
+            _c("section", { staticClass: "hero is-primary" }, [
+              _c("div", { staticClass: "hero-body" }, [
+                _c("div", { staticClass: "container" }, [
+                  _c("h1", { staticClass: "title" }, [
+                    _vm._v("Iglesia " + _vm._s(_vm.iglesia.nombre))
+                  ]),
+                  _vm._v(" "),
+                  _c("h2", { staticClass: "subtitle" }, [
+                    _vm._v(
+                      "Pastor " +
+                        _vm._s(_vm.data.name) +
+                        " - Distrito " +
+                        _vm._s(_vm.data.pastor.distrito.nombre) +
+                        "\r\n                        "
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm.data.pastor
+              ? _c(
+                  "div",
+                  { staticClass: "content" },
+                  [
+                    _c(
+                      "b-field",
+                      { attrs: { grouped: "", position: "is-right" } },
+                      [
+                        _c(
+                          "b-field",
+                          {
+                            staticClass: "m-t-md m-b-sm",
+                            attrs: { label: "Selecciona Remesa" }
+                          },
+                          [
+                            _c(
+                              "b-select",
+                              {
+                                attrs: {
+                                  placeholder: "Select a name",
+                                  size: "is-medium",
+                                  loading: _vm.loadingChart
+                                },
+                                model: {
+                                  value: _vm.id_remesa,
+                                  callback: function($$v) {
+                                    _vm.id_remesa = $$v
+                                  },
+                                  expression: "id_remesa"
+                                }
+                              },
+                              _vm._l(_vm.remesas, function(remesa) {
+                                return _c(
+                                  "option",
+                                  {
+                                    key: remesa.nombre,
+                                    domProps: { value: remesa.id }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\r\n                            " +
+                                        _vm._s(remesa.nombre) +
+                                        "\r\n                        "
+                                    )
+                                  ]
+                                )
+                              }),
+                              0
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm.remesas.length > 0
+                      ? _c("chart-compara", {
+                          attrs: {
+                            id_iglesia: _vm.iglesia.id,
+                            id_remesa: _vm.id_remesa
+                          },
+                          on: { loading: _vm.charLoading }
+                        })
+                      : _vm._e()
+                  ],
+                  1
+                )
+              : _vm._e()
+          ])
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "/home" } }, [_vm._v("Home")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/list/pastores" } }, [_vm._v("Lista Pastores")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-d2c94b42", module.exports)
+  }
+}
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(152)
+/* template */
+var __vue_template__ = __webpack_require__(153)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ChartCompara.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-54fccf5a", Component.options)
+  } else {
+    hotAPI.reload("data-v-54fccf5a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 152 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            loading: false,
+            options: [],
+            series: []
+        };
+    },
+
+    methods: {
+        loadChart: function loadChart() {
+            var _this = this;
+
+            this.loading = true;
+            this.$emit('loading', true);
+            this.$http.get('http://local.mayordomia.nicosli.com/api/reports/comparative/' + this.id_iglesia + '/' + this.id_remesa).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.loading = false;
+                _this.$emit('loading', false);
+                _this.options = data.options;
+                _this.options.chart = {
+                    id: 'chartComparativo',
+                    animations: {
+                        enabled: true,
+                        easing: 'linear',
+                        speed: 500
+                    }
+                };
+                _this.options.yaxis = {
+                    labels: {
+                        formatter: function formatter(val) {
+                            var value = (val / 1).toFixed(0).replace(',', '');
+                            return "$" + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        }
+                    }
+                };
+                _this.options.legend = {
+                    show: true,
+                    horizontalAlign: 'right',
+                    fontSize: '14px',
+                    markers: {
+                        width: 25,
+                        height: 15
+                    }
+                };
+                _this.options.dataLabels = {
+                    enabled: true,
+                    formatter: function formatter(val) {
+                        var value = (val / 1).toFixed(0).replace(',', '');
+                        return "$" + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    }
+                }, _this.series = data.series;
+            }).catch(function (error) {
+                _this.loading = false;
+                throw error;
+            });
+        },
+        formateNumber: function formateNumber(value) {
+            var val = (value / 1).toFixed(2).replace(',', '');
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+    },
+    watch: {
+        id_remesa: function id_remesa(val) {
+            this.loadChart();
+        }
+    },
+    props: {
+        id_iglesia: { required: true },
+        id_remesa: { required: true }
+    },
+    mounted: function mounted() {
+        this.loadChart();
+    }
+});
+
+/***/ }),
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47035,15 +47318,15 @@ if (false) {
 }
 
 /***/ }),
-/* 155 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(156)
+var __vue_script__ = __webpack_require__(155)
 /* template */
-var __vue_template__ = __webpack_require__(159)
+var __vue_template__ = __webpack_require__(158)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -47082,7 +47365,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 156 */
+/* 155 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47194,7 +47477,7 @@ __WEBPACK_IMPORTED_MODULE_0_moment___default.a.locale('es');
 });
 
 /***/ }),
-/* 157 */
+/* 156 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -47222,7 +47505,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 158 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -47495,10 +47778,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 158;
+webpackContext.id = 157;
 
 /***/ }),
-/* 159 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47613,7 +47896,7 @@ if (false) {
 }
 
 /***/ }),
-/* 160 */
+/* 159 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48712,7 +48995,7 @@ function xhrClient (request) {
 
 function nodeClient (request) {
 
-    var client = __webpack_require__(161);
+    var client = __webpack_require__(160);
 
     return new PromiseObj(function (resolve) {
 
@@ -49180,285 +49463,16 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /***/ }),
-/* 161 */
+/* 160 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 162 */
+/* 161 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */
-/***/ (function(module, exports, __webpack_require__) {
-
-(function (global, factory) {
-   true ? module.exports = factory(__webpack_require__(151)) :
-  typeof define === 'function' && define.amd ? define(['apexcharts'], factory) :
-  (global.VueApexCharts = factory(global.ApexCharts));
-}(this, (function (ApexCharts) { 'use strict';
-
-  ApexCharts = ApexCharts && ApexCharts.hasOwnProperty('default') ? ApexCharts['default'] : ApexCharts;
-
-  function _typeof(obj) {
-    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-      _typeof = function (obj) {
-        return typeof obj;
-      };
-    } else {
-      _typeof = function (obj) {
-        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-      };
-    }
-
-    return _typeof(obj);
-  }
-
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-
-  var ApexChartsComponent = {
-    props: {
-      options: {
-        type: Object
-      },
-      type: {
-        type: String,
-        default: 'line'
-      },
-      series: {
-        type: Array,
-        required: true,
-        default: function _default() {
-          return [];
-        }
-      },
-      width: {
-        default: '100%'
-      },
-      height: {
-        default: 'auto'
-      }
-    },
-    data: function data() {
-      return {
-        chart: null
-      };
-    },
-    beforeMount: function beforeMount() {
-      window.ApexCharts = ApexCharts;
-    },
-    mounted: function mounted() {
-      this.init();
-    },
-    created: function created() {
-      var _this = this;
-
-      this.$watch('options', function (options) {
-        if (!_this.chart && options) {
-          _this.init();
-        } else {
-          _this.chart.updateOptions(_this.options);
-        }
-      });
-      this.$watch('series', function (series) {
-        if (!_this.chart && series) {
-          _this.init();
-        } else {
-          _this.chart.updateSeries(_this.series);
-        }
-      }, {
-        deep: true
-      });
-      var watched = ['type', 'width', 'height'];
-      watched.forEach(function (prop) {
-        _this.$watch(prop, function () {
-          _this.refresh();
-        });
-      });
-    },
-    beforeDestroy: function beforeDestroy() {
-      if (!this.chart) {
-        return;
-      }
-
-      this.destroy();
-    },
-    render: function render(createElement) {
-      return createElement('div');
-    },
-    methods: {
-      init: function init() {
-        var _this2 = this;
-
-        var newOptions = {
-          chart: {
-            type: this.type,
-            height: this.height,
-            width: this.width,
-            events: {}
-          },
-          series: this.series
-        };
-        Object.keys(this.$listeners).forEach(function (evt) {
-          newOptions.chart.events[evt] = _this2.$listeners[evt];
-        });
-        var config = this.extend(this.options, newOptions);
-        this.chart = new ApexCharts(this.$el, config);
-        this.chart.render();
-      },
-      isObject: function isObject(item) {
-        return item && _typeof(item) === 'object' && !Array.isArray(item) && item != null;
-      },
-      extend: function extend(target, source) {
-        var _this3 = this;
-
-        if (typeof Object.assign !== 'function') {
-          (function () {
-            Object.assign = function (target) {
-              // We must check against these specific cases.
-              if (target === undefined || target === null) {
-                throw new TypeError('Cannot convert undefined or null to object');
-              }
-
-              var output = Object(target);
-
-              for (var index = 1; index < arguments.length; index++) {
-                var _source = arguments[index];
-
-                if (_source !== undefined && _source !== null) {
-                  for (var nextKey in _source) {
-                    if (_source.hasOwnProperty(nextKey)) {
-                      output[nextKey] = _source[nextKey];
-                    }
-                  }
-                }
-              }
-
-              return output;
-            };
-          })();
-        }
-
-        var output = Object.assign({}, target);
-
-        if (this.isObject(target) && this.isObject(source)) {
-          Object.keys(source).forEach(function (key) {
-            if (_this3.isObject(source[key])) {
-              if (!(key in target)) {
-                Object.assign(output, _defineProperty({}, key, source[key]));
-              } else {
-                output[key] = _this3.extend(target[key], source[key]);
-              }
-            } else {
-              Object.assign(output, _defineProperty({}, key, source[key]));
-            }
-          });
-        }
-
-        return output;
-      },
-      refresh: function refresh() {
-        this.destroy();
-        this.init();
-      },
-      destroy: function destroy() {
-        this.chart.destroy();
-      },
-      updateSeries: function updateSeries(newSeries, animate) {
-        this.chart.updateSeries(newSeries, animate);
-      },
-      updateOptions: function updateOptions(newOptions, redrawPaths, animate) {
-        this.chart.updateOptions(newOptions, redrawPaths, animate);
-      },
-      toggleSeries: function toggleSeries(seriesName) {
-        this.chart.toggleSeries(seriesName);
-      },
-      resetSeries: function resetSeries() {
-        this.chart.resetSeries();
-      },
-      toggleDataPointSelection: function toggleDataPointSelection(seriesIndex, dataPointIndex) {
-        this.chart.toggleDataPointSelection(seriesIndex, dataPointIndex);
-      },
-      appendData: function appendData(newData) {
-        this.chart.appendData(newData);
-      },
-      addText: function addText(options) {
-        this.chart.addText(options);
-      },
-      dataURI: function dataURI() {
-        return this.chart.dataURI();
-      },
-      addXaxisAnnotation: function addXaxisAnnotation(options, pushToMemory) {
-        this.chart.addXaxisAnnotation(options, pushToMemory);
-      },
-      addYaxisAnnotation: function addYaxisAnnotation(options, pushToMemory) {
-        this.chart.addYaxisAnnotation(options, pushToMemory);
-      },
-      addPointAnnotation: function addPointAnnotation(options, pushToMemory) {
-        this.chart.addPointAnnotation(options, pushToMemory);
-      },
-      clearAnnotations: function clearAnnotations() {
-        this.chart.clearAnnotations();
-      }
-    }
-  };
-
-  var VueApexCharts = ApexChartsComponent;
-  window.ApexCharts = ApexCharts;
-
-  VueApexCharts.install = function (Vue) {
-    //adding a global method or property
-    Vue.ApexCharts = ApexCharts;
-    window.ApexCharts = ApexCharts; // add the instance method
-
-    Object.defineProperty(Vue.prototype, '$apexcharts', {
-      get: function get() {
-        return ApexCharts;
-      }
-    });
-  };
-
-  return VueApexCharts;
-
-})));
-
 
 /***/ })
 ],[133]);

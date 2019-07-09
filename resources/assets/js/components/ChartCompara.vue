@@ -18,18 +18,43 @@
         methods: {
             loadChart() {
                 this.loading = true
+                this.$emit('loading', true)
                 this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/comparative/${this.id_iglesia}/${this.id_remesa}`)
 				.then(( {data} ) => {
 					this.loading = false
+                    this.$emit('loading', false)
                     this.options = data.options
-                    this.options.dataLabels = {
+                    this.options.chart = {
+                        id: 'chartComparativo',
+                        animations: {
                             enabled: true,
+                            easing: 'linear',
+                            speed: 500
+                        }
+                    }
+                    this.options.yaxis = {
+                        labels: {
                             formatter: function (val) {
-                                return "$ " + val;
-                            },
-                            style: {
-                                fontSize: '12px'
+                                let value = (val/1).toFixed(0).replace(',', '')
+                                return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                             }
+                        }
+                    }
+                    this.options.legend = {
+                        show: true,
+                        horizontalAlign: 'right',
+                        fontSize: '14px',
+                        markers: {
+                            width: 25,
+                            height: 15
+                        }
+                    }
+                    this.options.dataLabels = {
+                        enabled: true,
+                        formatter: function (val) {
+                            let value = (val/1).toFixed(0).replace(',', '')
+                            return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                        }                        
                     },
                     this.series = data.series
 				})

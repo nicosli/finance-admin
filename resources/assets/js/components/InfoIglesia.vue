@@ -22,14 +22,18 @@
             <div class="content" v-if="data.pastor">
                 <b-field grouped position="is-right">
                     <b-field label="Selecciona Remesa" class="m-t-md m-b-sm">
-                    <b-select placeholder="Select a name" v-model="id_remesa" size="is-medium">
+                    <b-select placeholder="Select a name" v-model="id_remesa" size="is-medium" :loading="loadingChart">
                         <option v-for="remesa in remesas" :value="remesa.id" :key="remesa.nombre">
                             {{ remesa.nombre }}
                         </option>
                     </b-select>
                     </b-field>
                 </b-field>
-                <chart-compara v-if="remesas.length > 0" :id_iglesia="iglesia.id" :id_remesa="id_remesa"></chart-compara>
+                <chart-compara 
+                @loading="charLoading"
+                v-if="remesas.length > 0" 
+                :id_iglesia="iglesia.id" 
+                :id_remesa="id_remesa"></chart-compara>
             </div>
         </div>
     </div>
@@ -44,11 +48,13 @@
                 remesas: [],
                 iglesia: '',
                 id_remesa: '',
-                loading: false
+                loading: false,
+                loadingChart: false
             }
         },
         methods: {
             loadAsyncData() {
+                this.loading = true
                 this.$http.get(`http://local.mayordomia.nicosli.com/api/list/pastores/${this.id_pastor}`)
 				.then(( {data} ) => {
                     this.data = data.results
@@ -64,6 +70,7 @@
 				})
             },
             loadRemesas() {
+                this.loading = true
                 this.$http.get(`http://local.mayordomia.nicosli.com/api/list/remesas`)
 				.then(( {data} ) => {
                     this.remesas = data.results
@@ -78,6 +85,9 @@
             percentFormat (val) {
                 return val + '%'
             },
+            charLoading(val){
+                this.loadingChart = val
+            }
         },
         props: {
             id_pastor: {required:true},

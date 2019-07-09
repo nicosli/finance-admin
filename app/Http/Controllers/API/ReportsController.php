@@ -78,9 +78,9 @@ class ReportsController extends Controller
                 "name" => $anio,
                 "data" => $importesActual
         ];
+
         return response()->json([
             'options' => [
-                "chart" => ["id" => "chartComparativo"],
                 "xaxis" => ["categories" => $meses]
             ],
             'series' => $series
