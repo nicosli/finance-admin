@@ -47411,7 +47411,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.loading = true;
             this.$emit('loading', true);
-            this.$http.get('http://local.mayordomia.nicosli.com/api/reports/comparative/' + this.id_iglesia + '/' + this.id_remesa).then(function (_ref) {
+            this.$http.get('http://local.mayordomia.nicosli.com/api/reports/comparative/byChurch/' + this.id_iglesia + '/' + this.id_remesa).then(function (_ref) {
                 var data = _ref.data;
 
                 _this.loading = false;
@@ -48211,7 +48211,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.loading = true;
             this.$emit('loading', true);
-            this.$http.get('http://local.mayordomia.nicosli.com/api/reports/comparative/' + this.id_iglesia + '/' + this.id_remesa).then(function (_ref) {
+            this.$http.get('http://local.mayordomia.nicosli.com/api/reports/comparative/byDistrict/' + this.id_distrito + '/' + this.id_remesa + '/' + this.mes).then(function (_ref) {
                 var data = _ref.data;
 
                 _this.loading = false;
@@ -48228,9 +48228,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     props: {
         id_distrito: { required: true },
-        id_remesa: { required: true }
+        id_remesa: { required: true },
+        mes: { required: true }
     },
-    mounted: function mounted() {}
+    mounted: function mounted() {
+        this.loadChart();
+    }
 });
 
 /***/ }),
@@ -48311,6 +48314,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -48561,9 +48565,10 @@ var render = function() {
                       1
                     ),
                     _vm._v(" "),
-                    _vm.data.pastor
+                    _vm.data.pastor && _vm.remesas[0].id
                       ? _c("tabla-remesa", {
                           attrs: {
+                            mes: _vm.mes,
                             id_distrito: _vm.data.pastor.distrito.id,
                             id_remesa: _vm.id_remesa
                           },

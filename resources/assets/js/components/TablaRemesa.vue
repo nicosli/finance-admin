@@ -17,7 +17,7 @@
             loadChart() {
                 this.loading = true
                 this.$emit('loading', true)
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/comparative/${this.id_iglesia}/${this.id_remesa}`)
+                this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/comparative/byDistrict/${this.id_distrito}/${this.id_remesa}/${this.mes}`)
 				.then(( {data} ) => {
 					this.loading = false
                     this.$emit('loading', false)
@@ -34,10 +34,11 @@
         },
         props: {
             id_distrito: {required:true},
-            id_remesa: {required:true}
+            id_remesa: {required:true},
+            mes: {required:true}
         },
         mounted() {
-            
+            this.loadChart()
         }
     }
 </script>

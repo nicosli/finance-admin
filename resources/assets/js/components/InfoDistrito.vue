@@ -39,8 +39,9 @@
                     </b-field>
                 </b-field>
                 
-                <tabla-remesa v-if="data.pastor" 
+                <tabla-remesa v-if="data.pastor && remesas[0].id" 
                 @loading="compLoading"
+                :mes="mes"
                 :id_distrito="data.pastor.distrito.id" 
                 :id_remesa="id_remesa"></tabla-remesa>
             </div>

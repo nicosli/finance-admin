@@ -14,7 +14,7 @@ class ReportsController extends Controller
     public static function pastores($id_distrito, $mes){
         
         $informe = Iglesias::with(['informes' => function($query) use ($mes){
-            $query->whereBetween('fecha', ['2019-'.$mes.'-01', '2019-'.$mes.'-31']);
+            $query->whereBetween('fecha', [date('Y').'-'.$mes.'-01', date('Y').'-'.$mes.'-31']);
         }, 'informes.remesa'])->where('id_distrito', '=', $id_distrito)->get();
 
         $remesas = Remesas::all();
@@ -22,6 +22,18 @@ class ReportsController extends Controller
         return response()->json([
             'remesas' => $remesas,
             'results' => $informe
+        ]);
+    }
+
+    public static function comparativoDis($id_distrito, $id_remesa, $mes){
+        $remesas = Remesas::all();
+        $informeAnioActual = Iglesias::with(['informes' => function($query) use ($mes){
+            $query->whereBetween('fecha', [date('Y').'-'.$mes.'-01', date('Y').'-'.$mes.'-31']);
+        }, 'informes.remesa'])->where('id_distrito', '=', $id_distrito)->get();
+
+        
+        return response()->json([
+            'informe' => $informeAnioActual
         ]);
     }
 

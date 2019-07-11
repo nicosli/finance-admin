@@ -19,7 +19,7 @@
             loadChart() {
                 this.loading = true
                 this.$emit('loading', true)
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/comparative/${this.id_iglesia}/${this.id_remesa}`)
+                this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/comparative/byChurch/${this.id_iglesia}/${this.id_remesa}`)
 				.then(( {data} ) => {
 					this.loading = false
                     this.$emit('loading', false)
