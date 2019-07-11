@@ -16923,7 +16923,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(134);
-module.exports = __webpack_require__(161);
+module.exports = __webpack_require__(167);
 
 
 /***/ }),
@@ -16957,17 +16957,17 @@ Vue.component('info-iglesia', __webpack_require__(148));
 
 Vue.component('chart-compara', __webpack_require__(151));
 
-Vue.component('tabla-informes', __webpack_require__(189));
+Vue.component('tabla-informes', __webpack_require__(154));
 
-Vue.component('tabla-remesa', __webpack_require__(183));
+Vue.component('tabla-remesa', __webpack_require__(159));
 
-Vue.component('info-distrito', __webpack_require__(186));
+Vue.component('info-distrito', __webpack_require__(162));
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a, {
     defaultIconPack: 'fa'
 });
 
-Vue.use(__webpack_require__(159));
+Vue.use(__webpack_require__(165));
 Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';
 Vue.http.interceptors.push(function (request, next) {
     request.headers.set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijg2NTU1MzMyYTliODZhNDcxZGQ2ODZkNThhOTYwMGY1NDFhNWYwYTAzMzEyNDlhNDhlNTFmY2NlYTYwYmEzNDg2Yjc3NzUzNjMxMDA1NzA2In0.eyJhdWQiOiIxIiwianRpIjoiODY1NTUzMzJhOWI4NmE0NzFkZDY4NmQ1OGE5NjAwZjU0MWE1ZjBhMDMzMTI0OWE0OGU1MWZjY2VhNjBiYTM0ODZiNzc3NTM2MzEwMDU3MDYiLCJpYXQiOjE1NjIyODA3NjksIm5iZiI6MTU2MjI4MDc2OSwiZXhwIjoxNTkzOTAzMTY5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Ue2WCWV9pJ9qfN7LWtt2Qr6g_4McL0WUhU6NGuykYtWQxgbSqQ2lXJ6idZW4QGuSurvnro_L1anDvWVDv1Ah1yFxuNnduj0Z_d2CihuiUG098joeZAWJFVc7wim_CYw8H_jKtAy5822_wkPAU8abiqkYh85ZipNJmkocH9YMZhx0F04KdOXzDHrS-uNFgN0OFsN46edWWtrVP26kSjZmeu3c19ebqjZmV-yS3UH1ik74s8VRyrlNA8596AmWZ_qfYyHDk9kaPZv8avhcG0JpGc14yuyvBrK7djy1_JaLxS8gVtUU9UQ5hvrgJ5opRol_PKaqoureM6W8evVxRcgPrdhKkxBvHhMWZm-SeBMQCVNCbtUfhlLqMxB8ka5sxgaaLEoWVpQlCqjOX4l7kVwiW3kSw6-zCvUigcNvXwFCx1Y9fkYHWMyhtlTy_b2pFbVe1G3fjMQncFxy3FdazTAk3PNseGdv62x_lrkOBuo8gPl2fDg_csPYprE1cyfvt68vV5DJ8YSw-8-910oyI0TylmfJscQHPBQHo6jzr3eWQFAQdoqeeLs0jnY5Nm7GVKf5CBg0uCvpQuEyHAQHnMe01ipJoq_qzQdmvAdERm-7PavTRhXo66rNOVl4uhaC2VGD2DbA0_yjsEN7LIymtoCd27oADjP-1aePRktYEvTjaIM');
@@ -46632,7 +46632,7 @@ var staticRenderFns = [
         _vm._v("Tabla de "),
         _c("strong", [_vm._v("Pastores")]),
         _vm._v(
-          '.\r\n                    Este módulo muestra una lista completa de todos los pastores\r\n                    que están dados de alta en el sistema, para poder\r\n                    ver los informes, hacer click en el botón "info", \r\n                    este link dará un informe detallado del pastor\r\n                '
+          '.\r\n                    Este módulo muestra una lista completa de todos los pastores\r\n                    que están dados de alta en el sistema, para poder\r\n                    ver los informes, hacer click en el botón "Info", \r\n                    este link dará un informe detallado del pastor\r\n                '
         )
       ])
     ])
@@ -46700,6 +46700,15 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -46838,20 +46847,33 @@ var render = function() {
             _c("section", { staticClass: "hero is-info" }, [
               _c("div", { staticClass: "hero-body" }, [
                 _c("div", { staticClass: "container" }, [
-                  _c("h1", { staticClass: "title" }, [
-                    _c("i", { staticClass: "fas fa-user-tie" }),
-                    _vm._v(
-                      " Pastor " +
-                        _vm._s(_vm.data.name) +
-                        " " +
-                        _vm._s(_vm.data.last_name)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("h2", { staticClass: "subtitle" }, [
-                    _vm._v(
-                      "Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
-                    )
+                  _c("div", { staticClass: "media" }, [
+                    _c("div", { staticClass: "media-left m-r-sm" }, [
+                      _c("figure", { staticClass: "image is-64x64" }, [
+                        _c("img", {
+                          staticClass: "is-rounded",
+                          attrs: {
+                            src: "https://i.pravatar.cc/150?u=" + _vm.data.email
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-content" }, [
+                      _c("p", { staticClass: "title is-4" }, [
+                        _vm._v(
+                          _vm._s(_vm.data.name) +
+                            " " +
+                            _vm._s(_vm.data.last_name)
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "subtitle is-6" }, [
+                        _vm._v(
+                          "Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
+                        )
+                      ])
+                    ])
                   ])
                 ])
               ])
@@ -47373,7 +47395,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47492,22 +47513,7 @@ var render = function() {
               series: _vm.series
             }
           })
-        : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "span",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.loading,
-              expression: "loading"
-            }
-          ]
-        },
-        [_vm._v("cargando...")]
-      )
+        : _vm._e()
     ],
     1
   )
@@ -47523,8 +47529,173 @@ if (false) {
 }
 
 /***/ }),
-/* 154 */,
-/* 155 */,
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(155)
+/* template */
+var __vue_template__ = __webpack_require__(158)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/TablaInformes.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-14c97a9a", Component.options)
+  } else {
+    hotAPI.reload("data-v-14c97a9a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 155 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+__WEBPACK_IMPORTED_MODULE_0_moment___default.a.locale('es');
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            data: [],
+            remesas: [],
+            sortField: 'fechaFuente',
+            sortOrder: 'desc',
+            defaultSortOrder: 'desc',
+            loading: false,
+            filtered: '',
+            searchKeyword: '',
+            perPage: 10
+        };
+    },
+
+    methods: {
+        loadAsyncData: function loadAsyncData() {
+            var _this = this;
+
+            this.loading = true;
+            this.$http.get('http://local.mayordomia.nicosli.com/api/reports/pastores/' + this.id_distrito + '/' + this.mes).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.data = [];
+                _this.remesas = [];
+                data.results.forEach(function (item) {
+                    _this.data.push(item);
+                });
+                data.remesas.forEach(function (item) {
+                    _this.remesas.push(item);
+                });
+                _this.loading = false;
+            }).catch(function (error) {
+                _this.loading = false;
+                throw error;
+            });
+        },
+        checkColor: function checkColor(fecha) {
+            var dia = parseInt(fecha.split('-')[2]);
+            if (dia <= 5) return "tag is-light";else if (dia > 5 && dia <= 10) return "tag is-warning";else if (dia > 10) return "tag is-danger";
+        }
+    },
+    computed: {
+        filteredData: function filteredData() {
+            var _this2 = this;
+
+            return this.data.filter(function (item) {
+                _this2.filtered = item.nombre.toLowerCase().includes(_this2.searchKeyword.toLowerCase()) || item.codigo_t.toLowerCase().includes(_this2.searchKeyword.toLowerCase());
+                return _this2.filtered;
+            });
+        }
+    },
+    filters: {
+        formateNumber: function formateNumber(value) {
+            var val = (value / 1).toFixed(2).replace(',', '');
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
+        formatDate: function formatDate(value) {
+            if (value) {
+                return __WEBPACK_IMPORTED_MODULE_0_moment___default()(String(value)).format('D MMM YYYY - HH:mm');
+            }
+        }
+    },
+    props: {
+        id_distrito: { required: true },
+        id_pastor: { required: true },
+        mes: { required: true }
+    },
+    mounted: function mounted() {
+        this.loadAsyncData();
+    }
+});
+
+/***/ }),
 /* 156 */
 /***/ (function(module, exports) {
 
@@ -47829,8 +48000,626 @@ module.exports = webpackContext;
 webpackContext.id = 157;
 
 /***/ }),
-/* 158 */,
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.loading,
+            expression: "loading"
+          }
+        ]
+      },
+      [_vm._v("\r\n        cargando...\r\n    ")]
+    ),
+    _vm._v(" "),
+    _c(
+      "table",
+      {
+        staticClass: "table is-bordered is-striped is-hoverable is-responsive"
+      },
+      [
+        _c("thead", [
+          _c(
+            "tr",
+            [
+              _c("th", [_vm._v("Iglesia")]),
+              _vm._v(" "),
+              _vm._l(_vm.remesas, function(remesa) {
+                return _c("th", [_vm._v(_vm._s(remesa.nombre))])
+              })
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.data, function(iglesia) {
+            return _c(
+              "tr",
+              [
+                _c("td", [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href:
+                          "/list/pastores/" +
+                          _vm.id_pastor +
+                          "/informes/iglesia/" +
+                          iglesia.id
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "fas fa-chart-line" }),
+                      _vm._v(
+                        " " +
+                          _vm._s(iglesia.nombre) +
+                          "\r\n                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.remesas, function(remesa) {
+                  return _c(
+                    "td",
+                    { attrs: { align: "center" } },
+                    _vm._l(iglesia.informes, function(informe) {
+                      return _c("span", [
+                        remesa.id == informe.remesa.id
+                          ? _c(
+                              "span",
+                              [
+                                _c(
+                                  "b-tooltip",
+                                  {
+                                    attrs: {
+                                      label: _vm._f("formatDate")(informe.fecha)
+                                    }
+                                  },
+                                  [
+                                    _c(
+                                      "span",
+                                      { class: _vm.checkColor(informe.fecha) },
+                                      [
+                                        _vm._v(
+                                          "\r\n                                    " +
+                                            _vm._s(
+                                              _vm._f("formateNumber")(
+                                                informe.importe
+                                              )
+                                            ) +
+                                            "\r\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          : _vm._e()
+                      ])
+                    }),
+                    0
+                  )
+                })
+              ],
+              2
+            )
+          }),
+          0
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-14c97a9a", module.exports)
+  }
+}
+
+/***/ }),
 /* 159 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(160)
+/* template */
+var __vue_template__ = __webpack_require__(161)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/TablaRemesa.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-72b2b51c", Component.options)
+  } else {
+    hotAPI.reload("data-v-72b2b51c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 160 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            loading: false
+        };
+    },
+
+    methods: {
+        loadChart: function loadChart() {
+            var _this = this;
+
+            this.loading = true;
+            this.$emit('loading', true);
+            this.$http.get('http://local.mayordomia.nicosli.com/api/reports/comparative/' + this.id_iglesia + '/' + this.id_remesa).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.loading = false;
+                _this.$emit('loading', false);
+            }).catch(function (error) {
+                _this.loading = false;
+                throw error;
+            });
+        },
+        formateNumber: function formateNumber(value) {
+            var val = (value / 1).toFixed(2).replace(',', '');
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+    },
+    props: {
+        id_distrito: { required: true },
+        id_remesa: { required: true }
+    },
+    mounted: function mounted() {}
+});
+
+/***/ }),
+/* 161 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h3", { staticClass: "subtitle m-t-lg" }, [_vm._v("Tabla Remesa")]),
+    _vm._v(" "),
+    _c("h6", { staticClass: "title is-6" }, [_vm._v("año anterior")]),
+    _vm._v("\r\n    " + _vm._s(_vm.id_remesa) + "\r\n")
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-72b2b51c", module.exports)
+  }
+}
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(163)
+/* template */
+var __vue_template__ = __webpack_require__(164)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/InfoDistrito.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5a23df1d", Component.options)
+  } else {
+    hotAPI.reload("data-v-5a23df1d", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 163 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            data: [],
+            remesas: [],
+            iglesia: '',
+            id_remesa: '',
+            loading: false,
+            loadingChart: false
+        };
+    },
+
+    methods: {
+        loadAsyncData: function loadAsyncData() {
+            var _this = this;
+
+            this.loading = true;
+            this.$http.get('http://local.mayordomia.nicosli.com/api/list/pastores/' + this.id_pastor).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.data = data.results;
+                data.results.pastor.distrito.iglesias.forEach(function (item) {
+                    if (_this.id_iglesia == item.id) _this.iglesia = item;
+                });
+                _this.loading = false;
+            }).catch(function (error) {
+                _this.loading = false;
+                throw error;
+            });
+        },
+        loadRemesas: function loadRemesas() {
+            var _this2 = this;
+
+            this.loading = true;
+            this.$http.get('http://local.mayordomia.nicosli.com/api/list/remesas').then(function (_ref2) {
+                var data = _ref2.data;
+
+                _this2.remesas = data.results;
+                _this2.id_remesa = _this2.remesas[0].id;
+                _this2.loading = false;
+            }).catch(function (error) {
+                _this2.loading = false;
+                throw error;
+            });
+        },
+        percentFormat: function percentFormat(val) {
+            return val + '%';
+        },
+        compLoading: function compLoading(val) {
+            this.loadingChart = val;
+        }
+    },
+    props: {
+        id_pastor: { required: true },
+        id_distrito: { required: true },
+        mes: { required: true }
+    },
+    mounted: function mounted() {
+        this.loadAsyncData();
+        this.loadRemesas();
+    }
+});
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm.data.id
+      ? _c(
+          "nav",
+          { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
+          [
+            _c("ul", [
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "/list/pastores/" + _vm.data.id } }, [
+                  _vm._v("Pastor " + _vm._s(_vm.data.name))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "is-active" }, [
+                _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
+                  _vm._v("Distrito " + _vm._s(_vm.data.pastor.distrito.nombre))
+                ])
+              ])
+            ])
+          ]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.data.pastor,
+            expression: "!data.pastor"
+          }
+        ]
+      },
+      [_vm._v("\r\n        cargando...\r\n    ")]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "card" }, [
+      _vm.data.pastor
+        ? _c("div", { staticClass: "card-content" }, [
+            _c("section", { staticClass: "hero is-primary" }, [
+              _c("div", { staticClass: "hero-body" }, [
+                _c("div", { staticClass: "container" }, [
+                  _c("h1", { staticClass: "title" }, [
+                    _c("i", { staticClass: "fas fa-landmark" }),
+                    _vm._v(
+                      " Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("h2", { staticClass: "subtitle" }, [
+                    _vm._v(
+                      "Pastor " +
+                        _vm._s(_vm.data.name) +
+                        " " +
+                        _vm._s(_vm.data.last_name) +
+                        "\r\n                        "
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _vm.data.pastor
+              ? _c(
+                  "div",
+                  { staticClass: "content" },
+                  [
+                    _c(
+                      "b-field",
+                      { attrs: { grouped: "", position: "is-right" } },
+                      [
+                        _c(
+                          "b-field",
+                          {
+                            staticClass: "m-t-md m-b-sm",
+                            attrs: { label: "Selecciona Remesa" }
+                          },
+                          [
+                            _c(
+                              "b-select",
+                              {
+                                attrs: {
+                                  placeholder: "Select a name",
+                                  size: "is-medium",
+                                  loading: _vm.loadingChart
+                                },
+                                model: {
+                                  value: _vm.id_remesa,
+                                  callback: function($$v) {
+                                    _vm.id_remesa = $$v
+                                  },
+                                  expression: "id_remesa"
+                                }
+                              },
+                              _vm._l(_vm.remesas, function(remesa) {
+                                return _c(
+                                  "option",
+                                  {
+                                    key: remesa.nombre,
+                                    domProps: { value: remesa.id }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\r\n                            " +
+                                        _vm._s(remesa.nombre) +
+                                        "\r\n                        "
+                                    )
+                                  ]
+                                )
+                              }),
+                              0
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm.data.pastor
+                      ? _c("tabla-remesa", {
+                          attrs: {
+                            id_distrito: _vm.data.pastor.distrito.id,
+                            id_remesa: _vm.id_remesa
+                          },
+                          on: { loading: _vm.compLoading }
+                        })
+                      : _vm._e()
+                  ],
+                  1
+                )
+              : _vm._e()
+          ])
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "/home" } }, [_vm._v("Home")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/list/pastores" } }, [_vm._v("Lista Pastores")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("article", { staticClass: "message is-primary" }, [
+      _c("div", { staticClass: "message-body" }, [
+        _vm._v("\r\n                    Este módulo muestra el "),
+        _c("strong", [_vm._v("acoumlado anual del distrito ")]),
+        _vm._v(
+          '\r\n                    categorizado por remesa. Para poder visualizar otra categoría, click en "Selecciona Remesa"\r\n                '
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5a23df1d", module.exports)
+  }
+}
+
+/***/ }),
+/* 165 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48929,7 +49718,7 @@ function xhrClient (request) {
 
 function nodeClient (request) {
 
-    var client = __webpack_require__(160);
+    var client = __webpack_require__(166);
 
     return new PromiseObj(function (resolve) {
 
@@ -49397,823 +50186,16 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /***/ }),
-/* 160 */
+/* 166 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 161 */
+/* 167 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(184)
-/* template */
-var __vue_template__ = __webpack_require__(185)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/TablaRemesa.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-72b2b51c", Component.options)
-  } else {
-    hotAPI.reload("data-v-72b2b51c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 184 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            loading: false
-        };
-    },
-
-    methods: {
-        loadChart: function loadChart() {
-            var _this = this;
-
-            this.loading = true;
-            this.$emit('loading', true);
-            this.$http.get('http://local.mayordomia.nicosli.com/api/reports/comparative/' + this.id_iglesia + '/' + this.id_remesa).then(function (_ref) {
-                var data = _ref.data;
-
-                _this.loading = false;
-                _this.$emit('loading', false);
-            }).catch(function (error) {
-                _this.loading = false;
-                throw error;
-            });
-        },
-        formateNumber: function formateNumber(value) {
-            var val = (value / 1).toFixed(2).replace(',', '');
-            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-    },
-    props: {
-        id_distrito: { required: true },
-        id_remesa: { required: true }
-    },
-    mounted: function mounted() {}
-});
-
-/***/ }),
-/* 185 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h3", { staticClass: "subtitle m-t-lg" }, [_vm._v("Tabla Remesa")]),
-    _vm._v(" "),
-    _c("h6", { staticClass: "title is-6" }, [_vm._v("año anterior")]),
-    _vm._v("\r\n    " + _vm._s(_vm.id_remesa) + "\r\n")
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-72b2b51c", module.exports)
-  }
-}
-
-/***/ }),
-/* 186 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(187)
-/* template */
-var __vue_template__ = __webpack_require__(188)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/InfoDistrito.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5a23df1d", Component.options)
-  } else {
-    hotAPI.reload("data-v-5a23df1d", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 187 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            data: [],
-            remesas: [],
-            iglesia: '',
-            id_remesa: '',
-            loading: false,
-            loadingChart: false
-        };
-    },
-
-    methods: {
-        loadAsyncData: function loadAsyncData() {
-            var _this = this;
-
-            this.loading = true;
-            this.$http.get('http://local.mayordomia.nicosli.com/api/list/pastores/' + this.id_pastor).then(function (_ref) {
-                var data = _ref.data;
-
-                _this.data = data.results;
-                data.results.pastor.distrito.iglesias.forEach(function (item) {
-                    if (_this.id_iglesia == item.id) _this.iglesia = item;
-                });
-                _this.loading = false;
-            }).catch(function (error) {
-                _this.loading = false;
-                throw error;
-            });
-        },
-        loadRemesas: function loadRemesas() {
-            var _this2 = this;
-
-            this.loading = true;
-            this.$http.get('http://local.mayordomia.nicosli.com/api/list/remesas').then(function (_ref2) {
-                var data = _ref2.data;
-
-                _this2.remesas = data.results;
-                _this2.id_remesa = _this2.remesas[0].id;
-                _this2.loading = false;
-            }).catch(function (error) {
-                _this2.loading = false;
-                throw error;
-            });
-        },
-        percentFormat: function percentFormat(val) {
-            return val + '%';
-        },
-        compLoading: function compLoading(val) {
-            this.loadingChart = val;
-        }
-    },
-    props: {
-        id_pastor: { required: true },
-        id_distrito: { required: true },
-        mes: { required: true }
-    },
-    mounted: function mounted() {
-        this.loadAsyncData();
-        this.loadRemesas();
-    }
-});
-
-/***/ }),
-/* 188 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.data.id
-      ? _c(
-          "nav",
-          { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
-          [
-            _c("ul", [
-              _vm._m(0),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "/list/pastores/" + _vm.data.id } }, [
-                  _vm._v("Pastor " + _vm._s(_vm.data.name))
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "is-active" }, [
-                _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
-                  _vm._v("Distrito " + _vm._s(_vm.data.pastor.distrito.nombre))
-                ])
-              ])
-            ])
-          ]
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: !_vm.data.pastor,
-            expression: "!data.pastor"
-          }
-        ]
-      },
-      [_vm._v("\r\n        cargando...\r\n    ")]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "card" }, [
-      _vm.data.pastor
-        ? _c("div", { staticClass: "card-content" }, [
-            _c("section", { staticClass: "hero is-primary" }, [
-              _c("div", { staticClass: "hero-body" }, [
-                _c("div", { staticClass: "container" }, [
-                  _c("h1", { staticClass: "title" }, [
-                    _c("i", { staticClass: "fas fa-landmark" }),
-                    _vm._v(
-                      " Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("h2", { staticClass: "subtitle" }, [
-                    _vm._v(
-                      "Pastor " +
-                        _vm._s(_vm.data.name) +
-                        " " +
-                        _vm._s(_vm.data.last_name) +
-                        "\r\n                        "
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._m(2),
-            _vm._v(" "),
-            _vm.data.pastor
-              ? _c(
-                  "div",
-                  { staticClass: "content" },
-                  [
-                    _c(
-                      "b-field",
-                      { attrs: { grouped: "", position: "is-right" } },
-                      [
-                        _c(
-                          "b-field",
-                          {
-                            staticClass: "m-t-md m-b-sm",
-                            attrs: { label: "Selecciona Remesa" }
-                          },
-                          [
-                            _c(
-                              "b-select",
-                              {
-                                attrs: {
-                                  placeholder: "Select a name",
-                                  size: "is-medium",
-                                  loading: _vm.loadingChart
-                                },
-                                model: {
-                                  value: _vm.id_remesa,
-                                  callback: function($$v) {
-                                    _vm.id_remesa = $$v
-                                  },
-                                  expression: "id_remesa"
-                                }
-                              },
-                              _vm._l(_vm.remesas, function(remesa) {
-                                return _c(
-                                  "option",
-                                  {
-                                    key: remesa.nombre,
-                                    domProps: { value: remesa.id }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\r\n                            " +
-                                        _vm._s(remesa.nombre) +
-                                        "\r\n                        "
-                                    )
-                                  ]
-                                )
-                              }),
-                              0
-                            )
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _vm.data.pastor
-                      ? _c("tabla-remesa", {
-                          attrs: {
-                            id_distrito: _vm.data.pastor.distrito.id,
-                            id_remesa: _vm.id_remesa
-                          },
-                          on: { loading: _vm.compLoading }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                )
-              : _vm._e()
-          ])
-        : _vm._e()
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [_c("a", { attrs: { href: "/home" } }, [_vm._v("Home")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "/list/pastores" } }, [_vm._v("Lista Pastores")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("article", { staticClass: "message is-primary" }, [
-      _c("div", { staticClass: "message-body" }, [
-        _vm._v("\r\n                    Este módulo muestra el "),
-        _c("strong", [_vm._v("acoumlado anual del distrito ")]),
-        _vm._v(
-          '\r\n                    categorizado por remesa. Para poder visualizar otra categoría, click en "Selecciona Remesa"\r\n                '
-        )
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5a23df1d", module.exports)
-  }
-}
-
-/***/ }),
-/* 189 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(190)
-/* template */
-var __vue_template__ = __webpack_require__(191)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/TablaInformes.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-14c97a9a", Component.options)
-  } else {
-    hotAPI.reload("data-v-14c97a9a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 190 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-__WEBPACK_IMPORTED_MODULE_0_moment___default.a.locale('es');
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            data: [],
-            remesas: [],
-            sortField: 'fechaFuente',
-            sortOrder: 'desc',
-            defaultSortOrder: 'desc',
-            loading: false,
-            filtered: '',
-            searchKeyword: '',
-            perPage: 10
-        };
-    },
-
-    methods: {
-        loadAsyncData: function loadAsyncData() {
-            var _this = this;
-
-            this.loading = true;
-            this.$http.get('http://local.mayordomia.nicosli.com/api/reports/pastores/' + this.id_distrito + '/' + this.mes).then(function (_ref) {
-                var data = _ref.data;
-
-                _this.data = [];
-                _this.remesas = [];
-                data.results.forEach(function (item) {
-                    _this.data.push(item);
-                });
-                data.remesas.forEach(function (item) {
-                    _this.remesas.push(item);
-                });
-                _this.loading = false;
-            }).catch(function (error) {
-                _this.loading = false;
-                throw error;
-            });
-        },
-        checkColor: function checkColor(fecha) {
-            var dia = parseInt(fecha.split('-')[2]);
-            if (dia <= 5) return "tag is-light";else if (dia > 5 && dia <= 10) return "tag is-warning";else if (dia > 10) return "tag is-danger";
-        }
-    },
-    computed: {
-        filteredData: function filteredData() {
-            var _this2 = this;
-
-            return this.data.filter(function (item) {
-                _this2.filtered = item.nombre.toLowerCase().includes(_this2.searchKeyword.toLowerCase()) || item.codigo_t.toLowerCase().includes(_this2.searchKeyword.toLowerCase());
-                return _this2.filtered;
-            });
-        }
-    },
-    filters: {
-        formateNumber: function formateNumber(value) {
-            var val = (value / 1).toFixed(2).replace(',', '');
-            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        },
-        formatDate: function formatDate(value) {
-            if (value) {
-                return __WEBPACK_IMPORTED_MODULE_0_moment___default()(String(value)).format('D MMM YYYY - HH:mm');
-            }
-        }
-    },
-    props: {
-        id_distrito: { required: true },
-        id_pastor: { required: true },
-        mes: { required: true }
-    },
-    mounted: function mounted() {
-        this.loadAsyncData();
-    }
-});
-
-/***/ }),
-/* 191 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.loading,
-            expression: "loading"
-          }
-        ]
-      },
-      [_vm._v("\r\n        cargando...\r\n    ")]
-    ),
-    _vm._v(" "),
-    _c(
-      "table",
-      {
-        staticClass: "table is-bordered is-striped is-hoverable is-responsive"
-      },
-      [
-        _c("thead", [
-          _c(
-            "tr",
-            [
-              _c("th", [_vm._v("Iglesia")]),
-              _vm._v(" "),
-              _vm._l(_vm.remesas, function(remesa) {
-                return _c("th", [_vm._v(_vm._s(remesa.nombre))])
-              })
-            ],
-            2
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "tbody",
-          _vm._l(_vm.data, function(iglesia) {
-            return _c(
-              "tr",
-              [
-                _c("td", [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href:
-                          "/list/pastores/" +
-                          _vm.id_pastor +
-                          "/informes/iglesia/" +
-                          iglesia.id
-                      }
-                    },
-                    [
-                      _c("i", { staticClass: "fas fa-chart-line" }),
-                      _vm._v(
-                        " " +
-                          _vm._s(iglesia.nombre) +
-                          "\r\n                    "
-                      )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.remesas, function(remesa) {
-                  return _c(
-                    "td",
-                    { attrs: { align: "center" } },
-                    _vm._l(iglesia.informes, function(informe) {
-                      return _c("span", [
-                        remesa.id == informe.remesa.id
-                          ? _c(
-                              "span",
-                              [
-                                _c(
-                                  "b-tooltip",
-                                  {
-                                    attrs: {
-                                      label: _vm._f("formatDate")(informe.fecha)
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      { class: _vm.checkColor(informe.fecha) },
-                                      [
-                                        _vm._v(
-                                          "\r\n                                    " +
-                                            _vm._s(
-                                              _vm._f("formateNumber")(
-                                                informe.importe
-                                              )
-                                            ) +
-                                            "\r\n                                "
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          : _vm._e()
-                      ])
-                    }),
-                    0
-                  )
-                })
-              ],
-              2
-            )
-          }),
-          0
-        )
-      ]
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-14c97a9a", module.exports)
-  }
-}
 
 /***/ })
 ],[133]);

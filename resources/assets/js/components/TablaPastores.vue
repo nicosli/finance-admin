@@ -12,7 +12,7 @@
                 <div class="message-body">Tabla de <strong>Pastores</strong>.
                     Este módulo muestra una lista completa de todos los pastores
                     que están dados de alta en el sistema, para poder
-                    ver los informes, hacer click en el botón "info", 
+                    ver los informes, hacer click en el botón "Info", 
                     este link dará un informe detallado del pastor
                 </div>
             </article>
