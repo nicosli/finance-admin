@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->char('mobile', 50);
             $table->integer('id_rol');
+            $table->integer('puntualidad')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

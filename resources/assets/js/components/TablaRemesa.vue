@@ -4,7 +4,7 @@
     <h6 class="title is-6">año anterior</h6>
     <table class="table is-bordered is-striped is-hoverable is-responsive">
         <thead>
-            <tr class="has-background-info">
+            <tr class="has-background-info" v-if="iglesias[0].id">
                 <th class="has-text-white">Iglesia</th>
                 <th class="has-text-white" v-for="anio in anios" align="center">{{anio}}</th>
                 <th class="has-text-white" align="center">+ / -</th>
@@ -14,15 +14,16 @@
         <tbody>
             <tr v-for="iglesia in iglesias">
                 <td>{{ iglesia.nombre }}</td>
-                <td v-for="informe in iglesia.informes" align="center">
-                    <span v-for="anio in anios">
-                        <span v-if="anio == informe.anio_informe">{{informe.importe | formatNumber}}</span>
-                    </span>
+                <td align="center">
+                    {{ iglesia.comparativo.anioAnterior | formatNumber}}
                 </td>
-                <td align="center">{{ iglesia.analytics.dif | formatNumber }}</td>
-                <td align="center">{{ iglesia.analytics.porcentaje | formatNumber }}</td>
+                <td align="center">
+                    {{ iglesia.comparativo.anio | formatNumber}}
+                </td>
+                <td align="center">{{ iglesia.analytics.dif | formatNumber}}</td>
+                <td align="center">{{ iglesia.analytics.porcentaje | formatNumber}}</td>
             </tr>
-            <tr class="has-background-link">
+            <tr class="has-background-link" v-if="analitycs.dif">
                 <td class="has-text-white" align="center">TOTAL</td>
                 <td v-for="anio in anios" class="has-text-white" align="center">
                     <span v-for="total in totales">

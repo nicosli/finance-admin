@@ -17,6 +17,10 @@ class InformesTableSeeder extends Seeder
             ->where('id_rol', '=', 3)
             ->get();
         foreach ($pastores as $key => $pastor) {
+            $totalInformes = 0;
+            $totalInputal = 0;
+            $totalPuntual = 0;
+            $id_pastor = $pastor->id;
             $iglesias = DB::table('iglesias')
                 ->where('id_distrito', '=', $pastor->id_distrito)
                 ->get();
@@ -49,6 +53,8 @@ class InformesTableSeeder extends Seeder
                         $id_remesa = $remesa->id;
                         $id_iglesia = $iglesia->id;
                         $importe = rand(1200, 15000);
+                        $totalInformes += 1;
+                        
                         DB::table('informes')->insert([
                             'id_pastor' => $id_pastor,
                             'id_remesa' => $id_remesa,
@@ -59,10 +65,24 @@ class InformesTableSeeder extends Seeder
                             "mes_informe" => $x,
                             "anio_informe" => $anio
                         ]);
+
+                        if($x == 6){
+                            if($caso == 1)
+                                $totalInputal += 1;
+                            else if($caso == 2)
+                                $totalPuntual += 1;
+                        }
                     }
-                    $this->command->info($anio." - ".$x);
+                    if($x == 6){
+                        $puntualidad = number_format(($totalPuntual / $totalInformes) * 100, 0);
+                        DB::table('users')
+                        ->where('id', $id_pastor)
+                        ->update(['puntualidad' => $puntualidad]);
+                    }
                 }
             }
+            
+            $this->command->info($pastor->name." Total Informes ".$totalInformes);
             
         }
     }

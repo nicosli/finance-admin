@@ -37,26 +37,32 @@ class ReportsController extends Controller
                 ['anio_informe', '=', $anioAnterior]
             ]);
         }, 'informes.remesa'])->where('id_distrito', '=', $id_distrito)->get();
-
         $importeTotal = 0;
         $importeTotalAnterior = 0;
         foreach ($iglesias as $key => $iglesia) {
-            $dif = 0;
-            $porcentaje = 0;
-            if(isset($iglesia->informes[0]->importe) AND isset($iglesia->informes[1]->importe)){
-                $v1 = $iglesia->informes[0]->importe;
-                $v2 = $iglesia->informes[1]->importe;
-                $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
-                foreach ($iglesia->informes as $key2 => $info) {
-                    if($info->anio_informe == $anio)
-                        $importeAnio = $info->importe;
-                    if($info->anio_informe == $anioAnterior)
-                        $importeAnioAnterior = $info->importe;
+            $importeAnio = 0;
+            $importeAnioAnterior = 0;
+            foreach ($iglesia->informes as $key2 => $informe) {
+                if($informe->anio_informe == $anio){
+                    $importeAnio = $informe->importe;                    
                 }
-                $porcentaje = ( ($importeAnio * 100) / $importeAnioAnterior ) - 100;
+                if($informe->anio_informe == $anioAnterior){
+                    $importeAnioAnterior = $informe->importe;
+                }
                 $importeTotal += $importeAnio;
                 $importeTotalAnterior += $importeAnioAnterior;
             }
+
+            $v1 = $importeAnioAnterior;
+            $v2 = $importeAnio;
+            $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
+            $porcentaje = ( ($importeAnio * 100) / $importeAnioAnterior ) - 100;
+
+            $iglesias[$key]->comparativo = [
+                "anio" => $importeAnio,
+                "anioAnterior" => $importeAnioAnterior
+            ];
+            
             $iglesias[$key]->analytics = [
                 "dif" => $dif,
                 "porcentaje" => $porcentaje
@@ -71,10 +77,12 @@ class ReportsController extends Controller
             "anio" => $anioAnterior,
             "suma" => $importeTotalAnterior
         ];
+        
         $v1 = $importeTotal;
         $v2 = $importeTotalAnterior;
         $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
-        $porcentaje = ( ($importeTotal * 100) / $importeTotalAnterior ) - 100;
+        if($importeTotalAnterior > 0)
+            $porcentaje = ( ($importeTotal * 100) / $importeTotalAnterior ) - 100;
         $analitycs = [
             "dif" => $dif,
             "porcentaje" => $porcentaje

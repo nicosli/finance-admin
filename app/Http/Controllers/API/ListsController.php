@@ -18,8 +18,7 @@ class ListsController extends Controller
             'pastor', 
             'pastor.distrito', 
             'pastor.distrito.iglesias'
-        ])
-            ->where('id_rol', '=', 3)
+        ])->where('id_rol', '=', 3)
             ->get();
         return response()->json([
             'results' => $users

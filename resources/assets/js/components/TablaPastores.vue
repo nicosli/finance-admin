@@ -60,6 +60,9 @@
                     <b-table-column field="iglesias" label="Iglesias" sortable>
                         {{ props.row.pastor.distrito.iglesias.length }}
                     </b-table-column>
+                    <b-table-column field="puntualidad" label="Puntualidad">
+                        {{props.row.puntualidad}}%
+                    </b-table-column>
                     <b-table-column>
                         <a class="button is-primary is-small" :href="'/list/pastores/'+props.row.id">
                             <span class="icon">

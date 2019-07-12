@@ -16970,7 +16970,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a, {
 Vue.use(__webpack_require__(165));
 Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';
 Vue.http.interceptors.push(function (request, next) {
-    request.headers.set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjRhYmI4NGY0NGY0NjQyZjQ0NDI2NGQ2NzUzYTM2MzViMDFmYjQwZTIxZTZmYzViZDk4M2MyODE5ZWJkZjVmNTBmNmI4ODdkOWQ1ZWEwMzgyIn0.eyJhdWQiOiIxIiwianRpIjoiNGFiYjg0ZjQ0ZjQ2NDJmNDQ0MjY0ZDY3NTNhMzYzNWIwMWZiNDBlMjFlNmZjNWJkOTgzYzI4MTllYmRmNWY1MGY2Yjg4N2Q5ZDVlYTAzODIiLCJpYXQiOjE1NjI5NDMwNzQsIm5iZiI6MTU2Mjk0MzA3NCwiZXhwIjoxNTk0NTY1NDc0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.FiS8mP0L_4SR-cbx1tPS3tryHy1_b7x66lEBDsi3G4K-WRRfKOnVcSCpK9uDGMr77kLNHtbfC5McUHz4VVRJTdDjjue1Sfon3mV0XvhvkVpyN5pHhq70r1hVOjFl2fDzjpsF7U05NgIN5ts3BZ60yFYjt4mzO0rq29YZUUSZWPbhEuz7OxnqShr0vvKgmB854bFcIpZ0acUy5nS0iQ5h9rjw83tfkNhe9QVyg_gKlPtNd8Y-unTvssPTt98y7MDgkVWBgxlejuB7KsoHG7YgVtLAooltVEAaNJq-LpoBuVpVGFC_Ayam5y92j4wmi65M5ei4lrK-QlDkE5Zrwj2WOyXQNN6sQAkVxVYr8vum6L2N6UQw1B9XfLg7M6CjF0g19OM_1JzwLST59z3WyXo2jIBNksCphMVarf55IGvgDZppKcPsHqjug4H72zpCpeEJP5Bt1tAzK2viiT_N6bKEhLWk9d7T9V-YEl02Cr3fqBoPHIFxjc8t15MBXWfOuPp1Ww5ycFTAejf91UoAjuU7bi3f84XszAkIyPBW0xuXkhv2quWoTBu778KEdwERMUSSa3fERugiHVOPZN6nLhvPSQw4YR1nzSJZhDU8pCd-Hl5Cfh_vY9c9p3rHdgpym8WH-KHDZTTBeuWy51MEktJ5S-R_iixW18Rn2jaSxO0ZN90');
+    request.headers.set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImVhZTc4MTgzMGViNzQ0YWFhMDBlZGNjMTI2MDNiN2UxODVjOTk0ZjVkNmQzZDhlMTc2N2Q1MjY3ZGQxMGNmYzdjYmFmYjZlMmMyZTdkNWRhIn0.eyJhdWQiOiIxIiwianRpIjoiZWFlNzgxODMwZWI3NDRhYWEwMGVkY2MxMjYwM2I3ZTE4NWM5OTRmNWQ2ZDNkOGUxNzY3ZDUyNjdkZDEwY2ZjN2NiYWZiNmUyYzJlN2Q1ZGEiLCJpYXQiOjE1NjI5NjM1MzksIm5iZiI6MTU2Mjk2MzUzOSwiZXhwIjoxNTk0NTg1OTM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.XQfllrJAqLy4U3Y7M7IMd5wo87KCCiVmRZHRpmtvPN_8uovCulGlqHVvBXYuyhfUqd4Dy0kvu199vRqslhE1o-UxO9Qoo0M-7VteD8VjZeJAKBDkH1ONw2hqnxbg-ySROKS4XmcUfHKjc24zpubkIaxfhhslvlZ1H-kZ0OmhaTzmOHYcGgePQbrmfM27A_A447J4kBhPFsBRc3JqrbYpNHAKUerIVfpIrNOoXoHC4YzK4tBbfdviEK0wjLPMrYULe0dzQb67ajuaCIDp07ToBTGqRPfbT47qVfDVMZjx-CbZ8KkJ9FHaFz1V3U_mbF0z_Naxf4gbt5IjcLNhvKlgGaaud1kcQa4vmIC-kMztNAhNQaP8XxkSntNRMY0JJJWAYJsS_f8s3mzk6EJhU-yCdZ0QKXF8CwVRfyhqDFNTFuGwxJElOz-Yiv5aqueXrs6XvyHXcI9f9Ix8_k0DKrYIMnmo4oezuNWgyjeQ7L3nvFzmTWpalQX7iNZ0-QneI2WYt7Z8WiC_6D7LqXUmvWQsX5d0o3lejrf_ZGxaLsnFoE_GfppbuPBAR1NzanyajrOmjaWBtb2gijv9Op-n-GRLwckb7Qlzf7XfkeLwTMxI1xgD7X1jrG5qVA-HIwtA1WAoVmCJ0O9bD74Z53pnwQ8f6BsB2LVbRs-NH65HGoyWKMg');
     request.headers.set('Content-Type', 'application/x-www-form-urlencoded');
     request.headers.set('Accept', 'application/json');
     next();
@@ -46325,6 +46325,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -46559,6 +46562,20 @@ var render = function() {
                                 props.row.pastor.distrito.iglesias.length
                               ) +
                               "\r\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-table-column",
+                        {
+                          attrs: { field: "puntualidad", label: "Puntualidad" }
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                        " +
+                              _vm._s(props.row.puntualidad) +
+                              "%\r\n                    "
                           )
                         ]
                       ),
@@ -48208,6 +48225,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -48282,132 +48300,153 @@ var render = function() {
       },
       [
         _c("thead", [
-          _c(
-            "tr",
-            { staticClass: "has-background-info" },
-            [
-              _c("th", { staticClass: "has-text-white" }, [_vm._v("Iglesia")]),
-              _vm._v(" "),
-              _vm._l(_vm.anios, function(anio) {
-                return _c(
-                  "th",
-                  { staticClass: "has-text-white", attrs: { align: "center" } },
-                  [_vm._v(_vm._s(anio))]
-                )
-              }),
-              _vm._v(" "),
-              _c(
-                "th",
-                { staticClass: "has-text-white", attrs: { align: "center" } },
-                [_vm._v("+ / -")]
-              ),
-              _vm._v(" "),
-              _c(
-                "th",
-                { staticClass: "has-text-white", attrs: { align: "center" } },
-                [_vm._v("%")]
+          _vm.iglesias[0].id
+            ? _c(
+                "tr",
+                { staticClass: "has-background-info" },
+                [
+                  _c("th", { staticClass: "has-text-white" }, [
+                    _vm._v("Iglesia")
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.anios, function(anio) {
+                    return _c(
+                      "th",
+                      {
+                        staticClass: "has-text-white",
+                        attrs: { align: "center" }
+                      },
+                      [_vm._v(_vm._s(anio))]
+                    )
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "th",
+                    {
+                      staticClass: "has-text-white",
+                      attrs: { align: "center" }
+                    },
+                    [_vm._v("+ / -")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "th",
+                    {
+                      staticClass: "has-text-white",
+                      attrs: { align: "center" }
+                    },
+                    [_vm._v("%")]
+                  )
+                ],
+                2
               )
-            ],
-            2
-          )
+            : _vm._e()
         ]),
         _vm._v(" "),
         _c(
           "tbody",
           [
             _vm._l(_vm.iglesias, function(iglesia) {
-              return _c(
-                "tr",
-                [
-                  _c("td", [_vm._v(_vm._s(iglesia.nombre))]),
-                  _vm._v(" "),
-                  _vm._l(iglesia.informes, function(informe) {
-                    return _c(
-                      "td",
-                      { attrs: { align: "center" } },
-                      _vm._l(_vm.anios, function(anio) {
-                        return _c("span", [
-                          anio == informe.anio_informe
-                            ? _c("span", [
-                                _vm._v(
-                                  _vm._s(
-                                    _vm._f("formatNumber")(informe.importe)
-                                  )
-                                )
-                              ])
-                            : _vm._e()
-                        ])
-                      }),
-                      0
-                    )
-                  }),
-                  _vm._v(" "),
-                  _c("td", { attrs: { align: "center" } }, [
-                    _vm._v(
-                      _vm._s(_vm._f("formatNumber")(iglesia.analytics.dif))
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("td", { attrs: { align: "center" } }, [
-                    _vm._v(
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(iglesia.nombre))]),
+                _vm._v(" "),
+                _c("td", { attrs: { align: "center" } }, [
+                  _vm._v(
+                    "\r\n                    " +
                       _vm._s(
-                        _vm._f("formatNumber")(iglesia.analytics.porcentaje)
-                      )
-                    )
-                  ])
-                ],
-                2
-              )
+                        _vm._f("formatNumber")(iglesia.comparativo.anioAnterior)
+                      ) +
+                      "\r\n                "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("td", { attrs: { align: "center" } }, [
+                  _vm._v(
+                    "\r\n                    " +
+                      _vm._s(_vm._f("formatNumber")(iglesia.comparativo.anio)) +
+                      "\r\n                "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("td", { attrs: { align: "center" } }, [
+                  _vm._v(_vm._s(_vm._f("formatNumber")(iglesia.analytics.dif)))
+                ]),
+                _vm._v(" "),
+                _c("td", { attrs: { align: "center" } }, [
+                  _vm._v(
+                    _vm._s(_vm._f("formatNumber")(iglesia.analytics.porcentaje))
+                  )
+                ])
+              ])
             }),
             _vm._v(" "),
-            _c(
-              "tr",
-              { staticClass: "has-background-link" },
-              [
-                _c(
-                  "td",
-                  { staticClass: "has-text-white", attrs: { align: "center" } },
-                  [_vm._v("TOTAL")]
-                ),
-                _vm._v(" "),
-                _vm._l(_vm.anios, function(anio) {
-                  return _c(
-                    "td",
-                    {
-                      staticClass: "has-text-white",
-                      attrs: { align: "center" }
-                    },
-                    _vm._l(_vm.totales, function(total) {
-                      return _c("span", [
-                        anio == total.anio
-                          ? _c("span", [
-                              _vm._v(_vm._s(_vm._f("formatNumber")(total.suma)))
-                            ])
-                          : _vm._e()
-                      ])
-                    }),
-                    0
-                  )
-                }),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  { staticClass: "has-text-white", attrs: { align: "center" } },
-                  [_vm._v(_vm._s(_vm._f("formatNumber")(_vm.analitycs.dif)))]
-                ),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  { staticClass: "has-text-white", attrs: { align: "center" } },
+            _vm.analitycs.dif
+              ? _c(
+                  "tr",
+                  { staticClass: "has-background-link" },
                   [
-                    _vm._v(
-                      _vm._s(_vm._f("formatNumber")(_vm.analitycs.porcentaje))
+                    _c(
+                      "td",
+                      {
+                        staticClass: "has-text-white",
+                        attrs: { align: "center" }
+                      },
+                      [_vm._v("TOTAL")]
+                    ),
+                    _vm._v(" "),
+                    _vm._l(_vm.anios, function(anio) {
+                      return _c(
+                        "td",
+                        {
+                          staticClass: "has-text-white",
+                          attrs: { align: "center" }
+                        },
+                        _vm._l(_vm.totales, function(total) {
+                          return _c("span", [
+                            anio == total.anio
+                              ? _c("span", [
+                                  _vm._v(
+                                    _vm._s(_vm._f("formatNumber")(total.suma))
+                                  )
+                                ])
+                              : _vm._e()
+                          ])
+                        }),
+                        0
+                      )
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        staticClass: "has-text-white",
+                        attrs: { align: "center" }
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(_vm._f("formatNumber")(_vm.analitycs.dif))
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        staticClass: "has-text-white",
+                        attrs: { align: "center" }
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(
+                            _vm._f("formatNumber")(_vm.analitycs.porcentaje)
+                          )
+                        )
+                      ]
                     )
-                  ]
+                  ],
+                  2
                 )
-              ],
-              2
-            )
+              : _vm._e()
           ],
           2
         )
