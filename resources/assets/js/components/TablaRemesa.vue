@@ -1,8 +1,39 @@
 <template>
 <div>
-    <h3 class="subtitle m-t-lg">Tabla Remesa</h3>
+    <h3 class="subtitle m-t-lg">Tabla Remesas</h3>
     <h6 class="title is-6">año anterior</h6>
-    {{id_remesa}}
+    <table class="table is-bordered is-striped is-hoverable is-responsive">
+        <thead>
+            <tr class="has-background-info">
+                <th class="has-text-white">Iglesia</th>
+                <th class="has-text-white" v-for="anio in anios" align="center">{{anio}}</th>
+                <th class="has-text-white" align="center">+ / -</th>
+                <th class="has-text-white" align="center">%</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="iglesia in iglesias">
+                <td>{{ iglesia.nombre }}</td>
+                <td v-for="informe in iglesia.informes" align="center">
+                    <span v-for="anio in anios">
+                        <span v-if="anio == informe.anio_informe">{{informe.importe | formatNumber}}</span>
+                    </span>
+                </td>
+                <td align="center">{{ iglesia.analytics.dif | formatNumber }}</td>
+                <td align="center">{{ iglesia.analytics.porcentaje | formatNumber }}</td>
+            </tr>
+            <tr class="has-background-link">
+                <td class="has-text-white" align="center">TOTAL</td>
+                <td v-for="anio in anios" class="has-text-white" align="center">
+                    <span v-for="total in totales">
+                        <span v-if="anio == total.anio">{{total.suma | formatNumber}}</span>
+                    </span>
+                </td>
+                <td class="has-text-white" align="center">{{analitycs.dif | formatNumber}}</td>
+                <td class="has-text-white" align="center">{{analitycs.porcentaje | formatNumber}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 </template>
 
@@ -10,7 +41,11 @@
     export default {
         data() {
             return {
-                loading: false
+                loading: false,
+                iglesias: [],
+                anios:'',
+                totales: '',
+                analitycs: ''
             }
         },
         methods: {
@@ -20,16 +55,27 @@
                 this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/comparative/byDistrict/${this.id_distrito}/${this.id_remesa}/${this.mes}`)
 				.then(( {data} ) => {
 					this.loading = false
+                    this.iglesias = data.results
+                    this.anios = data.anios
+                    this.totales = data.totales
+                    this.analitycs = data.analitycs
                     this.$emit('loading', false)
 				})
 				.catch((error) => {
 					this.loading = false
 					throw error
 				})
-            },
-            formateNumber(value){
+            }
+        },
+        filters: {
+            formatNumber(value){
                 let val = (value/1).toFixed(2).replace(',', '')
                 return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            }
+        },
+        watch:{
+            id_remesa: function(val){
+                this.loadChart()
             }
         },
         props: {

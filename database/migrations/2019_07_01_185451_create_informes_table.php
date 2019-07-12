@@ -21,6 +21,8 @@ class CreateInformesTable extends Migration
             $table->double('importe', 15, 2);
             $table->date('fecha');
             $table->time('hora');
+            $table->integer('mes_informe');
+            $table->integer('anio_informe');
             $table->index('id_pastor', 'id_pastor');
             $table->index('id_remesa', 'id_remesa');
             $table->index('id_iglesia', 'id_iglesia');

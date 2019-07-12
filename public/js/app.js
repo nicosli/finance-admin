@@ -16970,7 +16970,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a, {
 Vue.use(__webpack_require__(165));
 Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';
 Vue.http.interceptors.push(function (request, next) {
-    request.headers.set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijg2NTU1MzMyYTliODZhNDcxZGQ2ODZkNThhOTYwMGY1NDFhNWYwYTAzMzEyNDlhNDhlNTFmY2NlYTYwYmEzNDg2Yjc3NzUzNjMxMDA1NzA2In0.eyJhdWQiOiIxIiwianRpIjoiODY1NTUzMzJhOWI4NmE0NzFkZDY4NmQ1OGE5NjAwZjU0MWE1ZjBhMDMzMTI0OWE0OGU1MWZjY2VhNjBiYTM0ODZiNzc3NTM2MzEwMDU3MDYiLCJpYXQiOjE1NjIyODA3NjksIm5iZiI6MTU2MjI4MDc2OSwiZXhwIjoxNTkzOTAzMTY5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Ue2WCWV9pJ9qfN7LWtt2Qr6g_4McL0WUhU6NGuykYtWQxgbSqQ2lXJ6idZW4QGuSurvnro_L1anDvWVDv1Ah1yFxuNnduj0Z_d2CihuiUG098joeZAWJFVc7wim_CYw8H_jKtAy5822_wkPAU8abiqkYh85ZipNJmkocH9YMZhx0F04KdOXzDHrS-uNFgN0OFsN46edWWtrVP26kSjZmeu3c19ebqjZmV-yS3UH1ik74s8VRyrlNA8596AmWZ_qfYyHDk9kaPZv8avhcG0JpGc14yuyvBrK7djy1_JaLxS8gVtUU9UQ5hvrgJ5opRol_PKaqoureM6W8evVxRcgPrdhKkxBvHhMWZm-SeBMQCVNCbtUfhlLqMxB8ka5sxgaaLEoWVpQlCqjOX4l7kVwiW3kSw6-zCvUigcNvXwFCx1Y9fkYHWMyhtlTy_b2pFbVe1G3fjMQncFxy3FdazTAk3PNseGdv62x_lrkOBuo8gPl2fDg_csPYprE1cyfvt68vV5DJ8YSw-8-910oyI0TylmfJscQHPBQHo6jzr3eWQFAQdoqeeLs0jnY5Nm7GVKf5CBg0uCvpQuEyHAQHnMe01ipJoq_qzQdmvAdERm-7PavTRhXo66rNOVl4uhaC2VGD2DbA0_yjsEN7LIymtoCd27oADjP-1aePRktYEvTjaIM');
+    request.headers.set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjRhYmI4NGY0NGY0NjQyZjQ0NDI2NGQ2NzUzYTM2MzViMDFmYjQwZTIxZTZmYzViZDk4M2MyODE5ZWJkZjVmNTBmNmI4ODdkOWQ1ZWEwMzgyIn0.eyJhdWQiOiIxIiwianRpIjoiNGFiYjg0ZjQ0ZjQ2NDJmNDQ0MjY0ZDY3NTNhMzYzNWIwMWZiNDBlMjFlNmZjNWJkOTgzYzI4MTllYmRmNWY1MGY2Yjg4N2Q5ZDVlYTAzODIiLCJpYXQiOjE1NjI5NDMwNzQsIm5iZiI6MTU2Mjk0MzA3NCwiZXhwIjoxNTk0NTY1NDc0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.FiS8mP0L_4SR-cbx1tPS3tryHy1_b7x66lEBDsi3G4K-WRRfKOnVcSCpK9uDGMr77kLNHtbfC5McUHz4VVRJTdDjjue1Sfon3mV0XvhvkVpyN5pHhq70r1hVOjFl2fDzjpsF7U05NgIN5ts3BZ60yFYjt4mzO0rq29YZUUSZWPbhEuz7OxnqShr0vvKgmB854bFcIpZ0acUy5nS0iQ5h9rjw83tfkNhe9QVyg_gKlPtNd8Y-unTvssPTt98y7MDgkVWBgxlejuB7KsoHG7YgVtLAooltVEAaNJq-LpoBuVpVGFC_Ayam5y92j4wmi65M5ei4lrK-QlDkE5Zrwj2WOyXQNN6sQAkVxVYr8vum6L2N6UQw1B9XfLg7M6CjF0g19OM_1JzwLST59z3WyXo2jIBNksCphMVarf55IGvgDZppKcPsHqjug4H72zpCpeEJP5Bt1tAzK2viiT_N6bKEhLWk9d7T9V-YEl02Cr3fqBoPHIFxjc8t15MBXWfOuPp1Ww5ycFTAejf91UoAjuU7bi3f84XszAkIyPBW0xuXkhv2quWoTBu778KEdwERMUSSa3fERugiHVOPZN6nLhvPSQw4YR1nzSJZhDU8pCd-Hl5Cfh_vY9c9p3rHdgpym8WH-KHDZTTBeuWy51MEktJ5S-R_iixW18Rn2jaSxO0ZN90');
     request.headers.set('Content-Type', 'application/x-www-form-urlencoded');
     request.headers.set('Accept', 'application/json');
     next();
@@ -47468,8 +47468,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.loading = false;
                 throw error;
             });
-        },
-        formateNumber: function formateNumber(value) {
+        }
+    },
+    filters: {
+        formatNumber: function formatNumber(value) {
             var val = (value / 1).toFixed(2).replace(',', '');
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
@@ -47675,7 +47677,7 @@ __WEBPACK_IMPORTED_MODULE_0_moment___default.a.locale('es');
         }
     },
     filters: {
-        formateNumber: function formateNumber(value) {
+        formatNumber: function formatNumber(value) {
             var val = (value / 1).toFixed(2).replace(',', '');
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         },
@@ -48097,7 +48099,7 @@ var render = function() {
                                         _vm._v(
                                           "\r\n                                    " +
                                             _vm._s(
-                                              _vm._f("formateNumber")(
+                                              _vm._f("formatNumber")(
                                                 informe.importe
                                               )
                                             ) +
@@ -48197,11 +48199,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            loading: false
+            loading: false,
+            iglesias: [],
+            anios: '',
+            totales: '',
+            analitycs: ''
         };
     },
 
@@ -48215,15 +48252,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 var data = _ref.data;
 
                 _this.loading = false;
+                _this.iglesias = data.results;
+                _this.anios = data.anios;
+                _this.totales = data.totales;
+                _this.analitycs = data.analitycs;
                 _this.$emit('loading', false);
             }).catch(function (error) {
                 _this.loading = false;
                 throw error;
             });
-        },
-        formateNumber: function formateNumber(value) {
+        }
+    },
+    filters: {
+        formatNumber: function formatNumber(value) {
             var val = (value / 1).toFixed(2).replace(',', '');
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+    },
+    watch: {
+        id_remesa: function id_remesa(val) {
+            this.loadChart();
         }
     },
     props: {
@@ -48245,10 +48293,148 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "subtitle m-t-lg" }, [_vm._v("Tabla Remesa")]),
+    _c("h3", { staticClass: "subtitle m-t-lg" }, [_vm._v("Tabla Remesas")]),
     _vm._v(" "),
     _c("h6", { staticClass: "title is-6" }, [_vm._v("año anterior")]),
-    _vm._v("\r\n    " + _vm._s(_vm.id_remesa) + "\r\n")
+    _vm._v(" "),
+    _c(
+      "table",
+      {
+        staticClass: "table is-bordered is-striped is-hoverable is-responsive"
+      },
+      [
+        _c("thead", [
+          _c(
+            "tr",
+            { staticClass: "has-background-info" },
+            [
+              _c("th", { staticClass: "has-text-white" }, [_vm._v("Iglesia")]),
+              _vm._v(" "),
+              _vm._l(_vm.anios, function(anio) {
+                return _c(
+                  "th",
+                  { staticClass: "has-text-white", attrs: { align: "center" } },
+                  [_vm._v(_vm._s(anio))]
+                )
+              }),
+              _vm._v(" "),
+              _c(
+                "th",
+                { staticClass: "has-text-white", attrs: { align: "center" } },
+                [_vm._v("+ / -")]
+              ),
+              _vm._v(" "),
+              _c(
+                "th",
+                { staticClass: "has-text-white", attrs: { align: "center" } },
+                [_vm._v("%")]
+              )
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          [
+            _vm._l(_vm.iglesias, function(iglesia) {
+              return _c(
+                "tr",
+                [
+                  _c("td", [_vm._v(_vm._s(iglesia.nombre))]),
+                  _vm._v(" "),
+                  _vm._l(iglesia.informes, function(informe) {
+                    return _c(
+                      "td",
+                      { attrs: { align: "center" } },
+                      _vm._l(_vm.anios, function(anio) {
+                        return _c("span", [
+                          anio == informe.anio_informe
+                            ? _c("span", [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm._f("formatNumber")(informe.importe)
+                                  )
+                                )
+                              ])
+                            : _vm._e()
+                        ])
+                      }),
+                      0
+                    )
+                  }),
+                  _vm._v(" "),
+                  _c("td", { attrs: { align: "center" } }, [
+                    _vm._v(
+                      _vm._s(_vm._f("formatNumber")(iglesia.analytics.dif))
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { attrs: { align: "center" } }, [
+                    _vm._v(
+                      _vm._s(
+                        _vm._f("formatNumber")(iglesia.analytics.porcentaje)
+                      )
+                    )
+                  ])
+                ],
+                2
+              )
+            }),
+            _vm._v(" "),
+            _c(
+              "tr",
+              { staticClass: "has-background-link" },
+              [
+                _c(
+                  "td",
+                  { staticClass: "has-text-white", attrs: { align: "center" } },
+                  [_vm._v("TOTAL")]
+                ),
+                _vm._v(" "),
+                _vm._l(_vm.anios, function(anio) {
+                  return _c(
+                    "td",
+                    {
+                      staticClass: "has-text-white",
+                      attrs: { align: "center" }
+                    },
+                    _vm._l(_vm.totales, function(total) {
+                      return _c("span", [
+                        anio == total.anio
+                          ? _c("span", [
+                              _vm._v(_vm._s(_vm._f("formatNumber")(total.suma)))
+                            ])
+                          : _vm._e()
+                      ])
+                    }),
+                    0
+                  )
+                }),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  { staticClass: "has-text-white", attrs: { align: "center" } },
+                  [_vm._v(_vm._s(_vm._f("formatNumber")(_vm.analitycs.dif)))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  { staticClass: "has-text-white", attrs: { align: "center" } },
+                  [
+                    _vm._v(
+                      _vm._s(_vm._f("formatNumber")(_vm.analitycs.porcentaje))
+                    )
+                  ]
+                )
+              ],
+              2
+            )
+          ],
+          2
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = []
@@ -48314,6 +48500,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -48465,23 +48653,12 @@ var render = function() {
         )
       : _vm._e(),
     _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: !_vm.data.pastor,
-            expression: "!data.pastor"
-          }
-        ]
-      },
-      [_vm._v("\r\n        cargando...\r\n    ")]
-    ),
+    !_vm.data.pastor && _vm.remesas.length > 0
+      ? _c("div", [_vm._v("\r\n        cargando...\r\n    ")])
+      : _vm._e(),
     _vm._v(" "),
     _c("div", { staticClass: "card" }, [
-      _vm.data.pastor
+      _vm.data.pastor && _vm.remesas.length > 0
         ? _c("div", { staticClass: "card-content" }, [
             _c("section", { staticClass: "hero is-primary" }, [
               _c("div", { staticClass: "hero-body" }, [
@@ -48508,77 +48685,73 @@ var render = function() {
             _vm._v(" "),
             _vm._m(2),
             _vm._v(" "),
-            _vm.data.pastor
-              ? _c(
-                  "div",
-                  { staticClass: "content" },
+            _c(
+              "div",
+              { staticClass: "content" },
+              [
+                _c(
+                  "b-field",
+                  { attrs: { grouped: "", position: "is-right" } },
                   [
                     _c(
                       "b-field",
-                      { attrs: { grouped: "", position: "is-right" } },
+                      {
+                        staticClass: "m-t-md m-b-sm",
+                        attrs: { label: "Selecciona Remesa" }
+                      },
                       [
                         _c(
-                          "b-field",
+                          "b-select",
                           {
-                            staticClass: "m-t-md m-b-sm",
-                            attrs: { label: "Selecciona Remesa" }
-                          },
-                          [
-                            _c(
-                              "b-select",
-                              {
-                                attrs: {
-                                  placeholder: "Select a name",
-                                  size: "is-medium",
-                                  loading: _vm.loadingChart
-                                },
-                                model: {
-                                  value: _vm.id_remesa,
-                                  callback: function($$v) {
-                                    _vm.id_remesa = $$v
-                                  },
-                                  expression: "id_remesa"
-                                }
+                            attrs: {
+                              placeholder: "Select a name",
+                              size: "is-medium",
+                              loading: _vm.loadingChart
+                            },
+                            model: {
+                              value: _vm.id_remesa,
+                              callback: function($$v) {
+                                _vm.id_remesa = $$v
                               },
-                              _vm._l(_vm.remesas, function(remesa) {
-                                return _c(
-                                  "option",
-                                  {
-                                    key: remesa.nombre,
-                                    domProps: { value: remesa.id }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\r\n                            " +
-                                        _vm._s(remesa.nombre) +
-                                        "\r\n                        "
-                                    )
-                                  ]
+                              expression: "id_remesa"
+                            }
+                          },
+                          _vm._l(_vm.remesas, function(remesa) {
+                            return _c(
+                              "option",
+                              {
+                                key: remesa.nombre,
+                                domProps: { value: remesa.id }
+                              },
+                              [
+                                _vm._v(
+                                  "\r\n                            " +
+                                    _vm._s(remesa.nombre) +
+                                    "\r\n                        "
                                 )
-                              }),
-                              0
+                              ]
                             )
-                          ],
-                          1
+                          }),
+                          0
                         )
                       ],
                       1
-                    ),
-                    _vm._v(" "),
-                    _vm.data.pastor && _vm.remesas[0].id
-                      ? _c("tabla-remesa", {
-                          attrs: {
-                            mes: _vm.mes,
-                            id_distrito: _vm.data.pastor.distrito.id,
-                            id_remesa: _vm.id_remesa
-                          },
-                          on: { loading: _vm.compLoading }
-                        })
-                      : _vm._e()
+                    )
                   ],
                   1
-                )
-              : _vm._e()
+                ),
+                _vm._v(" "),
+                _c("tabla-remesa", {
+                  attrs: {
+                    mes: _vm.mes,
+                    id_distrito: _vm.data.pastor.distrito.id,
+                    id_remesa: _vm.id_remesa
+                  },
+                  on: { loading: _vm.compLoading }
+                })
+              ],
+              1
+            )
           ])
         : _vm._e()
     ])

@@ -26,14 +26,65 @@ class ReportsController extends Controller
     }
 
     public static function comparativoDis($id_distrito, $id_remesa, $mes){
-        $remesas = Remesas::all();
-        $informeAnioActual = Iglesias::with(['informes' => function($query) use ($mes){
-            $query->whereBetween('fecha', [date('Y').'-'.$mes.'-01', date('Y').'-'.$mes.'-31']);
+        $anio = (int) date('Y');
+        $anioAnterior = (int) ($anio -1);
+
+        $iglesias = Iglesias::with(['informes' => function($query) use ($mes, $anio, $anioAnterior, $id_remesa){
+            $query->where('mes_informe', '=', $mes);
+            $query->where('id_remesa', '=', $id_remesa);
+            $query->orWhere([
+                ['anio_informe', '=', $anio],
+                ['anio_informe', '=', $anioAnterior]
+            ]);
         }, 'informes.remesa'])->where('id_distrito', '=', $id_distrito)->get();
 
+        $importeTotal = 0;
+        $importeTotalAnterior = 0;
+        foreach ($iglesias as $key => $iglesia) {
+            $dif = 0;
+            $porcentaje = 0;
+            if(isset($iglesia->informes[0]->importe) AND isset($iglesia->informes[1]->importe)){
+                $v1 = $iglesia->informes[0]->importe;
+                $v2 = $iglesia->informes[1]->importe;
+                $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
+                foreach ($iglesia->informes as $key2 => $info) {
+                    if($info->anio_informe == $anio)
+                        $importeAnio = $info->importe;
+                    if($info->anio_informe == $anioAnterior)
+                        $importeAnioAnterior = $info->importe;
+                }
+                $porcentaje = ( ($importeAnio * 100) / $importeAnioAnterior ) - 100;
+                $importeTotal += $importeAnio;
+                $importeTotalAnterior += $importeAnioAnterior;
+            }
+            $iglesias[$key]->analytics = [
+                "dif" => $dif,
+                "porcentaje" => $porcentaje
+            ];
+        }
+
+        $totales[] = [
+            "anio" => $anio,
+            "suma" => $importeTotal
+        ];
+        $totales[] = [
+            "anio" => $anioAnterior,
+            "suma" => $importeTotalAnterior
+        ];
+        $v1 = $importeTotal;
+        $v2 = $importeTotalAnterior;
+        $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
+        $porcentaje = ( ($importeTotal * 100) / $importeTotalAnterior ) - 100;
+        $analitycs = [
+            "dif" => $dif,
+            "porcentaje" => $porcentaje
+        ];
         
         return response()->json([
-            'informe' => $informeAnioActual
+            'anios' => [$anioAnterior, $anio],
+            'totales' => $totales,
+            'analitycs' => $analitycs,
+            'results' => $iglesias
         ]);
     }
 

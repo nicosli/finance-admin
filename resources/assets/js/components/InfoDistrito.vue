@@ -8,11 +8,11 @@
             <li class="is-active"><a href="#" aria-current="page">Distrito {{data.pastor.distrito.nombre}}</a></li>
         </ul>
     </nav>
-    <div v-show="!data.pastor">
+    <div v-if="!data.pastor && remesas.length > 0">
         cargando...
     </div>
     <div class="card">
-        <div class="card-content" v-if="data.pastor">
+        <div class="card-content" v-if="data.pastor && remesas.length > 0">
             <section class="hero is-primary">
                 <div class="hero-body">
                     <div class="container">
@@ -28,10 +28,12 @@
                     categorizado por remesa. Para poder visualizar otra categoría, click en "Selecciona Remesa"
                 </div>
             </article>
-            <div class="content" v-if="data.pastor">
+            <div class="content">
                 <b-field grouped position="is-right">
                     <b-field label="Selecciona Remesa" class="m-t-md m-b-sm">
-                    <b-select placeholder="Select a name" v-model="id_remesa" size="is-medium" :loading="loadingChart">
+                    <b-select placeholder="Select a name" 
+                        v-model="id_remesa" size="is-medium" 
+                        :loading="loadingChart">
                         <option v-for="remesa in remesas" :value="remesa.id" :key="remesa.nombre">
                             {{ remesa.nombre }}
                         </option>
@@ -39,7 +41,7 @@
                     </b-field>
                 </b-field>
                 
-                <tabla-remesa v-if="data.pastor && remesas[0].id" 
+                <tabla-remesa 
                 @loading="compLoading"
                 :mes="mes"
                 :id_distrito="data.pastor.distrito.id" 

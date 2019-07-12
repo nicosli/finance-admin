@@ -23,9 +23,10 @@ class InformesTableSeeder extends Seeder
 
             foreach ($iglesias as $key => $iglesia) {
                 $mes = date('m');
-                //$mes = ((int) date('d') < 15)? $mes-1 : $mes;
-                $mes = 12;
-                $anio = "2018";
+                $mes = ((int) date('d') < 15)? $mes-1 : $mes;
+                $anio = "2019";
+                // $mes = 12;
+                // $anio = "2018";
                 for($x=1; $x<=$mes; $x++) {
                     $caso = rand(1,2);
                     switch ($caso) {
@@ -54,9 +55,12 @@ class InformesTableSeeder extends Seeder
                             'id_iglesia' => $id_iglesia,
                             'importe' => $importe,
                             'fecha' => $fecha_final,
-                            'hora' => date('H:i:s')
+                            'hora' => date('H:i:s'),
+                            "mes_informe" => $x,
+                            "anio_informe" => $anio
                         ]);
                     }
+                    $this->command->info($anio." - ".$x);
                 }
             }
             

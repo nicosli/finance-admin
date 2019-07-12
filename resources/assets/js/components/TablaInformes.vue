@@ -22,7 +22,7 @@
                         <span v-if="remesa.id == informe.remesa.id">
                             <b-tooltip :label="informe.fecha | formatDate">
                                 <span :class="checkColor(informe.fecha)">
-                                    {{informe.importe | formateNumber}}
+                                    {{informe.importe | formatNumber}}
                                 </span>
                             </b-tooltip>
                         </span>
@@ -91,7 +91,7 @@
             }
         },
         filters: {
-            formateNumber(value){
+            formatNumber(value){
                 let val = (value/1).toFixed(2).replace(',', '')
                 return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
             },
