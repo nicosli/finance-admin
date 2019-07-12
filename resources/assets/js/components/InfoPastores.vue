@@ -15,17 +15,8 @@
             <section class="hero is-info">
                 <div class="hero-body">
                     <div class="container">
-                        <div class="media">
-                            <div class="media-left m-r-sm">
-                                <figure class="image is-64x64">
-                                    <img class="is-rounded" :src="'https://i.pravatar.cc/150?u='+data.email">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <p class="title is-4">{{data.name}} {{data.last_name}}</p>
-                                <p class="subtitle is-6">Distrito {{data.pastor.distrito.nombre}}</p>
-                            </div>
-                        </div>
+                        <h1 class="title"><i class="fas fa-user-tie"></i> {{data.name}} {{data.last_name}}</h1>
+                        <h2 class="subtitle">Distrito {{data.pastor.distrito.nombre}}</h2>
                     </div>
                 </div>
             </section>

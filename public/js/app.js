@@ -46749,15 +46749,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -46847,33 +46838,20 @@ var render = function() {
             _c("section", { staticClass: "hero is-info" }, [
               _c("div", { staticClass: "hero-body" }, [
                 _c("div", { staticClass: "container" }, [
-                  _c("div", { staticClass: "media" }, [
-                    _c("div", { staticClass: "media-left m-r-sm" }, [
-                      _c("figure", { staticClass: "image is-64x64" }, [
-                        _c("img", {
-                          staticClass: "is-rounded",
-                          attrs: {
-                            src: "https://i.pravatar.cc/150?u=" + _vm.data.email
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "media-content" }, [
-                      _c("p", { staticClass: "title is-4" }, [
-                        _vm._v(
-                          _vm._s(_vm.data.name) +
-                            " " +
-                            _vm._s(_vm.data.last_name)
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "subtitle is-6" }, [
-                        _vm._v(
-                          "Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
-                        )
-                      ])
-                    ])
+                  _c("h1", { staticClass: "title" }, [
+                    _c("i", { staticClass: "fas fa-user-tie" }),
+                    _vm._v(
+                      " " +
+                        _vm._s(_vm.data.name) +
+                        " " +
+                        _vm._s(_vm.data.last_name)
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("h2", { staticClass: "subtitle" }, [
+                    _vm._v(
+                      "Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
+                    )
                   ])
                 ])
               ])
