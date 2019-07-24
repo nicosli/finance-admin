@@ -46331,6 +46331,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -46400,27 +46419,31 @@ var render = function() {
         [
           _vm._m(1),
           _vm._v(" "),
-          _c(
-            "b-field",
-            { attrs: { grouped: "", position: "is-right" } },
-            [
-              _c("b-input", {
-                attrs: {
-                  "icon-pack": "fas",
-                  icon: "search",
-                  placeholder: "búsqueda..."
-                },
-                model: {
-                  value: _vm.searchKeyword,
-                  callback: function($$v) {
-                    _vm.searchKeyword = $$v
+          _c("div", { staticClass: "columns" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "column is-3-widescreen" },
+              [
+                _c("b-input", {
+                  attrs: {
+                    "icon-pack": "fas",
+                    icon: "search",
+                    placeholder: "búsqueda..."
                   },
-                  expression: "searchKeyword"
-                }
-              })
-            ],
-            1
-          ),
+                  model: {
+                    value: _vm.searchKeyword,
+                    callback: function($$v) {
+                      _vm.searchKeyword = $$v
+                    },
+                    expression: "searchKeyword"
+                  }
+                })
+              ],
+              1
+            )
+          ]),
           _vm._v(" "),
           _c(
             "div",
@@ -46609,7 +46632,43 @@ var render = function() {
               _c("template", { slot: "footer" }, [
                 _c("div", { staticClass: "has-text-right" }, [
                   _vm._v(
-                    "\r\n                        Tabla Pastores\r\n                    "
+                    "\r\n                        Tabla de Pastores\r\n                    "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("template", { slot: "empty" }, [
+                _c("section", { staticClass: "section" }, [
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.loading,
+                          expression: "!loading"
+                        }
+                      ],
+                      staticClass: "content has-text-grey has-text-centered"
+                    },
+                    [
+                      _c(
+                        "p",
+                        [
+                          _c("b-icon", {
+                            attrs: {
+                              pack: "far",
+                              icon: "sad-cry",
+                              size: "is-large"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("No se encontraron registros.")])
+                    ]
                   )
                 ])
               ])
@@ -46654,6 +46713,16 @@ var staticRenderFns = [
         _vm._v(
           '.\r\n                    Este módulo muestra una lista completa de todos los pastores\r\n                    que están dados de alta en el sistema, para poder\r\n                    ver los informes, hacer click en el botón "Info", \r\n                    este link dará un informe detallado del pastor\r\n                '
         )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "column is-9-widescreen" }, [
+      _c("h3", { staticClass: "subtitle m-t-sm" }, [
+        _vm._v("Lista de Pastores")
       ])
     ])
   }
@@ -50548,6 +50617,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -50617,27 +50705,31 @@ var render = function() {
         [
           _vm._m(1),
           _vm._v(" "),
-          _c(
-            "b-field",
-            { attrs: { grouped: "", position: "is-right" } },
-            [
-              _c("b-input", {
-                attrs: {
-                  "icon-pack": "fas",
-                  icon: "search",
-                  placeholder: "búsqueda..."
-                },
-                model: {
-                  value: _vm.searchKeyword,
-                  callback: function($$v) {
-                    _vm.searchKeyword = $$v
+          _c("div", { staticClass: "columns" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "column is-3-widescreen" },
+              [
+                _c("b-input", {
+                  attrs: {
+                    "icon-pack": "fas",
+                    icon: "search",
+                    placeholder: "búsqueda..."
                   },
-                  expression: "searchKeyword"
-                }
-              })
-            ],
-            1
-          ),
+                  model: {
+                    value: _vm.searchKeyword,
+                    callback: function($$v) {
+                      _vm.searchKeyword = $$v
+                    },
+                    expression: "searchKeyword"
+                  }
+                })
+              ],
+              1
+            )
+          ]),
           _vm._v(" "),
           _c(
             "div",
@@ -50780,7 +50872,43 @@ var render = function() {
               _c("template", { slot: "footer" }, [
                 _c("div", { staticClass: "has-text-right" }, [
                   _vm._v(
-                    "\r\n                        Tabla Iglesias\r\n                    "
+                    "\r\n                        Tabla de Iglesias\r\n                    "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("template", { slot: "empty" }, [
+                _c("section", { staticClass: "section" }, [
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.loading,
+                          expression: "!loading"
+                        }
+                      ],
+                      staticClass: "content has-text-grey has-text-centered"
+                    },
+                    [
+                      _c(
+                        "p",
+                        [
+                          _c("b-icon", {
+                            attrs: {
+                              pack: "far",
+                              icon: "sad-cry",
+                              size: "is-large"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("No se encontraron registros.")])
+                    ]
                   )
                 ])
               ])
@@ -50825,6 +50953,16 @@ var staticRenderFns = [
         _vm._v(
           '.\r\n                    Este módulo muestra una lista completa de todas las iglesias\r\n                    que están dados de alta en el sistema, para poder\r\n                    ver los informes, hacer click en el botón "Info", \r\n                    este link dará un informe detallado de la iglesia\r\n                '
         )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "column is-9-widescreen" }, [
+      _c("h3", { staticClass: "subtitle m-t-sm" }, [
+        _vm._v("Lista de Iglesias")
       ])
     ])
   }
@@ -50891,6 +51029,25 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -51039,27 +51196,31 @@ var render = function() {
         [
           _vm._m(1),
           _vm._v(" "),
-          _c(
-            "b-field",
-            { attrs: { grouped: "", position: "is-right" } },
-            [
-              _c("b-input", {
-                attrs: {
-                  "icon-pack": "fas",
-                  icon: "search",
-                  placeholder: "búsqueda..."
-                },
-                model: {
-                  value: _vm.searchKeyword,
-                  callback: function($$v) {
-                    _vm.searchKeyword = $$v
+          _c("div", { staticClass: "columns" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "column is-3-widescreen" },
+              [
+                _c("b-input", {
+                  attrs: {
+                    "icon-pack": "fas",
+                    icon: "search",
+                    placeholder: "búsqueda..."
                   },
-                  expression: "searchKeyword"
-                }
-              })
-            ],
-            1
-          ),
+                  model: {
+                    value: _vm.searchKeyword,
+                    callback: function($$v) {
+                      _vm.searchKeyword = $$v
+                    },
+                    expression: "searchKeyword"
+                  }
+                })
+              ],
+              1
+            )
+          ]),
           _vm._v(" "),
           _c(
             "div",
@@ -51202,7 +51363,43 @@ var render = function() {
               _c("template", { slot: "footer" }, [
                 _c("div", { staticClass: "has-text-right" }, [
                   _vm._v(
-                    "\r\n                        Tabla Iglesias\r\n                    "
+                    "\r\n                        Tabla de Iglesias\r\n                    "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("template", { slot: "empty" }, [
+                _c("section", { staticClass: "section" }, [
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.loading,
+                          expression: "!loading"
+                        }
+                      ],
+                      staticClass: "content has-text-grey has-text-centered"
+                    },
+                    [
+                      _c(
+                        "p",
+                        [
+                          _c("b-icon", {
+                            attrs: {
+                              pack: "far",
+                              icon: "sad-cry",
+                              size: "is-large"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("No se encontraron registros.")])
+                    ]
                   )
                 ])
               ])
@@ -51247,6 +51444,16 @@ var staticRenderFns = [
         _vm._v(
           '.\r\n                    Este módulo muestra una lista completa de todas los distritos\r\n                    que están dados de alta en el sistema, para poder\r\n                    ver los informes, hacer click en el botón "Info", \r\n                    este link dará un informe detallado del distrito\r\n                '
         )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "column is-9-widescreen" }, [
+      _c("h3", { staticClass: "subtitle m-t-sm" }, [
+        _vm._v("Lista de Distritos")
       ])
     ])
   }

@@ -16,14 +16,19 @@
                     este link dará un informe detallado de la iglesia
                 </div>
             </article>
-            <b-field grouped position="is-right">
-                <b-input 
-                    icon-pack="fas"
-                    icon="search"
-                    v-model="searchKeyword"
-                    placeholder="búsqueda...">
-                </b-input>
-            </b-field>
+            <div class="columns">
+                <div class="column is-9-widescreen">
+                    <h3 class="subtitle m-t-sm">Lista de Iglesias</h3>
+                </div>
+                <div class="column is-3-widescreen">
+                    <b-input 
+                        icon-pack="fas"
+                        icon="search"
+                        v-model="searchKeyword"
+                        placeholder="búsqueda...">
+                    </b-input>
+                </div>
+            </div>
             <div v-show="loading">
                 cargando...
             </div>
@@ -68,8 +73,22 @@
                 </template>
                 <template slot="footer">
                     <div class="has-text-right">
-                        Tabla Iglesias
+                        Tabla de Iglesias
                     </div>
+                </template>
+                <template slot="empty">
+                    <section class="section">
+                        <div class="content has-text-grey has-text-centered" v-show="!loading">
+                            <p>
+                                <b-icon
+                                    pack="far"
+                                    icon="sad-cry"
+                                    size="is-large">
+                                </b-icon>
+                            </p>
+                            <p>No se encontraron registros.</p>
+                        </div>
+                    </section>
                 </template>
             </b-table>
         </div>
