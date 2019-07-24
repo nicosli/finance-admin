@@ -4,7 +4,7 @@
     <h6 class="title is-6">año anterior</h6>
     <table class="table is-bordered is-striped is-hoverable is-responsive">
         <thead>
-            <tr class="has-background-info" v-if="iglesias[0].id">
+            <tr class="has-background-info" v-if="iglesias.length > 0">
                 <th class="has-text-white">Iglesia</th>
                 <th class="has-text-white" v-for="anio in anios" align="center">{{anio}}</th>
                 <th class="has-text-white" align="center">+ / -</th>

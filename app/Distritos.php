@@ -21,4 +21,8 @@ class Distritos extends Model
         return $this->hasMany('App\Iglesias', 'id_distrito');
     }
 
+    public function pastor(){
+        return $this->belongsTo('App\Pastores', 'id', 'id_distrito');
+    }
+
 }

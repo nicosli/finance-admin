@@ -17,6 +17,15 @@ Vue.component(
 );
 
 Vue.component(
+    'tabla-iglesias',
+    require('./components/TablaIglesias.vue')
+);
+Vue.component(
+    'tabla-distritos',
+    require('./components/TablaDistritos.vue')
+);
+
+Vue.component(
     'info-pastores',
     require('./components/InfoPastores.vue')
 );

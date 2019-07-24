@@ -21,4 +21,7 @@ class Iglesias extends Model
         return $this->hasMany('App\Informes', 'id_iglesia');
     }
 
+    public function distrito(){
+        return $this->belongsTo('App\Distritos', 'id_distrito');
+    }
 }

@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function(){
@@ -25,6 +24,12 @@ Route::group(['middleware' => 'auth'], function(){
     });
     Route::get('/list/pastores', function(){
         return view('modulos.listaPastores');
+    });
+    Route::get('/list/distritos', function(){
+        return view('modulos.listaDistritos');
+    });
+    Route::get('/list/iglesias', function(){
+        return view('modulos.listaIglesias');
     });
     Route::get('/list/pastores/{id_pastor}', function($id_pastor){
         $mes = date('m');

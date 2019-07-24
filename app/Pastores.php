@@ -20,4 +20,8 @@ class Pastores extends Model
     public function distrito(){
         return $this->belongsTo('App\Distritos', 'id_distrito');
     }
+
+    public function user(){
+        return $this->belongsTo('App\User', 'id_user');
+    }
 }

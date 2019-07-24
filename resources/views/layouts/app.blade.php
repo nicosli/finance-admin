@@ -38,11 +38,11 @@
                         <a class="navbar-item" href="{{asset('list/pastores')}}">
                         Lista de Pastores
                         </a>
-                        <a class="navbar-item">
-                        Jobs
+                        <a class="navbar-item" href="{{asset('list/iglesias')}}">
+                        Lista de Iglesias
                         </a>
-                        <a class="navbar-item">
-                        Contact
+                        <a class="navbar-item" href="{{asset('list/distritos')}}">
+                        Lista de Distritos
                         </a>
                         <hr class="navbar-divider">
                         <a class="navbar-item">
@@ -65,16 +65,6 @@
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">{{ Auth::user()->name }}</a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                            Jobs
-                            </a>
-                            <a class="navbar-item">
-                            Contact
-                            </a>
-                            <hr class="navbar-divider">
-                            <a class="navbar-item">
-                            Report an issue
-                            </a>
                             <a class="navbar-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">

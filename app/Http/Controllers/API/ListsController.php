@@ -13,6 +13,26 @@ class ListsController extends Controller
 {
     public $successStatus = 200;
 
+    public static function iglesias(){
+        $iglesias = Iglesias::with([
+            'distrito',
+            'distrito.pastor.user'
+        ])->get();
+        return response()->json([
+            'results' => $iglesias
+        ]);
+    }
+
+    public static function distritos(){
+        $distritos = Distritos::with([
+            'iglesias',
+            'pastor.user'
+        ])->get();
+        return response()->json([
+            'results' => $distritos
+        ]);
+    }
+
     public static function pastores(){
         $users = User::with([
             'pastor', 
