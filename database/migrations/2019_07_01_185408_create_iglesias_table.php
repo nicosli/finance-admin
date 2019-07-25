@@ -20,6 +20,7 @@ class CreateIglesiasTable extends Migration
             $table->char('codigo_t', 20);
             $table->boolean('excepcion');
             $table->index('id_distrito', 'id_distrito');
+            $table->decimal('pdocd', 5, 2)->nullable()->comment('Porcentaje de diferencia de ofrendas en comparación con el diezmo');
         });
     }
 

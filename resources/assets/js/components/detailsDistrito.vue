@@ -31,15 +31,33 @@
                         </a>
                     </div>
                 </article>
-                <h3 class="subtitle m-t-lg">Informes del mes</h3>
-                <h6 class="title is-6 m-b-md">por iglesia</h6>
-                <p>
-                    <i class="far fa-lightbulb"></i>
-                    Para ver el informe acomlado por iglesia, click sobre el nombre
-                </p>
+                <div class="columns is-vcentered m-t-md m-b-md">
+                    <div class="column is-9-widescreen">
+                        <h3 class="subtitle">Informes {{dateReporte}}</h3>
+                        <h6 class="title is-6 m-b-sm">por iglesia</h6>
+                        <p>
+                            <i class="far fa-lightbulb"></i>
+                            Para ver el informe acomlado por iglesia, click sobre el nombre
+                        </p>
+                    </div>
+                    <div class="column is-3-widescreen">
+                        <template>
+                            <b-field label="Seleccionar Mes">
+                                <b-datepicker
+                                    type="month"
+                                    v-model="monthPicker"
+                                    placeholder="Clic para seleccionar..."
+                                    icon-pack="fas"
+                                    icon="calendar-alt">
+                                </b-datepicker>
+                            </b-field>
+                        </template>
+                    </div>
+                </div>
                 <tabla-informes 
+                    @dateReport="printDateReport"
                     :id_pastor="data.pastor.user.id"
-                    :id_distrito="data.id" :mes="mes">
+                    :id_distrito="data.id" :mes="mes" :anio="anio">
                 </tabla-informes>
             </div>
         </div>
@@ -59,12 +77,10 @@
                 filtered: '',
                 searchKeyword: '',
 				perPage: 10,
-                barData: [
-                    { year: 'Diezmos', 2018: 10, 2019: 5 },
-                    { year: 'Ofrenda Misionera', 2018: 10, 2019: 15 },
-                    { year: 'Plan de desarrollo', 2018: 20, 2019: 25 },
-                    { year: 'Primicias', 2018: 30, 2019: 20 }
-                ],
+                mes: new Date().getMonth(),
+                anio: new Date().getFullYear(),
+                monthPicker: new Date(),
+                dateReporte: ''
             }
         },
         methods: {
@@ -79,13 +95,24 @@
 					this.loading = false
 					throw error
 				})
+            },
+            printDateReport(val){
+                this.dateReporte = val
+            }
+        },
+        watch: {
+            monthPicker: function(val){
+                this.dateReporte = ''
+                this.mes = val.getMonth() + 1
+                this.anio = val.getFullYear()
             }
         },
         props: {
-            id_distrito: {required:true},
-            mes: {required:true}
+            id_distrito: {required:true}
         },
         mounted() {
+            this.mes = (this.mes == 0)? 1 : this.mes
+            this.monthPicker.setMonth(this.mes-1)
             this.loadAsyncData()
         }
     }

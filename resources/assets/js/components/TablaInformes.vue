@@ -48,16 +48,17 @@
                 loading: false,
                 filtered: '',
                 searchKeyword: '',
-				perPage: 10,
+				perPage: 10
             }
         },
         methods: {
             loadAsyncData() {
                 this.loading = true
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/pastores/${this.id_distrito}/${this.mes}`)
+                this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/pastores/${this.id_distrito}/${this.mes}/${this.anio}`)
 				.then(( {data} ) => {
                     this.data = []
                     this.remesas = []
+                    this.$emit('dateReport', data.dateReporte)
                     data.results.forEach((item) => {
 						this.data.push(item)
                     })
@@ -90,6 +91,11 @@
                 })
             }
         },
+        watch: {
+            mes: function(val){
+                this.loadAsyncData()
+            }
+        },
         filters: {
             formatNumber(value){
                 let val = (value/1).toFixed(2).replace(',', '')
@@ -104,7 +110,8 @@
         props: {
             id_distrito: {required:true},
             id_pastor: {required:true},
-            mes: {required:true}
+            mes: {required:true},
+            anio: {required:true}
         },
         mounted() {
             this.loadAsyncData()

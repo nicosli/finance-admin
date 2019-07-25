@@ -11,15 +11,29 @@ use App\Informes;
 
 class ReportsController extends Controller
 {
-    public static function pastores($id_distrito, $mes){
+    public static function pastores($id_distrito, $mes, $anio){
+
+        $mesChar[1] = "Enero";
+        $mesChar[2] = "Febrero";
+        $mesChar[3] = "Marzo";
+        $mesChar[4] = "Abril";
+        $mesChar[5] = "Mayo";
+        $mesChar[6] = "Junio";
+        $mesChar[7] = "Julio";
+        $mesChar[8] = "Agosto";
+        $mesChar[9] = "Septiembre";
+        $mesChar[10] = "Octubre";
+        $mesChar[11] = "Noviembre";
+        $mesChar[12] = "Diciembre";
         
-        $informe = Iglesias::with(['informes' => function($query) use ($mes){
-            $query->whereBetween('fecha', [date('Y').'-'.$mes.'-01', date('Y').'-'.$mes.'-31']);
+        $informe = Iglesias::with(['informes' => function($query) use ($mes, $anio){
+            $query->whereBetween('fecha', [$anio.'-'.$mes.'-01', $anio.'-'.$mes.'-31']);
         }, 'informes.remesa'])->where('id_distrito', '=', $id_distrito)->get();
 
         $remesas = Remesas::all();
         
         return response()->json([
+            'dateReporte' => $mesChar[$mes] . ' - ' .$anio,
             'remesas' => $remesas,
             'results' => $informe
         ]);
@@ -56,7 +70,10 @@ class ReportsController extends Controller
             $v1 = $importeAnioAnterior;
             $v2 = $importeAnio;
             $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
-            $porcentaje = ( ($importeAnio * 100) / $importeAnioAnterior ) - 100;
+            if($importeAnioAnterior != 0)
+                $porcentaje = ( ($importeAnio * 100) / $importeAnioAnterior ) - 100;
+            else
+                $porcentaje = 0;
 
             $iglesias[$key]->comparativo = [
                 "anio" => $importeAnio,

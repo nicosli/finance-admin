@@ -33,10 +33,7 @@ Route::group(['middleware' => 'auth'], function(){
     });
 
     Route::get('/details/distrito/{id_distrito}', function($id_distrito){
-        $mes = date('m');
-        if($mes != '01')
-            $mes -= 1;
-        return view('modulos.detailsDistrito', ["id_distrito" => $id_distrito, "mes" => $mes]);
+        return view('modulos.detailsDistrito', ["id_distrito" => $id_distrito]);
     });
 
     Route::get('/informes/iglesia/{id_iglesia}', function($id_iglesia){

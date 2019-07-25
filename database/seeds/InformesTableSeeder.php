@@ -28,9 +28,9 @@ class InformesTableSeeder extends Seeder
             foreach ($iglesias as $key => $iglesia) {
                 $mes = date('m');
                 $mes = ((int) date('d') < 15)? $mes-1 : $mes;
-                $anio = "2019";
-                // $mes = 12;
-                // $anio = "2018";
+                
+                $mes = 12;
+                $anio = "2018";
                 for($x=1; $x<=$mes; $x++) {
                     $caso = rand(1,2);
                     switch ($caso) {
@@ -73,12 +73,12 @@ class InformesTableSeeder extends Seeder
                                 $totalPuntual += 1;
                         }
                     }
-                    if($x == 6){
-                        $puntualidad = number_format(($totalPuntual / $totalInformes) * 100, 0);
-                        DB::table('users')
-                        ->where('id', $id_pastor)
-                        ->update(['puntualidad' => $puntualidad]);
-                    }
+                    // if($x == 6){
+                    //     $puntualidad = number_format(($totalPuntual / $totalInformes) * 100, 0);
+                    //     DB::table('users')
+                    //     ->where('id', $id_pastor)
+                    //     ->update(['puntualidad' => $puntualidad]);
+                    // }
                 }
             }
             

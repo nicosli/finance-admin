@@ -17,6 +17,7 @@ class CreateDistritosTable extends Migration
             $table->increments('id');
             $table->char('nombre', 50);
             $table->char('codigo_dt', 20);
+            $table->decimal('porcentaje_entrega', 5, 2)->nullable();
         });
     }
 
