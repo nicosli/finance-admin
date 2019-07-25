@@ -8,7 +8,7 @@
     </nav>
     <div class="card">
         <div class="card-content">
-            <article class="message is-link">
+            <article class="message is-info">
                 <div class="message-body">Tabla de <strong>Iglesias</strong>.
                     Este módulo muestra una lista completa de todas las iglesias
                     que están dados de alta en el sistema, para poder
@@ -59,15 +59,13 @@
                         {{ props.row.distrito.pastor.user.last_name }}
                     </b-table-column>
                     <b-table-column>
-                        <a class="button is-primary is-small" 
-                        :href="'/list/pastores/'
-                        +props.row.distrito.pastor.user.id
-                        +'/informes/iglesia/'
+                        <a class="button is-info is-small" 
+                        :href="'/informes/iglesia/'
                         +props.row.id">
                             <span class="icon">
                                 <i class="fas fa-angle-right"></i>
                             </span>
-                            <span>Info</span>
+                            <span>Informe</span>
                         </a>
                     </b-table-column>
                 </template>

@@ -3,8 +3,8 @@
     <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
             <li><a href="/home">Home</a></li>
-            <li><a href="/list/pastores">Lista Pastores</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Pastor {{data.name}}</a></li>
+            <li class="is-active" v-if="data.pastor"><a href="#" aria-current="page">
+            Distrito {{data.nombre}}</a></li>
         </ul>
     </nav>
     <div v-show="!data.pastor">
@@ -15,18 +15,18 @@
             <section class="hero is-info">
                 <div class="hero-body">
                     <div class="container">
-                        <h1 class="title"><i class="fas fa-user-tie"></i> {{data.name}} {{data.last_name}}</h1>
-                        <h2 class="subtitle">Distrito {{data.pastor.distrito.nombre}}</h2>
+                        <h1 class="title"><i class="fas fa-user-tie"></i> Distrito {{data.nombre}}</h1>
+                        <h2 class="subtitle">Pastor {{data.pastor.user.name}} {{data.pastor.user.last_name}}</h2>
                     </div>
                 </div>
             </section>
-            <div class="content" v-if="data.pastor">
+            <div class="content">
                 <article class="message is-info">
                     <div class="message-body">
                         Para ver el informe acomlado del Distrito
-                        <strong>{{data.pastor.distrito.nombre}}</strong>
+                        <strong>{{data.nombre}}</strong>
                         <a class="button is-info is-small" 
-                        :href="'/list/pastores/'+data.id+'/informes/distrito/'+data.pastor.distrito.id" >
+                        :href="'/informes/distrito/'+data.id" >
                             Click aquí
                         </a>
                     </div>
@@ -38,8 +38,8 @@
                     Para ver el informe acomlado por iglesia, click sobre el nombre
                 </p>
                 <tabla-informes 
-                    :id_pastor="id_pastor"
-                    :id_distrito="data.pastor.distrito.id" :mes="mes">
+                    :id_pastor="data.pastor.user.id"
+                    :id_distrito="data.id" :mes="mes">
                 </tabla-informes>
             </div>
         </div>
@@ -70,7 +70,7 @@
         methods: {
             loadAsyncData() {
                 this.loading = true
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/list/pastores/${this.id_pastor}`)
+                this.$http.get(`http://local.mayordomia.nicosli.com/api/details/distrito/${this.id_distrito}`)
 				.then(( {data} ) => {
                     this.data = data.results
 					this.loading = false
@@ -82,7 +82,7 @@
             }
         },
         props: {
-            id_pastor: {required:true},
+            id_distrito: {required:true},
             mes: {required:true}
         },
         mounted() {

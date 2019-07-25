@@ -26,8 +26,8 @@ Vue.component(
 );
 
 Vue.component(
-    'info-pastores',
-    require('./components/InfoPastores.vue')
+    'details-distrito',
+    require('./components/detailsDistrito.vue')
 );
 
 Vue.component(

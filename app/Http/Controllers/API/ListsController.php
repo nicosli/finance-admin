@@ -13,6 +13,16 @@ class ListsController extends Controller
 {
     public $successStatus = 200;
 
+    public static function getIglesia($id_iglesia){
+        $iglesia = Iglesias::with([
+            'distrito',
+            'pastor.user'
+        ])->find($id_iglesia);
+        return response()->json([
+            'results' => $iglesia
+        ]);
+    }
+
     public static function iglesias(){
         $iglesias = Iglesias::with([
             'distrito',
@@ -45,16 +55,14 @@ class ListsController extends Controller
         ]);
     }
 
-    public static function details($id){
-        $user = User::with([
-            'pastor', 
-            'pastor.distrito', 
-            'pastor.distrito.iglesias'
+    public static function detailsDistrito($id){
+        $distrito = Distritos::with([
+            'pastor.user'
         ])
         ->where('id', '=', $id)
-        ->first();
+        ->get();
         return response()->json([
-            'results' => $user
+            'results' => $distrito[0]
         ]);
     }
 

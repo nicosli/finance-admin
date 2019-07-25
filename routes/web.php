@@ -31,29 +31,29 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/list/iglesias', function(){
         return view('modulos.listaIglesias');
     });
-    Route::get('/list/pastores/{id_pastor}', function($id_pastor){
+
+    Route::get('/details/distrito/{id_distrito}', function($id_distrito){
         $mes = date('m');
         if($mes != '01')
             $mes -= 1;
-        return view('modulos.infoPastores', ["id_pastor" => $id_pastor, "mes" => $mes]);
+        return view('modulos.detailsDistrito', ["id_distrito" => $id_distrito, "mes" => $mes]);
     });
-    Route::get('/list/pastores/{id_pastor}/informes/iglesia/{id_iglesia}', function($id_pastor, $id_iglesia){
+
+    Route::get('/informes/iglesia/{id_iglesia}', function($id_iglesia){
         $mes = date('m');
         if($mes != '01')
             $mes -= 1;
-        return view('modulos.infoIglesia', [
-            "id_pastor" => $id_pastor, 
+        return view('modulos.detailsIglesia', [
             "id_iglesia" => $id_iglesia,
             "mes" => $mes
         ]);
     });
 
-    Route::get('/list/pastores/{id_pastor}/informes/distrito/{id_distrito}', function($id_pastor, $id_distrito){
+    Route::get('/informes/distrito/{id_distrito}', function($id_distrito){
         $mes = date('m');
         if($mes != '01')
             $mes -= 1;
         return view('modulos.infoDistrito', [
-            "id_pastor" => $id_pastor, 
             "id_distrito" => $id_distrito,
             "mes" => $mes
         ]);

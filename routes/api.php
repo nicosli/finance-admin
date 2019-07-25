@@ -18,10 +18,12 @@ Route::post('register', 'API\UserController@register');
 
 Route::group(['middleware' => 'auth:api'], function(){
     Route::post('details', 'API\UserController@details');
-    Route::get('/list/pastores', 'API\ListsController@pastores');
+    Route::get('/list/pastores', 'API\ListsController@pastores');    
     Route::get('/list/iglesias', 'API\ListsController@iglesias');
+    Route::get('/details/iglesia/{id_iglesia}', 'API\ListsController@getIglesia');
+
     Route::get('/list/distritos', 'API\ListsController@distritos');
-    Route::get('/list/pastores/{id}', 'API\ListsController@details');
+    Route::get('/details/distrito/{id}', 'API\ListsController@detailsDistrito');
     Route::get('/list/remesas', 'API\ListsController@remesas');
     Route::get('/reports/pastores/{id_distrito}/{mes}', 'API\ReportsController@pastores');
     Route::get('/reports/comparative/byChurch/{id_iglesia}/{id_remesa}', 'API\ReportsController@comparativo');

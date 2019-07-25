@@ -13,7 +13,7 @@
         <tbody>
             <tr v-for="iglesia in data">
                 <td>
-                    <a :href="'/list/pastores/'+id_pastor+'/informes/iglesia/'+iglesia.id">
+                    <a :href="'/informes/iglesia/'+iglesia.id">
                         <i class="fas fa-chart-line"></i> {{iglesia.nombre}}
                     </a>
                 </td>

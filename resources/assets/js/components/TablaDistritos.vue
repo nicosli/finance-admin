@@ -8,7 +8,7 @@
     </nav>
     <div class="card">
         <div class="card-content">
-            <article class="message is-link">
+            <article class="message is-info">
                 <div class="message-body">Tabla de <strong>Distritos</strong>.
                     Este módulo muestra una lista completa de todas los distritos
                     que están dados de alta en el sistema, para poder
@@ -33,6 +33,7 @@
                 cargando...
             </div>
             <b-table
+                :focusable=true
                 :data="filteredData"
                 :loading="loading"
                 paginated
@@ -40,40 +41,51 @@
                 :per-page="perPage"
                 :striped=true
                 :hoverable=true
-                :default-sort-direction="defaultSortOrder"
-                :focusable=true>
+                :default-sort-direction="defaultSortOrder">
                 <template slot-scope="props">
-                    <b-table-column field="codigo_t" label="Código" sortable>
+                    <b-table-column sortable field="codigo_dt" label="Código">
                         <span class="has-text-danger">
                             {{ props.row.codigo_dt }}
                         </span>
                     </b-table-column>
-                    <b-table-column field="nombre" label="Nombre" sortable>
+                    <b-table-column sortable field="nombre" label="Nombre">
                         {{ props.row.nombre }}
                     </b-table-column>
-                    <b-table-column field="iglesias" label="Iglesias" sortable>
+                    <b-table-column sortable field="iglesias" label="Iglesias">
                         {{ props.row.iglesias.length }}
                     </b-table-column>
-                    <b-table-column field="pastor" label="Pastor" sortable>
+                    <b-table-column sortable field="pastor" label="Pastor">
                         {{ props.row.pastor.user.name }}
                         {{ props.row.pastor.user.last_name }}
                     </b-table-column>
+                    <b-table-column sortable field="entrega" label="Entrega">
+                        45%
+                    </b-table-column>
+                    <b-table-column field="ac_iglesias" label="">
+                        <a 
+                        :href="'/details/distrito/'
+                        +props.row.id"
+                        class="button is-info is-small">
+                        <span class="icon">
+                            <i class="fas fa-angle-right"></i>
+                        </span>
+                        <span>Iglesias</span>
+                        </a>
+                    </b-table-column>
                     <b-table-column>
-                        <a class="button is-primary is-small" 
-                        :href="'/list/pastores/'
-                        +props.row.pastor.user.id
-                        +'/informes/distrito/'
+                        <a class="button is-info is-small" 
+                        :href="'/informes/distrito/'
                         +props.row.id">
                             <span class="icon">
                                 <i class="fas fa-angle-right"></i>
                             </span>
-                            <span>Info</span>
+                            <span>Reporte</span>
                         </a>
                     </b-table-column>
                 </template>
                 <template slot="footer">
                     <div class="has-text-right">
-                        Tabla de Iglesias
+                        Tabla de Distritos
                     </div>
                 </template>
                 <template slot="empty">
@@ -101,13 +113,13 @@
         data() {
             return {
                 data: [],
-                sortField: 'fechaFuente',
+                sortField: 'nombre',
                 sortOrder: 'desc',
                 defaultSortOrder: 'desc',
                 loading: false,
                 filtered: '',
                 searchKeyword: '',
-				perPage: 10,
+				perPage: 10
             }
         },
         methods: {

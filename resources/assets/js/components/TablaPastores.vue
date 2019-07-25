@@ -60,21 +60,19 @@
                         </span>
                     </b-table-column>
                     <b-table-column field="nombre" label="Distrito" sortable>
-                        {{ props.row.pastor.distrito.nombre }}
+                        <a class="" :href="'/details/distrito/'
+                            +props.row.pastor.distrito.id">
+                            <span class="icon">
+                                <i class="fas fa-angle-right"></i>
+                            </span>
+                            <span>{{ props.row.pastor.distrito.nombre }}</span>
+                        </a>
                     </b-table-column>
                     <b-table-column field="iglesias" label="Iglesias" sortable>
                         {{ props.row.pastor.distrito.iglesias.length }}
                     </b-table-column>
                     <b-table-column field="puntualidad" label="Puntualidad">
                         {{props.row.puntualidad}}%
-                    </b-table-column>
-                    <b-table-column>
-                        <a class="button is-primary is-small" :href="'/list/pastores/'+props.row.id">
-                            <span class="icon">
-                                <i class="fas fa-angle-right"></i>
-                            </span>
-                            <span>Info</span>
-                        </a>
                     </b-table-column>
                 </template>
                 <template slot="footer">

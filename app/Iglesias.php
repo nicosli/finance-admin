@@ -24,4 +24,8 @@ class Iglesias extends Model
     public function distrito(){
         return $this->belongsTo('App\Distritos', 'id_distrito');
     }
+
+    public function pastor(){
+        return $this->belongsTo('App\Pastores', 'id_distrito', 'id_distrito');
+    }
 }

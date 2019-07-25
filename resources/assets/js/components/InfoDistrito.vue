@@ -1,28 +1,27 @@
 <template>
 <div>
-    <nav class="breadcrumb" aria-label="breadcrumbs" v-if="data.id">
+    <nav class="breadcrumb" aria-label="breadcrumbs" v-if="distrito.id">
         <ul>
             <li><a href="/home">Home</a></li>
-            <li><a href="/list/pastores">Lista Pastores</a></li>
-            <li><a :href="'/list/pastores/'+data.id">Pastor {{data.name}}</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Distrito {{data.pastor.distrito.nombre}}</a></li>
+            <li><a :href="'/details/distrito/'+distrito.id">Distrito {{distrito.nombre}}</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Informe</a></li>
         </ul>
     </nav>
-    <div v-if="!data.pastor && remesas.length > 0">
+    <div v-if="!distrito">
         cargando...
     </div>
-    <div class="card">
-        <div class="card-content" v-if="data.pastor && remesas.length > 0">
-            <section class="hero is-primary">
+    <div class="card" v-if="distrito.id && remesas.length > 0">
+        <div class="card-content">
+            <section class="hero is-info">
                 <div class="hero-body">
                     <div class="container">
-                        <h1 class="title"><i class="fas fa-landmark"></i> Distrito {{data.pastor.distrito.nombre}}</h1>
-                        <h2 class="subtitle">Pastor {{data.name}} {{data.last_name}}
+                        <h1 class="title"><i class="fas fa-landmark"></i> Distrito {{distrito.nombre}}</h1>
+                        <h2 class="subtitle">Pastor {{distrito.pastor.user.name}} {{distrito.pastor.user.last_name}}
                         </h2>
                     </div>
                 </div>
             </section>
-            <article class="message is-primary">
+            <article class="message is-info">
                 <div class="message-body">
                     Este módulo muestra el <strong>acomulado anual del distrito </strong>
                     categorizado por remesa. Para poder visualizar otra categoría, click en "Selecciona Remesa"
@@ -44,7 +43,7 @@
                 <tabla-remesa 
                 @loading="compLoading"
                 :mes="mes"
-                :id_distrito="data.pastor.distrito.id" 
+                :id_distrito="distrito.id" 
                 :id_remesa="id_remesa"></tabla-remesa>
             </div>
         </div>
@@ -56,7 +55,7 @@
     export default {
         data() {
             return {
-                data: [],
+                distrito: [],
                 remesas: [],
                 iglesia: '',
                 id_remesa: '',
@@ -67,14 +66,11 @@
         methods: {
             loadAsyncData() {
                 this.loading = true
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/list/pastores/${this.id_pastor}`)
+                this.$http.get(`http://local.mayordomia.nicosli.com/api/details/distrito/${this.id_distrito}`)
 				.then(( {data} ) => {
-                    this.data = data.results
-                    data.results.pastor.distrito.iglesias.forEach((item) => {
-						if(this.id_iglesia == item.id)
-                            this.iglesia = item
-                    })
+                    this.distrito = data.results
 					this.loading = false
+                    this.loadRemesas()
 				})
 				.catch((error) => {
 					this.loading = false
@@ -102,13 +98,11 @@
             }
         },
         props: {
-            id_pastor: {required:true},
             id_distrito: {required:true},
             mes: {required:true}
         },
         mounted() {
             this.loadAsyncData()
-            this.loadRemesas()
         }
     }
 </script>

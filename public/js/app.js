@@ -16954,7 +16954,7 @@ Vue.component('tabla-pastores', __webpack_require__(142));
 Vue.component('tabla-iglesias', __webpack_require__(189));
 Vue.component('tabla-distritos', __webpack_require__(192));
 
-Vue.component('info-pastores', __webpack_require__(145));
+Vue.component('details-distrito', __webpack_require__(198));
 
 Vue.component('info-iglesia', __webpack_require__(148));
 
@@ -46348,8 +46348,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -46564,10 +46562,24 @@ var render = function() {
                           }
                         },
                         [
-                          _vm._v(
-                            "\r\n                        " +
-                              _vm._s(props.row.pastor.distrito.nombre) +
-                              "\r\n                    "
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href:
+                                  "/details/distrito/" +
+                                  props.row.pastor.distrito.id
+                              }
+                            },
+                            [
+                              _c("span", { staticClass: "icon" }, [
+                                _c("i", { staticClass: "fas fa-angle-right" })
+                              ]),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(_vm._s(props.row.pastor.distrito.nombre))
+                              ])
+                            ]
                           )
                         ]
                       ),
@@ -46604,24 +46616,7 @@ var render = function() {
                               "%\r\n                    "
                           )
                         ]
-                      ),
-                      _vm._v(" "),
-                      _c("b-table-column", [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "button is-primary is-small",
-                            attrs: { href: "/list/pastores/" + props.row.id }
-                          },
-                          [
-                            _c("span", { staticClass: "icon" }, [
-                              _c("i", { staticClass: "fas fa-angle-right" })
-                            ]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("Info")])
-                          ]
-                        )
-                      ])
+                      )
                     ]
                   }
                 }
@@ -46737,313 +46732,9 @@ if (false) {
 }
 
 /***/ }),
-/* 145 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(146)
-/* template */
-var __vue_template__ = __webpack_require__(147)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/InfoPastores.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-cb337630", Component.options)
-  } else {
-    hotAPI.reload("data-v-cb337630", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 146 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            data: [],
-            sortField: 'fechaFuente',
-            sortOrder: 'desc',
-            defaultSortOrder: 'desc',
-            loading: false,
-            filtered: '',
-            searchKeyword: '',
-            perPage: 10,
-            barData: [{ year: 'Diezmos', 2018: 10, 2019: 5 }, { year: 'Ofrenda Misionera', 2018: 10, 2019: 15 }, { year: 'Plan de desarrollo', 2018: 20, 2019: 25 }, { year: 'Primicias', 2018: 30, 2019: 20 }]
-        };
-    },
-
-    methods: {
-        loadAsyncData: function loadAsyncData() {
-            var _this = this;
-
-            this.loading = true;
-            this.$http.get('http://local.mayordomia.nicosli.com/api/list/pastores/' + this.id_pastor).then(function (_ref) {
-                var data = _ref.data;
-
-                _this.data = data.results;
-                _this.loading = false;
-            }).catch(function (error) {
-                _this.loading = false;
-                throw error;
-            });
-        }
-    },
-    props: {
-        id_pastor: { required: true },
-        mes: { required: true }
-    },
-    mounted: function mounted() {
-        this.loadAsyncData();
-    }
-});
-
-/***/ }),
-/* 147 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "nav",
-      { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
-      [
-        _c("ul", [
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _c("li", { staticClass: "is-active" }, [
-            _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
-              _vm._v("Pastor " + _vm._s(_vm.data.name))
-            ])
-          ])
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: !_vm.data.pastor,
-            expression: "!data.pastor"
-          }
-        ]
-      },
-      [_vm._v("\r\n        cargando...\r\n    ")]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "card" }, [
-      _vm.data.pastor
-        ? _c("div", { staticClass: "card-content" }, [
-            _c("section", { staticClass: "hero is-info" }, [
-              _c("div", { staticClass: "hero-body" }, [
-                _c("div", { staticClass: "container" }, [
-                  _c("h1", { staticClass: "title" }, [
-                    _c("i", { staticClass: "fas fa-user-tie" }),
-                    _vm._v(
-                      " " +
-                        _vm._s(_vm.data.name) +
-                        " " +
-                        _vm._s(_vm.data.last_name)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("h2", { staticClass: "subtitle" }, [
-                    _vm._v(
-                      "Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _vm.data.pastor
-              ? _c(
-                  "div",
-                  { staticClass: "content" },
-                  [
-                    _c("article", { staticClass: "message is-info" }, [
-                      _c("div", { staticClass: "message-body" }, [
-                        _vm._v(
-                          "\r\n                        Para ver el informe acomlado del Distrito\r\n                        "
-                        ),
-                        _c("strong", [
-                          _vm._v(_vm._s(_vm.data.pastor.distrito.nombre))
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "button is-info is-small",
-                            attrs: {
-                              href:
-                                "/list/pastores/" +
-                                _vm.data.id +
-                                "/informes/distrito/" +
-                                _vm.data.pastor.distrito.id
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\r\n                            Click aquí\r\n                        "
-                            )
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "subtitle m-t-lg" }, [
-                      _vm._v("Informes del mes")
-                    ]),
-                    _vm._v(" "),
-                    _c("h6", { staticClass: "title is-6 m-b-md" }, [
-                      _vm._v("por iglesia")
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _c("tabla-informes", {
-                      attrs: {
-                        id_pastor: _vm.id_pastor,
-                        id_distrito: _vm.data.pastor.distrito.id,
-                        mes: _vm.mes
-                      }
-                    })
-                  ],
-                  1
-                )
-              : _vm._e()
-          ])
-        : _vm._e()
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [_c("a", { attrs: { href: "/home" } }, [_vm._v("Home")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "/list/pastores" } }, [_vm._v("Lista Pastores")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _c("i", { staticClass: "far fa-lightbulb" }),
-      _vm._v(
-        "\r\n                    Para ver el informe acomlado por iglesia, click sobre el nombre\r\n                "
-      )
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-cb337630", module.exports)
-  }
-}
-
-/***/ }),
+/* 145 */,
+/* 146 */,
+/* 147 */,
 /* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -47146,7 +46837,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47161,18 +46851,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        loadAsyncData: function loadAsyncData() {
+        getIglesia: function getIglesia() {
             var _this = this;
 
             this.loading = true;
-            this.$http.get('http://local.mayordomia.nicosli.com/api/list/pastores/' + this.id_pastor).then(function (_ref) {
+            this.$http.get('http://local.mayordomia.nicosli.com/api/details/iglesia/' + this.id_iglesia).then(function (_ref) {
                 var data = _ref.data;
 
-                _this.data = data.results;
-                data.results.pastor.distrito.iglesias.forEach(function (item) {
-                    if (_this.id_iglesia == item.id) _this.iglesia = item;
-                });
+                _this.iglesia = data.results;
                 _this.loading = false;
+                _this.loadRemesas();
             }).catch(function (error) {
                 _this.loading = false;
                 throw error;
@@ -47201,13 +46889,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     props: {
-        id_pastor: { required: true },
         id_iglesia: { required: true },
         mes: { required: true }
     },
     mounted: function mounted() {
-        this.loadAsyncData();
-        this.loadRemesas();
+        this.getIglesia();
     }
 });
 
@@ -47220,7 +46906,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.data.id
+    _vm.iglesia.id
       ? _c(
           "nav",
           { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
@@ -47228,12 +46914,16 @@ var render = function() {
             _c("ul", [
               _vm._m(0),
               _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
               _c("li", [
-                _c("a", { attrs: { href: "/list/pastores/" + _vm.data.id } }, [
-                  _vm._v("Pastor " + _vm._s(_vm.data.name))
-                ])
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href: "/details/distrito/" + _vm.iglesia.distrito.id
+                    }
+                  },
+                  [_vm._v("Distrito " + _vm._s(_vm.iglesia.distrito.nombre))]
+                )
               ]),
               _vm._v(" "),
               _c("li", { staticClass: "is-active" }, [
@@ -47253,8 +46943,8 @@ var render = function() {
           {
             name: "show",
             rawName: "v-show",
-            value: !_vm.data.pastor,
-            expression: "!data.pastor"
+            value: !_vm.iglesia,
+            expression: "!iglesia"
           }
         ]
       },
@@ -47262,9 +46952,9 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "card" }, [
-      _vm.data.pastor
+      _vm.iglesia
         ? _c("div", { staticClass: "card-content" }, [
-            _c("section", { staticClass: "hero is-primary" }, [
+            _c("section", { staticClass: "hero is-info" }, [
               _c("div", { staticClass: "hero-body" }, [
                 _c("div", { staticClass: "container" }, [
                   _c("h1", { staticClass: "title" }, [
@@ -47275,9 +46965,9 @@ var render = function() {
                   _c("h2", { staticClass: "subtitle" }, [
                     _vm._v(
                       "Pastor " +
-                        _vm._s(_vm.data.name) +
+                        _vm._s(_vm.iglesia.pastor.user.name) +
                         " " +
-                        _vm._s(_vm.data.last_name) +
+                        _vm._s(_vm.iglesia.pastor.user.last_name) +
                         "\r\n                        "
                     )
                   ])
@@ -47285,9 +46975,9 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm._m(2),
+            _vm._m(1),
             _vm._v(" "),
-            _vm.data.pastor
+            _vm.iglesia
               ? _c(
                   "div",
                   { staticClass: "content" },
@@ -47373,15 +47063,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "/list/pastores" } }, [_vm._v("Lista Pastores")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("article", { staticClass: "message is-link" }, [
+    return _c("article", { staticClass: "message is-info" }, [
       _c("div", { staticClass: "message-body" }, [
         _vm._v("\r\n                    Este módulo muestra el "),
         _c("strong", [_vm._v("acoumlado anual")]),
@@ -48121,15 +47803,7 @@ var render = function() {
                 _c("td", [
                   _c(
                     "a",
-                    {
-                      attrs: {
-                        href:
-                          "/list/pastores/" +
-                          _vm.id_pastor +
-                          "/informes/iglesia/" +
-                          iglesia.id
-                      }
-                    },
+                    { attrs: { href: "/informes/iglesia/" + iglesia.id } },
                     [
                       _c("i", { staticClass: "fas fa-chart-line" }),
                       _vm._v(
@@ -48363,7 +48037,9 @@ var render = function() {
   return _c("div", [
     _c("h3", { staticClass: "subtitle m-t-lg" }, [_vm._v("Tabla Remesas")]),
     _vm._v(" "),
-    _c("h6", { staticClass: "title is-6" }, [_vm._v("año anterior")]),
+    _c("h6", { staticClass: "title is-6" }, [
+      _vm._v("Comparativo con año anterior")
+    ]),
     _vm._v(" "),
     _c(
       "table",
@@ -48375,9 +48051,9 @@ var render = function() {
           _vm.iglesias.length > 0
             ? _c(
                 "tr",
-                { staticClass: "has-background-info" },
+                { staticClass: "has-background-light" },
                 [
-                  _c("th", { staticClass: "has-text-white" }, [
+                  _c("th", { staticClass: "has-text-dark" }, [
                     _vm._v("Iglesia")
                   ]),
                   _vm._v(" "),
@@ -48385,7 +48061,7 @@ var render = function() {
                     return _c(
                       "th",
                       {
-                        staticClass: "has-text-white",
+                        staticClass: "has-text-dark",
                         attrs: { align: "center" }
                       },
                       [_vm._v(_vm._s(anio))]
@@ -48395,7 +48071,7 @@ var render = function() {
                   _c(
                     "th",
                     {
-                      staticClass: "has-text-white",
+                      staticClass: "has-text-dark",
                       attrs: { align: "center" }
                     },
                     [_vm._v("+ / -")]
@@ -48404,7 +48080,7 @@ var render = function() {
                   _c(
                     "th",
                     {
-                      staticClass: "has-text-white",
+                      staticClass: "has-text-dark",
                       attrs: { align: "center" }
                     },
                     [_vm._v("%")]
@@ -48455,7 +48131,7 @@ var render = function() {
             _vm.analitycs.dif
               ? _c(
                   "tr",
-                  { staticClass: "has-background-link" },
+                  { staticClass: "has-background-info" },
                   [
                     _c(
                       "td",
@@ -48642,12 +48318,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            data: [],
+            distrito: [],
             remesas: [],
             iglesia: '',
             id_remesa: '',
@@ -48661,14 +48336,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.loading = true;
-            this.$http.get('http://local.mayordomia.nicosli.com/api/list/pastores/' + this.id_pastor).then(function (_ref) {
+            this.$http.get('http://local.mayordomia.nicosli.com/api/details/distrito/' + this.id_distrito).then(function (_ref) {
                 var data = _ref.data;
 
-                _this.data = data.results;
-                data.results.pastor.distrito.iglesias.forEach(function (item) {
-                    if (_this.id_iglesia == item.id) _this.iglesia = item;
-                });
+                _this.distrito = data.results;
                 _this.loading = false;
+                _this.loadRemesas();
             }).catch(function (error) {
                 _this.loading = false;
                 throw error;
@@ -48697,13 +48370,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     props: {
-        id_pastor: { required: true },
         id_distrito: { required: true },
         mes: { required: true }
     },
     mounted: function mounted() {
         this.loadAsyncData();
-        this.loadRemesas();
     }
 });
 
@@ -48716,7 +48387,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.data.id
+    _vm.distrito.id
       ? _c(
           "nav",
           { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
@@ -48724,47 +48395,41 @@ var render = function() {
             _c("ul", [
               _vm._m(0),
               _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
               _c("li", [
-                _c("a", { attrs: { href: "/list/pastores/" + _vm.data.id } }, [
-                  _vm._v("Pastor " + _vm._s(_vm.data.name))
-                ])
+                _c(
+                  "a",
+                  { attrs: { href: "/details/distrito/" + _vm.distrito.id } },
+                  [_vm._v("Distrito " + _vm._s(_vm.distrito.nombre))]
+                )
               ]),
               _vm._v(" "),
-              _c("li", { staticClass: "is-active" }, [
-                _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
-                  _vm._v("Distrito " + _vm._s(_vm.data.pastor.distrito.nombre))
-                ])
-              ])
+              _vm._m(1)
             ])
           ]
         )
       : _vm._e(),
     _vm._v(" "),
-    !_vm.data.pastor && _vm.remesas.length > 0
+    !_vm.distrito
       ? _c("div", [_vm._v("\r\n        cargando...\r\n    ")])
       : _vm._e(),
     _vm._v(" "),
-    _c("div", { staticClass: "card" }, [
-      _vm.data.pastor && _vm.remesas.length > 0
-        ? _c("div", { staticClass: "card-content" }, [
-            _c("section", { staticClass: "hero is-primary" }, [
+    _vm.distrito.id && _vm.remesas.length > 0
+      ? _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-content" }, [
+            _c("section", { staticClass: "hero is-info" }, [
               _c("div", { staticClass: "hero-body" }, [
                 _c("div", { staticClass: "container" }, [
                   _c("h1", { staticClass: "title" }, [
                     _c("i", { staticClass: "fas fa-landmark" }),
-                    _vm._v(
-                      " Distrito " + _vm._s(_vm.data.pastor.distrito.nombre)
-                    )
+                    _vm._v(" Distrito " + _vm._s(_vm.distrito.nombre))
                   ]),
                   _vm._v(" "),
                   _c("h2", { staticClass: "subtitle" }, [
                     _vm._v(
                       "Pastor " +
-                        _vm._s(_vm.data.name) +
+                        _vm._s(_vm.distrito.pastor.user.name) +
                         " " +
-                        _vm._s(_vm.data.last_name) +
+                        _vm._s(_vm.distrito.pastor.user.last_name) +
                         "\r\n                        "
                     )
                   ])
@@ -48833,7 +48498,7 @@ var render = function() {
                 _c("tabla-remesa", {
                   attrs: {
                     mes: _vm.mes,
-                    id_distrito: _vm.data.pastor.distrito.id,
+                    id_distrito: _vm.distrito.id,
                     id_remesa: _vm.id_remesa
                   },
                   on: { loading: _vm.compLoading }
@@ -48842,8 +48507,8 @@ var render = function() {
               1
             )
           ])
-        : _vm._e()
-    ])
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = [
@@ -48857,15 +48522,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "/list/pastores" } }, [_vm._v("Lista Pastores")])
+    return _c("li", { staticClass: "is-active" }, [
+      _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
+        _vm._v("Informe")
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("article", { staticClass: "message is-primary" }, [
+    return _c("article", { staticClass: "message is-info" }, [
       _c("div", { staticClass: "message-body" }, [
         _vm._v("\r\n                    Este módulo muestra el "),
         _c("strong", [_vm._v("acomulado anual del distrito ")]),
@@ -50634,8 +50301,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -50844,21 +50509,15 @@ var render = function() {
                         _c(
                           "a",
                           {
-                            staticClass: "button is-primary is-small",
-                            attrs: {
-                              href:
-                                "/list/pastores/" +
-                                props.row.distrito.pastor.user.id +
-                                "/informes/iglesia/" +
-                                props.row.id
-                            }
+                            staticClass: "button is-info is-small",
+                            attrs: { href: "/informes/iglesia/" + props.row.id }
                           },
                           [
                             _c("span", { staticClass: "icon" }, [
                               _c("i", { staticClass: "fas fa-angle-right" })
                             ]),
                             _vm._v(" "),
-                            _c("span", [_vm._v("Info")])
+                            _c("span", [_vm._v("Informe")])
                           ]
                         )
                       ])
@@ -50946,7 +50605,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("article", { staticClass: "message is-link" }, [
+    return _c("article", { staticClass: "message is-info" }, [
       _c("div", { staticClass: "message-body" }, [
         _vm._v("Tabla de "),
         _c("strong", [_vm._v("Iglesias")]),
@@ -51127,12 +50786,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             data: [],
-            sortField: 'fechaFuente',
+            sortField: 'nombre',
             sortOrder: 'desc',
             defaultSortOrder: 'desc',
             loading: false,
@@ -51241,14 +50912,14 @@ var render = function() {
             "b-table",
             {
               attrs: {
+                focusable: true,
                 data: _vm.filteredData,
                 loading: _vm.loading,
                 paginated: "",
                 "per-page": _vm.perPage,
                 striped: true,
                 hoverable: true,
-                "default-sort-direction": _vm.defaultSortOrder,
-                focusable: true
+                "default-sort-direction": _vm.defaultSortOrder
               },
               scopedSlots: _vm._u([
                 {
@@ -51259,9 +50930,9 @@ var render = function() {
                         "b-table-column",
                         {
                           attrs: {
-                            field: "codigo_t",
-                            label: "Código",
-                            sortable: ""
+                            sortable: "",
+                            field: "codigo_dt",
+                            label: "Código"
                           }
                         },
                         [
@@ -51279,9 +50950,9 @@ var render = function() {
                         "b-table-column",
                         {
                           attrs: {
+                            sortable: "",
                             field: "nombre",
-                            label: "Nombre",
-                            sortable: ""
+                            label: "Nombre"
                           }
                         },
                         [
@@ -51297,9 +50968,9 @@ var render = function() {
                         "b-table-column",
                         {
                           attrs: {
+                            sortable: "",
                             field: "iglesias",
-                            label: "Iglesias",
-                            sortable: ""
+                            label: "Iglesias"
                           }
                         },
                         [
@@ -51315,9 +50986,9 @@ var render = function() {
                         "b-table-column",
                         {
                           attrs: {
+                            sortable: "",
                             field: "pastor",
-                            label: "Pastor",
-                            sortable: ""
+                            label: "Pastor"
                           }
                         },
                         [
@@ -51331,17 +51002,52 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
+                      _c(
+                        "b-table-column",
+                        {
+                          attrs: {
+                            sortable: "",
+                            field: "entrega",
+                            label: "Entrega"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                        45%\r\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-table-column",
+                        { attrs: { field: "ac_iglesias", label: "" } },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "button is-info is-small",
+                              attrs: {
+                                href: "/details/distrito/" + props.row.id
+                              }
+                            },
+                            [
+                              _c("span", { staticClass: "icon" }, [
+                                _c("i", { staticClass: "fas fa-angle-right" })
+                              ]),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("Iglesias")])
+                            ]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
                       _c("b-table-column", [
                         _c(
                           "a",
                           {
-                            staticClass: "button is-primary is-small",
+                            staticClass: "button is-info is-small",
                             attrs: {
-                              href:
-                                "/list/pastores/" +
-                                props.row.pastor.user.id +
-                                "/informes/distrito/" +
-                                props.row.id
+                              href: "/informes/distrito/" + props.row.id
                             }
                           },
                           [
@@ -51349,7 +51055,7 @@ var render = function() {
                               _c("i", { staticClass: "fas fa-angle-right" })
                             ]),
                             _vm._v(" "),
-                            _c("span", [_vm._v("Info")])
+                            _c("span", [_vm._v("Reporte")])
                           ]
                         )
                       ])
@@ -51363,7 +51069,7 @@ var render = function() {
               _c("template", { slot: "footer" }, [
                 _c("div", { staticClass: "has-text-right" }, [
                   _vm._v(
-                    "\r\n                        Tabla de Iglesias\r\n                    "
+                    "\r\n                        Tabla de Distritos\r\n                    "
                   )
                 ])
               ]),
@@ -51437,7 +51143,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("article", { staticClass: "message is-link" }, [
+    return _c("article", { staticClass: "message is-info" }, [
       _c("div", { staticClass: "message-body" }, [
         _vm._v("Tabla de "),
         _c("strong", [_vm._v("Distritos")]),
@@ -51464,6 +51170,296 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-fd886ab0", module.exports)
+  }
+}
+
+/***/ }),
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(199)
+/* template */
+var __vue_template__ = __webpack_require__(200)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/detailsDistrito.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7442e033", Component.options)
+  } else {
+    hotAPI.reload("data-v-7442e033", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 199 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            data: [],
+            sortField: 'fechaFuente',
+            sortOrder: 'desc',
+            defaultSortOrder: 'desc',
+            loading: false,
+            filtered: '',
+            searchKeyword: '',
+            perPage: 10,
+            barData: [{ year: 'Diezmos', 2018: 10, 2019: 5 }, { year: 'Ofrenda Misionera', 2018: 10, 2019: 15 }, { year: 'Plan de desarrollo', 2018: 20, 2019: 25 }, { year: 'Primicias', 2018: 30, 2019: 20 }]
+        };
+    },
+
+    methods: {
+        loadAsyncData: function loadAsyncData() {
+            var _this = this;
+
+            this.loading = true;
+            this.$http.get('http://local.mayordomia.nicosli.com/api/details/distrito/' + this.id_distrito).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.data = data.results;
+                _this.loading = false;
+            }).catch(function (error) {
+                _this.loading = false;
+                throw error;
+            });
+        }
+    },
+    props: {
+        id_distrito: { required: true },
+        mes: { required: true }
+    },
+    mounted: function mounted() {
+        this.loadAsyncData();
+    }
+});
+
+/***/ }),
+/* 200 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "nav",
+      { staticClass: "breadcrumb", attrs: { "aria-label": "breadcrumbs" } },
+      [
+        _c("ul", [
+          _vm._m(0),
+          _vm._v(" "),
+          _vm.data.pastor
+            ? _c("li", { staticClass: "is-active" }, [
+                _c("a", { attrs: { href: "#", "aria-current": "page" } }, [
+                  _vm._v("\r\n            Distrito " + _vm._s(_vm.data.nombre))
+                ])
+              ])
+            : _vm._e()
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.data.pastor,
+            expression: "!data.pastor"
+          }
+        ]
+      },
+      [_vm._v("\r\n        cargando...\r\n    ")]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "card" }, [
+      _vm.data.pastor
+        ? _c("div", { staticClass: "card-content" }, [
+            _c("section", { staticClass: "hero is-info" }, [
+              _c("div", { staticClass: "hero-body" }, [
+                _c("div", { staticClass: "container" }, [
+                  _c("h1", { staticClass: "title" }, [
+                    _c("i", { staticClass: "fas fa-user-tie" }),
+                    _vm._v(" Distrito " + _vm._s(_vm.data.nombre))
+                  ]),
+                  _vm._v(" "),
+                  _c("h2", { staticClass: "subtitle" }, [
+                    _vm._v(
+                      "Pastor " +
+                        _vm._s(_vm.data.pastor.user.name) +
+                        " " +
+                        _vm._s(_vm.data.pastor.user.last_name)
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "content" },
+              [
+                _c("article", { staticClass: "message is-info" }, [
+                  _c("div", { staticClass: "message-body" }, [
+                    _vm._v(
+                      "\r\n                        Para ver el informe acomlado del Distrito\r\n                        "
+                    ),
+                    _c("strong", [_vm._v(_vm._s(_vm.data.nombre))]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "button is-info is-small",
+                        attrs: { href: "/informes/distrito/" + _vm.data.id }
+                      },
+                      [
+                        _vm._v(
+                          "\r\n                            Click aquí\r\n                        "
+                        )
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("h3", { staticClass: "subtitle m-t-lg" }, [
+                  _vm._v("Informes del mes")
+                ]),
+                _vm._v(" "),
+                _c("h6", { staticClass: "title is-6 m-b-md" }, [
+                  _vm._v("por iglesia")
+                ]),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c("tabla-informes", {
+                  attrs: {
+                    id_pastor: _vm.data.pastor.user.id,
+                    id_distrito: _vm.data.id,
+                    mes: _vm.mes
+                  }
+                })
+              ],
+              1
+            )
+          ])
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "/home" } }, [_vm._v("Home")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "far fa-lightbulb" }),
+      _vm._v(
+        "\r\n                    Para ver el informe acomlado por iglesia, click sobre el nombre\r\n                "
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7442e033", module.exports)
   }
 }
 
