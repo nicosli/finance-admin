@@ -3,7 +3,7 @@
     <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
             <li><a href="/home">Home</a></li>
-            <li class="is-active" v-if="data.pastor"><a href="#" aria-current="page">
+            <li class="is-active"><a href="#" aria-current="page">
             Informe Mensual</a></li>
         </ul>
     </nav>

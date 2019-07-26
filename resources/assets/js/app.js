@@ -55,6 +55,11 @@ Vue.component(
     require('./components/InfoAnualDistrito.vue')
 );
 
+Vue.component(
+    'info-pdocd',
+    require('./components/InfoPdocd.vue')
+);
+
 Vue.use(Buefy, {
     defaultIconPack: 'fa'
 })

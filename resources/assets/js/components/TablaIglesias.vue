@@ -84,7 +84,7 @@
                         multilined
                         animated>
                             <a class="has-text-info" 
-                            :href="'/informes/iglesia/pdocd/'
+                            :href="'/informes/pdocd/iglesia/'
                             +props.row.id">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>

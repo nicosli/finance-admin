@@ -55,4 +55,10 @@ Route::group(['middleware' => 'auth'], function(){
             "mes" => $mes
         ]);
     });
+
+    Route::get('/informes/pdocd/iglesia/{id_iglesia}', function($id_iglesia){
+        return view('modulos.pdocd', [
+            "id_iglesia" => $id_iglesia
+        ]);
+    });
 });
