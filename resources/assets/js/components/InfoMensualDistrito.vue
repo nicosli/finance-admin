@@ -4,7 +4,7 @@
         <ul>
             <li><a href="/home">Home</a></li>
             <li class="is-active" v-if="data.pastor"><a href="#" aria-current="page">
-            Distrito {{data.nombre}}</a></li>
+            Informe Mensual</a></li>
         </ul>
     </nav>
     <div v-show="!data.pastor">
@@ -23,12 +23,9 @@
             <div class="content">
                 <article class="message is-info">
                     <div class="message-body">
-                        Para ver el informe acomlado del Distrito
-                        <strong>{{data.nombre}}</strong>
-                        <a class="button is-info is-small" 
-                        :href="'/informes/distrito/'+data.id" >
-                            Click aquí
-                        </a>
+                        Este módulo muestra el informe mensual
+                        por iglesia y por mes, para seleccionar otro mes
+                        clic en el campo <strong>Selecionar Mes</strong>
                     </div>
                 </article>
                 <div class="columns is-vcentered m-t-md m-b-md">

@@ -32,8 +32,8 @@ Route::group(['middleware' => 'auth'], function(){
         return view('modulos.listaIglesias');
     });
 
-    Route::get('/details/distrito/{id_distrito}', function($id_distrito){
-        return view('modulos.detailsDistrito', ["id_distrito" => $id_distrito]);
+    Route::get('/informes/mensual/distrito/{id_distrito}', function($id_distrito){
+        return view('modulos.infoMensualDistrito', ["id_distrito" => $id_distrito]);
     });
 
     Route::get('/informes/iglesia/{id_iglesia}', function($id_iglesia){
@@ -46,11 +46,11 @@ Route::group(['middleware' => 'auth'], function(){
         ]);
     });
 
-    Route::get('/informes/distrito/{id_distrito}', function($id_distrito){
+    Route::get('/informes/anual/distrito/{id_distrito}', function($id_distrito){
         $mes = date('m');
         if($mes != '01')
             $mes -= 1;
-        return view('modulos.infoDistrito', [
+        return view('modulos.infoAnualDistrito', [
             "id_distrito" => $id_distrito,
             "mes" => $mes
         ]);

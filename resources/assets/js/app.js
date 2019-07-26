@@ -26,8 +26,8 @@ Vue.component(
 );
 
 Vue.component(
-    'details-distrito',
-    require('./components/detailsDistrito.vue')
+    'informe-mensual-distrito',
+    require('./components/InfoMensualDistrito.vue')
 );
 
 Vue.component(
@@ -51,8 +51,8 @@ Vue.component(
 );
 
 Vue.component(
-    'info-distrito',
-    require('./components/InfoDistrito.vue')
+    'info-anual-distrito',
+    require('./components/InfoAnualDistrito.vue')
 );
 
 Vue.use(Buefy, {

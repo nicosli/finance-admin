@@ -18,7 +18,7 @@ class RemesasTableSeeder extends Seeder
             'nombre' => 'Ofrenda Misionera'
         ]);
         DB::table('remesas')->insert([
-            'nombre' => 'Plan de desarrollo'
+            'nombre' => 'Plan de Desarrollo'
         ]);
         DB::table('remesas')->insert([
             'nombre' => 'Primisias'
@@ -30,7 +30,7 @@ class RemesasTableSeeder extends Seeder
             'nombre' => 'Gratitud Anual'
         ]);
         DB::table('remesas')->insert([
-            'nombre' => 'Ayuda educativa'
+            'nombre' => 'Ayuda Educativa'
         ]);
     }
 }

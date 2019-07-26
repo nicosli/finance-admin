@@ -62,25 +62,38 @@
                         45%
                     </b-table-column>
                     <b-table-column field="ac_iglesias" label="">
-                        <a 
-                        :href="'/details/distrito/'
-                        +props.row.id"
-                        class="button is-info is-small">
-                        <span class="icon">
-                            <i class="fas fa-angle-right"></i>
-                        </span>
-                        <span>Iglesias</span>
-                        </a>
-                    </b-table-column>
-                    <b-table-column>
-                        <a class="button is-info is-small" 
-                        :href="'/informes/distrito/'
-                        +props.row.id">
+                        <b-tooltip label="Mostrar Informe Mensual de Remesas del Distrito"
+                        position="is-top"
+                        type="is-info"
+                        multilined
+                        animated>
+                            <a 
+                            :href="'/informes/mensual/distrito/'
+                            +props.row.id"
+                            class="">
                             <span class="icon">
                                 <i class="fas fa-angle-right"></i>
                             </span>
-                            <span>Reporte</span>
-                        </a>
+                            <span>Informe Mensual</span>
+                            </a>
+                        </b-tooltip>
+                    </b-table-column>
+                    <b-table-column>
+                        <b-tooltip label="Mostrar Informe Acomulado Anual 
+                        del Distrito Categorizado por Remesa"
+                        position="is-top"
+                        type="is-info"
+                        multilined
+                        animated>
+                            <a class="has-text-info" 
+                            :href="'/informes/anual/distrito/'
+                            +props.row.id">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span>Informe Anual</span>
+                            </a>
+                        </b-tooltip>
                     </b-table-column>
                 </template>
                 <template slot="footer">

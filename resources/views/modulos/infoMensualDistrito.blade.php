@@ -3,7 +3,7 @@
 @section('content')
 <div class="container m-t-md">
     <div id="app" >
-        <details-distrito id_distrito="{{$id_distrito}}"></details-distrito>
+        <informe-mensual-distrito id_distrito="{{$id_distrito}}"></informe-mensual-distrito>
     </div>
 </div>
 @endsection

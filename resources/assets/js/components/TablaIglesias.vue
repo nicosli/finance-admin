@@ -59,14 +59,39 @@
                         {{ props.row.distrito.pastor.user.last_name }}
                     </b-table-column>
                     <b-table-column>
-                        <a class="button is-info is-small" 
-                        :href="'/informes/iglesia/'
-                        +props.row.id">
-                            <span class="icon">
-                                <i class="fas fa-angle-right"></i>
-                            </span>
-                            <span>Informe</span>
-                        </a>
+                        <b-tooltip label="Reporte Que Muestra el 
+                        Importe Acomulado Anual y lo compara
+                        con el año anterior"
+                        position="is-top"
+                        type="is-link"
+                        multilined
+                        animated>
+                            <a class="" 
+                            :href="'/informes/iglesia/'
+                            +props.row.id">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span>Comparativo</span>
+                            </a>
+                        </b-tooltip>
+                    </b-table-column>
+                    <b-table-column field="" label="">
+                        <b-tooltip label="Porcentaje de Diferencia de
+                         Ofrendas en Comparación con el Diezmo (PDOCD)"
+                        position="is-top"
+                        type="is-info"
+                        multilined
+                        animated>
+                            <a class="has-text-info" 
+                            :href="'/informes/iglesia/pdocd/'
+                            +props.row.id">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span>PDOCD</span>
+                            </a>
+                        </b-tooltip>
                     </b-table-column>
                 </template>
                 <template slot="footer">

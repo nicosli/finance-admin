@@ -3,8 +3,7 @@
     <nav class="breadcrumb" aria-label="breadcrumbs" v-if="distrito.id">
         <ul>
             <li><a href="/home">Home</a></li>
-            <li><a :href="'/details/distrito/'+distrito.id">Distrito {{distrito.nombre}}</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Informe</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Informe Anual</a></li>
         </ul>
     </nav>
     <div v-if="!distrito">

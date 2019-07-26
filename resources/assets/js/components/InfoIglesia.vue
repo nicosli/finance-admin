@@ -3,8 +3,7 @@
     <nav class="breadcrumb" aria-label="breadcrumbs" v-if="iglesia.id">
         <ul>
             <li><a href="/home">Home</a></li>
-            <li><a :href="'/details/distrito/'+iglesia.distrito.id">Distrito {{iglesia.distrito.nombre}}</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Iglesia {{iglesia.nombre}}</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Informe Coparativo</a></li>
         </ul>
     </nav>
     <div v-show="!iglesia">
@@ -23,8 +22,8 @@
             </section>
             <article class="message is-info">
                 <div class="message-body">
-                    Este módulo muestra el <strong>acoumlado anual</strong> categorizado por remesa.
-                    Para poder visualizar otra categoría, click en "Selecciona Remesa"
+                    Este reporte muestra el <strong>Importe Acomulado Anual</strong> y 
+                    lo compara con el año anterior, categorizado por remesa. 
                 </div>
             </article>
             <div class="content" v-if="iglesia">
