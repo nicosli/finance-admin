@@ -59,20 +59,41 @@
                             {{ props.row.email }}
                         </span>
                     </b-table-column>
-                    <b-table-column field="nombre" label="Distrito" sortable>
-                        <a class="" :href="'/details/distrito/'
-                            +props.row.pastor.distrito.id">
-                            <span class="icon">
-                                <i class="fas fa-angle-right"></i>
-                            </span>
-                            <span>{{ props.row.pastor.distrito.nombre }}</span>
-                        </a>
-                    </b-table-column>
                     <b-table-column field="iglesias" label="Iglesias" sortable>
                         {{ props.row.pastor.distrito.iglesias.length }}
                     </b-table-column>
                     <b-table-column field="puntualidad" label="Puntualidad">
                         {{props.row.puntualidad}}%
+                    </b-table-column>
+                    <b-table-column field="nombre" label="Informe Mensual" sortable>
+                        <b-tooltip label="Mostrar Informe Mensual de Remesas del Distrito"
+                        position="is-top"
+                        type="is-link"
+                        multilined
+                        animated>
+                            <a class="has-text-link" :href="'/informes/mensual/distrito/'
+                                +props.row.pastor.distrito.id">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span>Informe Mensual</span>
+                            </a>
+                        </b-tooltip>
+                    </b-table-column>
+                    <b-table-column field="nombre" label="Informe Anual" sortable>
+                        <b-tooltip label="Mostrar Informe Mensual de Remesas del Distrito"
+                        position="is-top"
+                        type="is-info"
+                        multilined
+                        animated>
+                            <a class="has-text-info" :href="'/informes/anual/distrito/'
+                                +props.row.pastor.distrito.id">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span>Informe Anual</span>
+                            </a>
+                        </b-tooltip>
                     </b-table-column>
                 </template>
                 <template slot="footer">

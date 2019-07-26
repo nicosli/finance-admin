@@ -23,9 +23,8 @@
             <div class="content">
                 <article class="message is-info">
                     <div class="message-body">
-                        Este módulo muestra el informe mensual
-                        por iglesia y por mes, para seleccionar otro mes
-                        clic en el campo <strong>Selecionar Mes</strong>
+                        Este módulo muestra el <strong>Informe Mensual de Remesas</strong>
+                        del distrito.
                     </div>
                 </article>
                 <div class="columns is-vcentered m-t-md m-b-md">

@@ -46348,6 +46348,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -46556,38 +46577,6 @@ var render = function() {
                         "b-table-column",
                         {
                           attrs: {
-                            field: "nombre",
-                            label: "Distrito",
-                            sortable: ""
-                          }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                href:
-                                  "/details/distrito/" +
-                                  props.row.pastor.distrito.id
-                              }
-                            },
-                            [
-                              _c("span", { staticClass: "icon" }, [
-                                _c("i", { staticClass: "fas fa-angle-right" })
-                              ]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v(_vm._s(props.row.pastor.distrito.nombre))
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-table-column",
-                        {
-                          attrs: {
                             field: "iglesias",
                             label: "Iglesias",
                             sortable: ""
@@ -46616,6 +46605,104 @@ var render = function() {
                               "%\r\n                    "
                           )
                         ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-table-column",
+                        {
+                          attrs: {
+                            field: "nombre",
+                            label: "Informe Mensual",
+                            sortable: ""
+                          }
+                        },
+                        [
+                          _c(
+                            "b-tooltip",
+                            {
+                              attrs: {
+                                label:
+                                  "Mostrar Informe Mensual de Remesas del Distrito",
+                                position: "is-top",
+                                type: "is-link",
+                                multilined: "",
+                                animated: ""
+                              }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "has-text-link",
+                                  attrs: {
+                                    href:
+                                      "/informes/mensual/distrito/" +
+                                      props.row.pastor.distrito.id
+                                  }
+                                },
+                                [
+                                  _c("span", { staticClass: "icon" }, [
+                                    _c("i", {
+                                      staticClass: "fas fa-angle-right"
+                                    })
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("span", [_vm._v("Informe Mensual")])
+                                ]
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-table-column",
+                        {
+                          attrs: {
+                            field: "nombre",
+                            label: "Informe Anual",
+                            sortable: ""
+                          }
+                        },
+                        [
+                          _c(
+                            "b-tooltip",
+                            {
+                              attrs: {
+                                label:
+                                  "Mostrar Informe Mensual de Remesas del Distrito",
+                                position: "is-top",
+                                type: "is-info",
+                                multilined: "",
+                                animated: ""
+                              }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "has-text-info",
+                                  attrs: {
+                                    href:
+                                      "/informes/anual/distrito/" +
+                                      props.row.pastor.distrito.id
+                                  }
+                                },
+                                [
+                                  _c("span", { staticClass: "icon" }, [
+                                    _c("i", {
+                                      staticClass: "fas fa-angle-right"
+                                    })
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("span", [_vm._v("Informe Anual")])
+                                ]
+                              )
+                            ]
+                          )
+                        ],
+                        1
                       )
                     ]
                   }
@@ -47710,7 +47797,7 @@ var render = function() {
                                 label:
                                   "Mostrar Informe Mensual de Remesas del Distrito",
                                 position: "is-top",
-                                type: "is-info",
+                                type: "is-link",
                                 multilined: "",
                                 animated: ""
                               }
@@ -51087,7 +51174,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -51294,10 +51380,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("article", { staticClass: "message is-info" }, [
       _c("div", { staticClass: "message-body" }, [
+        _vm._v("\r\n                        Este módulo muestra el "),
+        _c("strong", [_vm._v("Informe Mensual de Remesas")]),
         _vm._v(
-          "\r\n                        Este módulo muestra el informe mensual\r\n                        por iglesia y por mes, para seleccionar otro mes\r\n                        clic en el campo "
-        ),
-        _c("strong", [_vm._v("Selecionar Mes")])
+          "\r\n                        del distrito.\r\n                    "
+        )
       ])
     ])
   },
@@ -51628,9 +51715,9 @@ var staticRenderFns = [
     return _c("article", { staticClass: "message is-info" }, [
       _c("div", { staticClass: "message-body" }, [
         _vm._v("\r\n                    Este módulo muestra el "),
-        _c("strong", [_vm._v("acomulado anual del distrito ")]),
+        _c("strong", [_vm._v("Acomulado Anual del Distrito ")]),
         _vm._v(
-          '\r\n                    categorizado por remesa. Para poder visualizar otra categoría, click en "Selecciona Remesa"\r\n                '
+          "\r\n                    categorizado por remesa.\r\n                "
         )
       ])
     ])

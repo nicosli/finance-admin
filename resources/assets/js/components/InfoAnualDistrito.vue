@@ -22,8 +22,8 @@
             </section>
             <article class="message is-info">
                 <div class="message-body">
-                    Este módulo muestra el <strong>acomulado anual del distrito </strong>
-                    categorizado por remesa. Para poder visualizar otra categoría, click en "Selecciona Remesa"
+                    Este módulo muestra el <strong>Acomulado Anual del Distrito </strong>
+                    categorizado por remesa.
                 </div>
             </article>
             <div class="content">

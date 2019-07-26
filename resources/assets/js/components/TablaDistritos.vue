@@ -64,7 +64,7 @@
                     <b-table-column field="ac_iglesias" label="">
                         <b-tooltip label="Mostrar Informe Mensual de Remesas del Distrito"
                         position="is-top"
-                        type="is-info"
+                        type="is-link"
                         multilined
                         animated>
                             <a 
