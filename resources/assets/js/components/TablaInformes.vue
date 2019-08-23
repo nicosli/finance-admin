@@ -7,7 +7,7 @@
         <thead>
             <tr>
                 <th>Iglesia</th>
-                <th v-for="remesa in remesas">{{remesa.nombre}}</th>
+                <th v-for="remesa in remesas" align="center">{{remesa.nombre}}</th>
             </tr>
         </thead>
         <tbody>
@@ -27,14 +27,17 @@
                                 <span :class="checkColor(informe.fecha)">
                                     {{checkLabel(informe.fecha)}} 
                                 </span>
-                            </b-tooltip><br>
+                            </b-tooltip>
+                            <div class="is-block m-t-sm"></div>
                             <b-tooltip 
                                 type="is-info"
                                 :label="informe.mes_anterior.importe | formatNumber('El mes anterior')">
                                 <span>
+                                    <span class="has-text-grey">$</span> 
                                     {{informe.importe | formatNumber}} 
                                 </span>
-                            </b-tooltip><br>
+                            </b-tooltip>
+                            <div class="is-block"></div>
                             <b-tooltip 
                                 type="is-info"
                                 :label="informe.mes_anterior.dif | formatNumber('Diferencia')">
