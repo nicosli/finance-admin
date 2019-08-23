@@ -62,7 +62,9 @@
         methods: {
             getIglesia(){
                 this.loading = true
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/details/iglesia/${this.id_iglesia}`)
+                this.$http.get(
+                    this.appConfig.$api_url +
+                    `/api/details/iglesia/${this.id_iglesia}`)
 				.then(( {data} ) => {
                     this.iglesia = data.results
 					this.loading = false
@@ -75,7 +77,9 @@
             },
             loadRemesas() {
                 this.loading = true
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/list/remesas`)
+                this.$http.get(
+                    this.appConfig.$api_url +
+                    `/api/list/remesas`)
 				.then(( {data} ) => {
                     this.remesas = data.results
                     this.id_remesa = this.remesas[0].id

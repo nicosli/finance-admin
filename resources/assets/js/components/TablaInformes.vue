@@ -54,7 +54,9 @@
         methods: {
             loadAsyncData() {
                 this.loading = true
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/pastores/${this.id_distrito}/${this.mes}/${this.anio}`)
+                this.$http.get(
+                    this.appConfig.$api_url +
+                    `/api/reports/pastores/${this.id_distrito}/${this.mes}/${this.anio}`)
 				.then(( {data} ) => {
                     this.data = []
                     this.remesas = []

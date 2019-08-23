@@ -19,7 +19,9 @@
             loadChart() {
                 this.loading = true
                 this.$emit('loading', true)
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/comparative/byChurch/${this.id_iglesia}/${this.id_remesa}`)
+                this.$http.get(
+                    this.appConfig.$api_url +
+                    `/api/reports/comparative/byChurch/${this.id_iglesia}/${this.id_remesa}`)
 				.then(( {data} ) => {
 					this.loading = false
                     this.$emit('loading', false)

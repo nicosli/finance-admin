@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Nicolás Vicente',
             'last_name' => 'Navarrete Clemente',
             'codigo_er' => 'NCLE-01',
-            'email' => 'nicosli@gmail.com',
+            'email' => 'nicolas@nicolas.com',
             'mobile' => '9993900074',
             'id_rol' => 1,
             'password' => bcrypt('ok00'),

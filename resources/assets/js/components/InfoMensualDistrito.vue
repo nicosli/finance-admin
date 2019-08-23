@@ -73,7 +73,7 @@
                 filtered: '',
                 searchKeyword: '',
 				perPage: 10,
-                mes: new Date().getMonth(),
+                mes: new Date().getMonth()+1,
                 anio: new Date().getFullYear(),
                 monthPicker: new Date(),
                 dateReporte: ''
@@ -82,7 +82,9 @@
         methods: {
             loadAsyncData() {
                 this.loading = true
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/details/distrito/${this.id_distrito}`)
+                this.$http.get(
+                    this.appConfig.$api_url +
+                    `/api/details/distrito/${this.id_distrito}`)
 				.then(( {data} ) => {
                     this.data = data.results
 					this.loading = false
@@ -107,8 +109,8 @@
             id_distrito: {required:true}
         },
         mounted() {
-            this.mes = (this.mes == 0)? 1 : this.mes
-            this.monthPicker.setMonth(this.mes-1)
+            // this.mes = (this.mes == 0)? 1 : this.mes
+            // this.monthPicker.setMonth(this.mes-1)
             this.loadAsyncData()
         }
     }

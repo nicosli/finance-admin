@@ -142,7 +142,9 @@
                     `sort_by=${this.sortField}`,
                     `sort_type=${this.sortOrder}`
                 ].join('&')
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/list/pastores?${params}`)
+                this.$http.get(
+                    this.appConfig.$api_url +
+                    `/api/list/pastores?${params}`)
 				.then(( {data} ) => {
                     this.data = []
                     data.results.forEach((item) => {

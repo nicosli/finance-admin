@@ -53,7 +53,9 @@
             loadChart() {
                 this.loading = true
                 this.$emit('loading', true)
-                this.$http.get(`http://local.mayordomia.nicosli.com/api/reports/comparative/byDistrict/${this.id_distrito}/${this.id_remesa}/${this.mes}`)
+                this.$http.get(
+                    this.appConfig.$api_url +
+                    `/api/reports/comparative/byDistrict/${this.id_distrito}/${this.id_remesa}/${this.mes}`)
 				.then(( {data} ) => {
 					this.loading = false
                     this.iglesias = data.results
