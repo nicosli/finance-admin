@@ -133,7 +133,7 @@ class ReportsController extends Controller
             WHEN 12 THEN "Diciembre"
             END mes, YEAR(fecha) as anio, importe'))
         ->get();
-        $mesTope = date('m') - 1;
+        $mesTope = date('m');
 
         $meses = [];
         $importesActual = [];
