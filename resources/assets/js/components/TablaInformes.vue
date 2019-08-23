@@ -14,20 +14,43 @@
             <tr v-for="iglesia in data">
                 <td>
                     <a :href="'/informes/iglesia/'+iglesia.id">
-                        <i class="fas fa-chart-line"></i> {{iglesia.nombre}}
+                        {{iglesia.nombre}}
                     </a>
                 </td>
                 <td v-for="remesa in remesas" align="center">
                     <span v-for="informe in iglesia.informes">
                         <span v-if="remesa.id == informe.remesa.id">
-                            <b-tooltip :label="informe.fecha | formatDate">
+                            <b-tooltip 
+                                multilined="true"
+                                size="is-small"
+                                :label="informe.fecha+' '+informe.hora | formatDate('Entrega')">
                                 <span :class="checkColor(informe.fecha)">
-                                    {{informe.importe | formatNumber}}
+                                    {{checkLabel(informe.fecha)}} 
+                                </span>
+                            </b-tooltip><br>
+                            <b-tooltip 
+                                type="is-info"
+                                :label="informe.mes_anterior.importe | formatNumber('El mes anterior')">
+                                <span>
+                                    {{informe.importe | formatNumber}} 
+                                </span>
+                            </b-tooltip><br>
+                            <b-tooltip 
+                                type="is-info"
+                                :label="informe.mes_anterior.dif | formatNumber('Diferencia')">
+                                <span style="font-size:14px">
+                                    <b-icon
+                                        pack="fas"
+                                        :icon="informe.mes_anterior.icono"
+                                        :type="informe.mes_anterior.type"
+                                        size="is-small">
+                                    </b-icon>
+                                    {{ informe.mes_anterior.porcentaje | formatNumber }}%
                                 </span>
                             </b-tooltip>
                         </span>
                     </span>
-                </td>                
+                </td>
             </tr>
         </tbody>
     </table>
@@ -82,6 +105,15 @@
                     return "tag is-warning";
                 else if(dia > 10)
                     return "tag is-danger";
+            },
+            checkLabel(fecha){
+                let dia = parseInt(fecha.split('-')[2]);
+                if(dia <= 5)
+                    return "A tiempo";
+                else if(dia > 5 && dia <= 10)
+                    return "en límite";
+                else if(dia > 10)
+                    return "Tardanza";
             }
         },
         computed: {
@@ -99,13 +131,17 @@
             }
         },
         filters: {
-            formatNumber(value){
+            formatNumber(value, string){
+                if(string == undefined)
+                    string = ''
                 let val = (value/1).toFixed(2).replace(',', '')
-                return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                return string + ' ' +val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
             },
-            formatDate(value){
+            formatDate(value, string){
+                if(string == undefined)
+                    string = ''
                 if (value) {
-                    return moment(String(value)).format('D MMM YYYY - HH:mm')
+                    return string + ' ' + moment(String(value)).format('D MMM YYYY - HH:mm')
                 }
             }
         },

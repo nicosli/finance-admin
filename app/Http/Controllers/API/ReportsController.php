@@ -27,10 +27,58 @@ class ReportsController extends Controller
         $mesChar[12] = "Diciembre";
         
         $informe = Iglesias::with(['informes' => function($query) use ($mes, $anio){
-            $query->whereBetween('fecha', [$anio.'-'.$mes.'-01', $anio.'-'.$mes.'-31']);
+            $query->where('mes_informe', $mes)->where('anio_informe', $anio);
         }, 'informes.remesa'])->where('id_distrito', '=', $id_distrito)->get();
 
+        $mesAnt = ($mes == 1)? $mes : $mes-1;
+
+        if($mesAnt > 1){
+            $informeMesAnt = Iglesias::with(['informes' => function($query) use ($mesAnt, $anio){
+                $query->where('mes_informe', $mesAnt)->where('anio_informe', $anio);
+            }, 'informes.remesa'])->where('id_distrito', '=', $id_distrito)->get();
+
+            foreach ($informe as $key => $val) {
+                foreach($val->informes as $key2 => $val2){
+                    $id_remesa = $val2->id_remesa;
+                    $mes_informe = $val2->mes_informe;
+                    $id_iglesia = $val2->id_iglesia;
+                    foreach ($informeMesAnt as $key3 => $val3) {
+                        foreach($val3->informes as $key4 => $val4){
+                            if($val4->id_remesa == $id_remesa AND $val4->id_iglesia == $id_iglesia){
+                                $importeTotal = $val2->importe;
+                                $importeTotalAnterior = $val4->importe;
+                                $v1 = $importeTotal;
+                                $v2 = $importeTotalAnterior;
+                                
+                                if(($v1-$v2) < 0){
+                                    $dif = (-1)*($v1-$v2);
+                                    $icono = 'caret-down';
+                                    $type = 'is-danger';
+                                }else{
+                                    $dif = ($v1-$v2);
+                                    $icono = 'caret-up';
+                                    $type = 'is-success';
+                                }
+                                
+                                if($importeTotalAnterior > 0)
+                                    $porcentaje = ( ($importeTotal * 100) / $importeTotalAnterior ) - 100;
+                                $analitycs = [
+                                    "dif" => $dif,
+                                    "porcentaje" => $porcentaje,
+                                    "importe" => $val4->importe,
+                                    "icono" => $icono,
+                                    "type" => $type
+                                ];
+                                $informe[$key]->informes[$key2]->mes_anterior = $analitycs;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         $remesas = Remesas::all();
+
         
         return response()->json([
             'dateReporte' => $mesChar[$mes] . ' - ' .$anio,
