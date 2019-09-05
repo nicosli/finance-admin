@@ -28,20 +28,45 @@
             </article>
             <div class="content">
                 <b-field grouped position="is-right">
-                    <b-field label="Selecciona Remesa" class="m-t-md m-b-sm">
-                    <b-select placeholder="Select a name" 
-                        v-model="id_remesa" size="is-medium" 
-                        :loading="loadingChart">
-                        <option v-for="remesa in remesas" :value="remesa.id" :key="remesa.nombre">
-                            {{ remesa.nombre }}
-                        </option>
-                    </b-select>
-                    </b-field>
+                    <div class="control">
+                        <b-field label="Seleccionar Mes">
+                            <b-datepicker
+                                type="month"
+                                v-model="monthPicker" 
+                                placeholder="Clic para seleccionar..."
+                                icon-pack="fas"
+                                icon="calendar-alt">
+                            </b-datepicker>
+                        </b-field>
+                    </div>
+                    <div class="control">
+                        <b-field label="Selecciona Remesa">
+                            <b-select placeholder="Select a name" 
+                                v-model="id_remesa"
+                                :loading="loadingChart">
+                                <option v-for="remesa in remesas" :value="remesa.id" :key="remesa.nombre">
+                                    {{ remesa.nombre }}
+                                </option>
+                            </b-select>
+                        </b-field>
+                    </div>
+                    <div class="control">
+                        <b-field label="Tipo Reporte">
+                            <b-select placeholder="Select tipo" 
+                                v-model="tipo_reporte"
+                                :loading="loadingChart">
+                                <option value="1">Acomulado</option>
+                                <option value="2">Mensual</option>
+                            </b-select>
+                        </b-field>
+                    </div>
                 </b-field>
-                
+
                 <tabla-remesa 
                 @loading="compLoading"
                 :mes="mes"
+                :anio="anio"
+                :tipo_reporte="tipo_reporte"
                 :id_distrito="distrito.id" 
                 :id_remesa="id_remesa"></tabla-remesa>
             </div>
@@ -59,7 +84,11 @@
                 iglesia: '',
                 id_remesa: '',
                 loading: false,
-                loadingChart: false
+                loadingChart: false,
+                mes: new Date().getMonth()+1,
+                anio: new Date().getFullYear(),
+                monthPicker: new Date(),
+                tipo_reporte: 1
             }
         },
         methods: {
@@ -100,9 +129,14 @@
                 this.loadingChart = val
             }
         },
+        watch: {
+            monthPicker: function(val){
+                this.mes = val.getMonth() + 1
+                this.anio = val.getFullYear()
+            }
+        },
         props: {
-            id_distrito: {required:true},
-            mes: {required:true}
+            id_distrito: {required:true}
         },
         mounted() {
             this.loadAsyncData()

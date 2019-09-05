@@ -87,18 +87,20 @@ class ReportsController extends Controller
         ]);
     }
 
-    public static function comparativoDis($id_distrito, $id_remesa, $mes){
-        $anio = (int) date('Y');
+    public static function comparativoDis($id_distrito, $id_remesa, $mes, $anio, $tipo_reporte){
         $anioAnterior = (int) ($anio -1);
 
-        $iglesias = Iglesias::with(['informes' => function($query) use ($mes, $anio, $anioAnterior, $id_remesa){
-            //$query->where('mes_informe', '=', $mes);
+        $iglesias = Iglesias::with(['informes' => function($query) use ($mes, $anio, $anioAnterior, $id_remesa, $tipo_reporte){
+            if($tipo_reporte == 1)
+                $query->where('mes_informe', '=', $mes);
+
             $query->where('id_remesa', '=', $id_remesa);
             $query->orWhere([
                 ['anio_informe', '=', $anio],
                 ['anio_informe', '=', $anioAnterior]
             ]);
         }, 'informes.remesa'])->where('id_distrito', '=', $id_distrito)->get();
+        
         $importeTotal = 0;
         $importeTotalAnterior = 0;
         foreach ($iglesias as $key => $iglesia) {

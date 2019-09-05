@@ -55,7 +55,7 @@
                 this.$emit('loading', true)
                 this.$http.get(
                     this.appConfig.$api_url +
-                    `/api/reports/comparative/byDistrict/${this.id_distrito}/${this.id_remesa}/${this.mes}`)
+                    `/api/reports/comparative/byDistrict/${this.id_distrito}/${this.id_remesa}/${this.mes}/${this.anio}/${this.tipo_reporte}`)
 				.then(( {data} ) => {
 					this.loading = false
                     this.iglesias = data.results
@@ -79,12 +79,23 @@
         watch:{
             id_remesa: function(val){
                 this.loadChart()
+            },
+            tipo_reporte: function(val){
+                this.loadChart()
+            },
+            mes: function(val){
+                this.loadChart()
+            },
+            anio: function(val){
+                this.loadChart()
             }
         },
         props: {
             id_distrito: {required:true},
             id_remesa: {required:true},
-            mes: {required:true}
+            mes: {required:true},
+            anio: {required:true},
+            tipo_reporte: {required:true}
         },
         mounted() {
             this.loadChart()
