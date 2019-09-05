@@ -101,9 +101,9 @@ class ReportsController extends Controller
         }, 'informes.remesa'])->where('id_distrito', '=', $id_distrito)->get();
         $importeTotal = 0;
         $importeTotalAnterior = 0;
-        $importeAnio = 0;
-        $importeAnioAnterior = 0;
         foreach ($iglesias as $key => $iglesia) {
+            $importeAnio = 0;
+            $importeAnioAnterior = 0;
             foreach ($iglesia->informes as $key2 => $informe) {
                 if($informe->anio_informe == $anio){
                     $importeAnio = $informe->importe;                    
@@ -124,8 +124,8 @@ class ReportsController extends Controller
                 $porcentaje = 0;
 
             $iglesias[$key]->comparativo = [
-                "anio" => $importeAnio,
-                "anioAnterior" => $importeAnioAnterior
+                "anio" => $importeTotal,
+                "anioAnterior" => $importeTotalAnterior
             ];
             
             $iglesias[$key]->analytics = [
