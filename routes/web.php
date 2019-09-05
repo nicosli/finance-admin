@@ -61,4 +61,6 @@ Route::group(['middleware' => 'auth'], function(){
             "id_iglesia" => $id_iglesia
         ]);
     });
+
+    Route::get('/query/informes', 'ScriptController@inicio');
 });
