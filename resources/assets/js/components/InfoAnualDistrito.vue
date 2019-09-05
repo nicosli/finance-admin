@@ -88,7 +88,7 @@
                 mes: new Date().getMonth()+1,
                 anio: new Date().getFullYear(),
                 monthPicker: new Date(),
-                tipo_reporte: 1
+                tipo_reporte: 2
             }
         },
         methods: {
