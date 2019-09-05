@@ -115,8 +115,8 @@ class ReportsController extends Controller
                 $importeTotalAnterior += $importeAnioAnterior;
             }
 
-            $v1 = $importeAnioAnterior;
-            $v2 = $importeAnio;
+            $v1 = $importeTotalAnterior;
+            $v2 = $importeTotal;
             $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
             if($importeAnioAnterior != 0)
                 $porcentaje = ( ($importeAnio * 100) / $importeAnioAnterior ) - 100;
