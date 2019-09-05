@@ -91,9 +91,10 @@ class ReportsController extends Controller
         $anioAnterior = (int) ($anio -1);
 
         $iglesias = Iglesias::with(['informes' => function($query) use ($mes, $anio, $anioAnterior, $id_remesa, $tipo_reporte){
-            if($tipo_reporte == 1)
+            if($tipo_reporte == 2)
                 $query->where('mes_informe', '=', $mes);
-
+            if($tipo_reporte == 1)
+                $query->where('mes_informe', '<=', $mes);
             $query->where('id_remesa', '=', $id_remesa);
             $query->orWhere([
                 ['anio_informe', '=', $anio],
@@ -103,18 +104,21 @@ class ReportsController extends Controller
         
         $importeTotal = 0;
         $importeTotalAnterior = 0;
+        $importeAnio = 0;
+        $importeAnioAnterior = 0;
+        
         foreach ($iglesias as $key => $iglesia) {
-            $importeAnio = 0;
-            $importeAnioAnterior = 0;
+            $importeTotalAnterior = 0;
+            $importeTotal = 0;
             foreach ($iglesia->informes as $key2 => $informe) {
-                if($informe->anio_informe == $anio){
-                    $importeAnio = $informe->importe;                    
-                }
                 if($informe->anio_informe == $anioAnterior){
-                    $importeAnioAnterior = $informe->importe;
+                    $importeTotalAnterior += $informe->importe;
+                    $importeAnioAnterior += $informe->importe;
                 }
-                $importeTotal += $importeAnio;
-                $importeTotalAnterior += $importeAnioAnterior;
+                if($informe->anio_informe == $anio){
+                    $importeTotal += $informe->importe;
+                    $importeAnio += $informe->importe;
+                }
             }
 
             $v1 = $importeTotalAnterior;
@@ -138,18 +142,18 @@ class ReportsController extends Controller
 
         $totales[] = [
             "anio" => $anio,
-            "suma" => $importeTotal
+            "suma" => $importeAnio
         ];
         $totales[] = [
             "anio" => $anioAnterior,
-            "suma" => $importeTotalAnterior
+            "suma" => $importeAnioAnterior
         ];
         
-        $v1 = $importeTotal;
-        $v2 = $importeTotalAnterior;
+        $v1 = $importeAnio;
+        $v2 = $importeAnioAnterior;
         $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
-        if($importeTotalAnterior > 0)
-            $porcentaje = ( ($importeTotal * 100) / $importeTotalAnterior ) - 100;
+        if($importeAnioAnterior > 0)
+            $porcentaje = ( ($importeAnio * 100) / $importeAnioAnterior ) - 100;
         $analitycs = [
             "dif" => $dif,
             "porcentaje" => $porcentaje
