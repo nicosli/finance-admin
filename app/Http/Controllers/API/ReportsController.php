@@ -92,7 +92,7 @@ class ReportsController extends Controller
         $anioAnterior = (int) ($anio -1);
 
         $iglesias = Iglesias::with(['informes' => function($query) use ($mes, $anio, $anioAnterior, $id_remesa){
-            $query->where('mes_informe', '=', $mes);
+            //$query->where('mes_informe', '=', $mes);
             $query->where('id_remesa', '=', $id_remesa);
             $query->orWhere([
                 ['anio_informe', '=', $anio],
