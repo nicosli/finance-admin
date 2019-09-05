@@ -22,7 +22,7 @@
             </section>
             <article class="message is-info">
                 <div class="message-body">
-                    Este módulo muestra el <strong>Acomulado Anual del Distrito </strong>
+                    Este módulo muestra el <strong>Importe Acomulado o Mensual del Distrito </strong>
                     categorizado por remesa.
                 </div>
             </article>
@@ -139,6 +139,8 @@
             id_distrito: {required:true}
         },
         mounted() {
+            this.monthPicker.setMonth(this.monthPicker.getMonth()-1)
+            console.log(this.monthPicker.getMonth())
             this.loadAsyncData()
         }
     }
