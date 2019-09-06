@@ -43,11 +43,6 @@
                 :default-sort-direction="defaultSortOrder"
                 :focusable=true>
                 <template slot-scope="props">
-                    <b-table-column field="codigo_er" label="Código" sortable>
-                        <span class="has-text-danger">
-                            {{ props.row.codigo_er }}
-                        </span>
-                    </b-table-column>
                     <b-table-column field="name" label="Nombre" sortable>
                             {{ props.row.name }}
                     </b-table-column>

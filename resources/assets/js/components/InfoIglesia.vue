@@ -22,7 +22,7 @@
             </section>
             <article class="message is-info">
                 <div class="message-body">
-                    Este reporte muestra el <strong>Importe Acomulado Anual</strong> y 
+                    Este reporte muestra el <strong>Importe Acumulado Anual</strong> y 
                     lo compara con el año anterior, categorizado por remesa. 
                 </div>
             </article>

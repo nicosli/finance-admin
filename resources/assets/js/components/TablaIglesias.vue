@@ -43,11 +43,6 @@
                 :default-sort-direction="defaultSortOrder"
                 :focusable=true>
                 <template slot-scope="props">
-                    <b-table-column field="codigo_t" label="Código" sortable>
-                        <span class="has-text-danger">
-                            {{ props.row.codigo_t }}
-                        </span>
-                    </b-table-column>
                     <b-table-column field="nombre" label="Nombre" sortable>
                         {{ props.row.nombre }}
                     </b-table-column>
@@ -60,7 +55,7 @@
                     </b-table-column>
                     <b-table-column>
                         <b-tooltip label="Reporte Que Muestra el 
-                        Importe Acomulado Anual y lo compara
+                        Importe Acumulado Anual y lo compara
                         con el año anterior"
                         position="is-top"
                         type="is-link"

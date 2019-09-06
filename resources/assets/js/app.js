@@ -63,6 +63,11 @@ Vue.component(
     require('./components/InfoPdocd.vue')
 );
 
+Vue.component(
+    'dashboard',
+    require('./components/Dashboard.vue')
+);
+
 Vue.use(Buefy, {
     defaultIconPack: 'fa'
 })

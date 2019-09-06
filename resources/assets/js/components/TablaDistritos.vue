@@ -43,11 +43,6 @@
                 :hoverable=true
                 :default-sort-direction="defaultSortOrder">
                 <template slot-scope="props">
-                    <b-table-column sortable field="codigo_dt" label="Código">
-                        <span class="has-text-danger">
-                            {{ props.row.codigo_dt }}
-                        </span>
-                    </b-table-column>
                     <b-table-column sortable field="nombre" label="Nombre">
                         {{ props.row.nombre }}
                     </b-table-column>
@@ -79,7 +74,7 @@
                         </b-tooltip>
                     </b-table-column>
                     <b-table-column>
-                        <b-tooltip label="Mostrar Informe Acomulado Anual 
+                        <b-tooltip label="Mostrar Informe Acumulado Anual 
                         del Distrito Categorizado por Remesa"
                         position="is-top"
                         type="is-info"

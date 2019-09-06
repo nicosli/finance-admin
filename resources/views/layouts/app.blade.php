@@ -98,5 +98,22 @@
     <script src="{{ asset('js/manifest.js') }}"></script>
     <script src="{{ asset('js/vendor.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+ 
+    <script>
+        $(document).ready(function() {
+            // Check for click events on the navbar burger icon
+            $(".navbar-burger").click(function() {
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                $(".navbar-burger").toggleClass("is-active");
+                $(".navbar-menu").toggleClass("is-active");
+
+            });
+        });
+    </script>
 </body>
 </html>
