@@ -10,21 +10,7 @@
                 </div>
             @endif
             <div id="app" >
-                <div class="column p-b-none">
-                    <div class="">
-                        Dashboard
-                    </div>
-                </div>
-                <div class="column p-t-none">
-                    <div class="level">
-                        <div class="level-left">
-                            <div class="title">
-                                Bienvenido {{ Auth::user()->name }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <dashboard></dashboard>
+                <dashboard username="{{ Auth::user()->name }}"></dashboard>
             </div>
         </div>
     </div>
