@@ -59,4 +59,8 @@ Route::group(['middleware' => 'auth'], function(){
     });
 
     Route::get('/query/informes', 'ScriptController@inicio');
+
+    Route::get('/report/nivel-asociacion', function(){
+        return view('modulos.nivelAsociacion');
+    });
 });

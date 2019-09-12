@@ -16,6 +16,26 @@
                     este link dará un informe detallado del pastor
                 </div>
             </article>
+            <nav class="level">
+                <div class="level-item has-text-centered">
+                    <div>
+                    <p class="heading">Pastores</p>
+                    <p class="title">{{analytics.pastores}}</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                    <p class="heading">Iglesias</p>
+                    <p class="title">{{analytics.iglesias}}</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                    <p class="heading">Distritos</p>
+                    <p class="title">{{analytics.distritos}}</p>
+                    </div>
+                </div>
+            </nav>
             <div class="columns">
                 <div class="column is-9-widescreen">
                     <h3 class="subtitle m-t-sm">Lista de Pastores</h3>
@@ -121,6 +141,7 @@
         data() {
             return {
                 data: [],
+                analytics: '',
                 sortField: 'fechaFuente',
                 sortOrder: 'desc',
                 defaultSortOrder: 'desc',
@@ -142,6 +163,7 @@
                     `/api/list/pastores?${params}`)
 				.then(( {data} ) => {
                     this.data = []
+                    this.analytics = data.analytics
                     data.results.forEach((item) => {
 						this.data.push(item)
                     })

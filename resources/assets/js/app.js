@@ -68,6 +68,11 @@ Vue.component(
     require('./components/Dashboard.vue')
 );
 
+Vue.component(
+    'reporte-nivelasociacion',
+    require('./components/NivelAsociacion.vue')
+);
+
 Vue.use(Buefy, {
     defaultIconPack: 'fa'
 })

@@ -37,17 +37,17 @@
                     <a class="navbar-link">Mayordomía</a>
                     <div class="navbar-dropdown">
                         <a class="navbar-item" href="{{asset('list/pastores')}}">
-                        Lista de Pastores
+                            Lista de Pastores
                         </a>
                         <a class="navbar-item" href="{{asset('list/iglesias')}}">
-                        Lista de Iglesias
+                            Lista de Iglesias
                         </a>
                         <a class="navbar-item" href="{{asset('list/distritos')}}">
-                        Lista de Distritos
+                            Lista de Distritos
                         </a>
                         <hr class="navbar-divider">
-                        <a class="navbar-item">
-                        Report an issue
+                        <a class="navbar-item" href="{{asset('report/nivel-asociacion')}}">
+                            Reporte Nivel Asociación
                         </a>
                     </div>
                 </div>

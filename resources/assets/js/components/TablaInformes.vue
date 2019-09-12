@@ -31,7 +31,8 @@
                             <div class="is-block m-t-sm"></div>
                             <b-tooltip 
                                 type="is-info"
-                                :label="informe.mes_anterior.importe | formatNumber('El mes anterior')">
+                                position="is-left"
+                                :label="informe.mes_anterior.importe | formatNumber('Año pasado')">
                                 <span>
                                     <span class="has-text-grey">$</span> 
                                     {{informe.importe | formatNumber}} 
@@ -40,6 +41,7 @@
                             <div class="is-block"></div>
                             <b-tooltip 
                                 type="is-info"
+                                position="is-left"
                                 :label="informe.mes_anterior.dif | formatNumber('Diferencia')">
                                 <span style="font-size:14px">
                                     <b-icon

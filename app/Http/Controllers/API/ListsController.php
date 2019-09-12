@@ -50,8 +50,21 @@ class ListsController extends Controller
             'pastor.distrito.iglesias'
         ])->where('id_rol', '=', 3)
             ->get();
+
+        $pastores = count($users);
+        $iglesias = 0;
+        foreach ($users as $key => $pastor) {
+            if(isset($pastor->pastor->distrito->iglesias))
+                $iglesias += count($pastor->pastor->distrito->iglesias);
+        }
+        $distritos = Distritos::all();
         return response()->json([
-            'results' => $users
+            'results' => $users,
+            'analytics' => [
+                "pastores" => $pastores,
+                "iglesias" => $iglesias,
+                "distritos" => count($distritos)
+            ]
         ]);
     }
 

@@ -53,7 +53,9 @@
                 <tabla-informes 
                     @dateReport="printDateReport"
                     :id_pastor="data.pastor.user.id"
-                    :id_distrito="data.id" :mes="mes" :anio="anio">
+                    :id_distrito="data.id" 
+                    :mes="mes" 
+                    :anio="anio">
                 </tabla-informes>
             </div>
         </div>
