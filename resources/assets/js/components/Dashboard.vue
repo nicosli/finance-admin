@@ -1,6 +1,6 @@
 <template>
 <div>
-	<div class="column p-b-none">
+	<div class="column">
 		<div class="">
 			Dashboard
 		</div>
@@ -9,7 +9,8 @@
 		<div class="level">
 			<div class="level-left">
 				<div class="title">
-					Bienvenido {{ username }}
+					<div class="is-size-4">Depto. De Mayordomía</div>
+					<div class="">{{empresa}}</div>
 				</div>
 			</div>
 			<div class="level-right">
@@ -229,7 +230,7 @@
             }
         },
 		props:{
-			username: {required:true}
+			empresa: {required:true}
 		},
         mounted() {
 			this.dataDashboard()

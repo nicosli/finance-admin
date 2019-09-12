@@ -10,7 +10,7 @@
                 </div>
             @endif
             <div id="app" >
-                <dashboard username="{{ Auth::user()->name }}"></dashboard>
+                <dashboard empresa="{{ config('licencia.empresa') }}"></dashboard>
             </div>
         </div>
     </div>

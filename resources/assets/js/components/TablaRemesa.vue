@@ -1,5 +1,20 @@
 <template>
 <div>
+    <div class="tags has-addons">
+        <span class="tag">Mes</span>
+        <span class="tag is-info">{{getMontName(mes)}} {{anio}}</span>
+    </div>
+    <h3 class="subtitle m-t-lg">Gráfica</h3>
+    <h6 class="title is-6">Comparativo con año anterior</h6>
+    <apexchart 
+        v-if="options.chart" 
+        width="100%" 
+        height="350" 
+        type="line" 
+        :options="options" 
+        :series="series">
+    </apexchart>
+
     <h3 class="subtitle m-t-lg">Tabla Remesas</h3>
     <h6 class="title is-6">Comparativo con año anterior</h6>
     <table class="table is-bordered is-striped is-hoverable is-responsive">
@@ -21,7 +36,17 @@
                     {{ iglesia.comparativo.anio | formatNumber}}
                 </td>
                 <td align="center">{{ iglesia.analytics.dif | formatNumber}}</td>
-                <td align="center">{{ iglesia.analytics.porcentaje | formatNumber}}</td>
+                <td align="center">
+                    <span style="font-size:14px">
+                        <b-icon
+                            pack="fas"
+                            :icon="iglesia.analytics.icon"
+                            :type="iglesia.analytics.type"
+                            size="is-small">
+                        </b-icon>
+                        {{ iglesia.analytics.porcentaje | formatNumber}}%
+                    </span>
+                </td>
             </tr>
             <tr class="has-background-info" v-if="analitycs.dif">
                 <td class="has-text-white" align="center">TOTAL</td>
@@ -31,7 +56,17 @@
                     </span>
                 </td>
                 <td class="has-text-white" align="center">{{analitycs.dif | formatNumber}}</td>
-                <td class="has-text-white" align="center">{{analitycs.porcentaje | formatNumber}}</td>
+                <td class="has-text-white" align="center">
+                    <span style="font-size:14px">
+                        <b-icon
+                            pack="fas"
+                            :icon="analitycs.icon"
+                            :type="analitycs.type"
+                            size="is-small">
+                        </b-icon>
+                        {{analitycs.porcentaje | formatNumber}}
+                    </span>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -46,7 +81,9 @@
                 iglesias: [],
                 anios:'',
                 totales: '',
-                analitycs: ''
+                analitycs: '',
+                options: [],
+                series: []
             }
         },
         methods: {
@@ -62,13 +99,75 @@
                     this.anios = data.anios
                     this.totales = data.totales
                     this.analitycs = data.analitycs
+
+                    this.options = data.graph.options
+                    this.options.chart = {
+                        id: 'chartComparativo',
+                        animations: {
+                            enabled: true,
+                            easing: 'linear',
+                            speed: 500
+                        }
+                    }
+                    this.options.stroke = {
+                        width: [1, 1, 4]
+                    }
+                    this.options.yaxis = {
+                        labels: {
+                            formatter: function (val) {
+                                let value = (val/1).toFixed(0).replace(',', '')
+                                return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                            }
+                        },
+                        axisTicks: {
+                            show: true,
+                        },
+                        axisBorder: {
+                            show: true
+                        },
+                        tooltip: {
+                            enabled: true
+                        }
+                    }
+                    this.options.legend = {
+                        show: true,
+                        horizontalAlign: 'right',
+                        fontSize: '14px',
+                        markers: {
+                            width: 25,
+                            height: 15
+                        }
+                    }
+                    this.options.annotations = {
+                        points: data.graph.annotations.points
+                    }
+                    
+                    this.options.dataLabels = {
+                        enabled: false,
+                        style: {
+                            colors: ['#FFF']
+                        },
+                        formatter: function (val) {
+                            let value = (val/1).toFixed(0).replace(',', '')
+                            return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                        }                        
+                    },
+                    this.series = data.graph.series
+
                     this.$emit('loading', false)
 				})
 				.catch((error) => {
 					this.loading = false
 					throw error
 				})
-            }
+            },
+            getMontName(mes){
+				mes--
+				const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+					"Julio", "Augosto", "Septiembre", "Octubre", "Noviembre", "Deciembre"
+				];
+				return monthNames[mes]
+			}
         },
         filters: {
             formatNumber(value){

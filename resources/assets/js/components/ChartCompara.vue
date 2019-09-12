@@ -2,7 +2,14 @@
 <div>
     <h3 class="subtitle m-t-lg">Tabla Acomulada</h3>
     <h6 class="title is-6">año anterior</h6>
-    <apexchart v-if="options.chart" width="100%" height="350" type="line" :options="options" :series="series"></apexchart>
+    <apexchart 
+        v-if="options.chart" 
+        width="100%" 
+        height="350" 
+        type="line" 
+        :options="options" 
+        :series="series">
+    </apexchart>
 </div>
 </template>
 
@@ -63,8 +70,11 @@
                             height: 15
                         }
                     }
+                    this.options.annotations = {
+                        points: data.annotations.points
+                    }
                     this.options.dataLabels = {
-                        enabled: true,
+                        enabled: false,
                         style: {
                             colors: ['#FFF']
                         },

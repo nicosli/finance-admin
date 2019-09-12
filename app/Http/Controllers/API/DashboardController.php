@@ -35,11 +35,11 @@ class DashboardController extends Controller
         $v2 = $diezmosAnioAnterior;
         if(($v1-$v2) < 0){
             $dif = (-1)*($v1-$v2);
-            $icono = 'caret-down';
+            $icon = 'caret-down';
             $type = 'is-danger';
         }else{
             $dif = ($v1-$v2);
-            $icono = 'caret-up';
+            $icon = 'caret-up';
             $type = 'is-success';
         }
         if($diezmosAnioAnterior != 0)
@@ -57,7 +57,7 @@ class DashboardController extends Controller
                 "anio_anterior" => $diezmosAnioAnterior,
                 "dif" => $dif,
                 "porc" => $porcentaje,
-                "icon" => $icono,
+                "icon" => $icon,
                 "type" => $type
             ]
         ];

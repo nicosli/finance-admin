@@ -106,10 +106,13 @@ class ReportsController extends Controller
         $importeTotalAnterior = 0;
         $importeAnio = 0;
         $importeAnioAnterior = 0;
+        $graph_importeAnio = [];
+        $graph_importeAnioAnterior = [];
         
         foreach ($iglesias as $key => $iglesia) {
             $importeTotalAnterior = 0;
             $importeTotal = 0;
+            $graph_iglesias[] = $iglesia->nombre;
             foreach ($iglesia->informes as $key2 => $informe) {
                 if($informe->anio_informe == $anioAnterior){
                     $importeTotalAnterior += $informe->importe;
@@ -121,13 +124,38 @@ class ReportsController extends Controller
                 }
             }
 
+            $graph_importeAnioAnterior[] = $importeTotalAnterior;
+            $graph_importeAnio[] = $importeTotal;
+
             $v1 = $importeTotalAnterior;
             $v2 = $importeTotal;
+            if(($v1-$v2) < 0){
+                $icon = 'caret-up';
+                $type = 'is-success';
+            }else{
+                $icon = 'caret-down';
+                $type = 'is-danger';
+            }
             $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
             if($importeTotalAnterior != 0)
                 $porcentaje = ( ($importeTotal * 100) / $importeTotalAnterior ) - 100;
             else
                 $porcentaje = 0;
+            
+            $points[] = [
+                "x" => $iglesia->nombre,
+                "seriesIndex" => 0,
+                "label" => [
+                    "borderColor" => '#775DD0',
+                    "offsetY" => 0,
+                    "style" => [
+                        "color" => "#fff",
+                        "background" => "#775DD0",
+                        "fontSize" => 12
+                    ],
+                    "text"  => "Dif ".number_format($porcentaje,2)."%"
+                ]
+            ];
 
             $iglesias[$key]->comparativo = [
                 "anio" => $importeTotal,
@@ -136,7 +164,9 @@ class ReportsController extends Controller
             
             $iglesias[$key]->analytics = [
                 "dif" => $dif,
-                "porcentaje" => $porcentaje
+                "porcentaje" => $porcentaje,
+                "icon" => $icon,
+                "type" => $type
             ];
         }
 
@@ -151,19 +181,48 @@ class ReportsController extends Controller
         
         $v1 = $importeAnio;
         $v2 = $importeAnioAnterior;
+        if(($v1-$v2) < 0){
+            $icon = 'caret-down';
+            $type = 'is-danger';
+        }else{
+            $icon = 'caret-up';
+            $type = 'is-success';
+        }
         $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
         if($importeAnioAnterior > 0)
             $porcentaje = ( ($importeAnio * 100) / $importeAnioAnterior ) - 100;
         $analitycs = [
             "dif" => $dif,
-            "porcentaje" => $porcentaje
+            "porcentaje" => $porcentaje,
+            "icon" => $icon,
+            "type" => $type
+        ];
+        
+        // Gráfica
+        $series[] = [
+                "name" => $anioAnterior,
+                "type" => "column",
+                "data" => $graph_importeAnioAnterior
+        ];
+
+        $series[] = [
+                "name" => $anio,
+                "type" => "column",
+                "data" => $graph_importeAnio
         ];
         
         return response()->json([
             'anios' => [$anioAnterior, $anio],
             'totales' => $totales,
             'analitycs' => $analitycs,
-            'results' => $iglesias
+            'results' => $iglesias,
+            'graph' => [
+                'options' => [
+                    "xaxis" => ["categories" => $graph_iglesias]
+                ],
+                'series' => $series,
+                "annotations" => ["points" => $points]
+            ]
         ]);
     }
 
@@ -199,18 +258,47 @@ class ReportsController extends Controller
             $anioAnterior = $anio - 1;
             $anioImporte = 0;
             $anioAnteriorImporte = 0;
+            $importeTotal = 0;
+            $importeTotalAnterior = 0;
             
             foreach ($reporte as $key => $val) {
                 if($val->mesNumber == $mes)
                     if( ! in_array($val->mes, $meses))
                         $meses[] = $val->mes;
 
-                if($val->anio == $anio AND $mes == $val->mesNumber)
+                if($val->anio == $anio AND $mes == $val->mesNumber){
                     $importesActual[] = $val->importe;
+                    $importeTotal += $val->importe;
+                }
 
-                if($val->anio == $anioAnterior AND $mes == $val->mesNumber)
+                if($val->anio == $anioAnterior AND $mes == $val->mesNumber){
                     $importesAnterior[] = $val->importe;
+                    $importeTotalAnterior += $val->importe;
+                }
             }
+
+            $v1 = $importeTotalAnterior;
+            $v2 = $importeTotal;
+            $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
+            if($importeTotalAnterior != 0)
+                $porcentaje = ( ($importeTotal * 100) / $importeTotalAnterior ) - 100;
+            else
+                $porcentaje = 0;
+
+            $points[] = [
+                "x" => $meses[$mes-1],
+                "seriesIndex" => 0,
+                "label" => [
+                    "borderColor" => '#775DD0',
+                    "offsetY" => 0,
+                    "style" => [
+                        "color" => "#fff",
+                        "background" => "#775DD0",
+                        "fontSize" => 12
+                    ],
+                    "text"  => "Dif ".number_format($porcentaje,2)."%"
+                ]
+            ];
         }
         $series[] = [
                 "name" => (string)$anioAnterior,
@@ -227,7 +315,8 @@ class ReportsController extends Controller
             'options' => [
                 "xaxis" => ["categories" => $meses]
             ],
-            'series' => $series
+            'series' => $series,
+            "annotations" => ["points" => $points]
         ]);
     }
 }

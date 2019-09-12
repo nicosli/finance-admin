@@ -23,9 +23,9 @@ $positions: (
     @return if($key == 'none', 0, $value + $sizeUnit);
 }
 
-@each $size in $sizescustom {
-    $sizeKey: nth($size, 1);
-    $sizeValue: nth($size, 2);
+@each $_size in $sizescustom {
+    $sizeKey: nth($_size, 1);
+    $sizeValue: nth($_size, 2);
     .#{$marginKey}#{$separator}#{$sizeKey} {
         margin: sizeValue($sizeKey, $sizeValue) !important;
     }
