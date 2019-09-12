@@ -9,7 +9,7 @@
     <apexchart 
         v-if="options.chart" 
         width="100%" 
-        height="350" 
+        height="450" 
         type="line" 
         :options="options" 
         :series="series">
