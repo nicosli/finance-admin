@@ -23,7 +23,7 @@ class ScriptController extends Controller
                 "anio_informe" => "2018"
             ];
         }
-        for($mes=1; $mes<=7; $mes++){
+        for($mes=1; $mes<=8; $mes++){
             $mesChar = ($mes<10)? "0".$mes : $mes;
             $array[] = [
                 "fecha" => "2019-$mesChar-01",
