@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Iglesias;
 use App\Remesas;
 use App\Informes;
+use App\Distritos;
 
 class ReportsController extends Controller
 {
@@ -315,5 +316,148 @@ class ReportsController extends Controller
             'series' => $series,
             "annotations" => ["points" => $points]
         ]);
+    }
+
+    public static function nivelDistrito($mes, $anio, $tipo_reporte, $id_remesa){
+
+        $anioAnterior = (int) ($anio -1);
+
+        $distritos = Distritos::with(['iglesias.informes' => function($query) use($mes, $anio, $anioAnterior, $id_remesa, $tipo_reporte){
+            if($tipo_reporte == 2)
+                $query->where('mes_informe', '=', $mes);
+            if($tipo_reporte == 1)
+                $query->where('mes_informe', '<=', $mes);
+            $query->where('id_remesa', '=', $id_remesa);
+            $query->orWhere([
+                ['anio_informe', '=', $anio],
+                ['anio_informe', '=', $anioAnterior]
+            ]);
+        }])->get();
+
+        $importeTotal = 0;
+        $importeTotalAnterior = 0;
+        $importeAnio = 0;
+        $importeAnioAnterior = 0;
+        $graph_importeAnio = [];
+        $graph_importeAnioAnterior = [];
+        
+        foreach ($distritos as $key => $distrito) {
+            $importeTotalAnterior = 0;
+            $importeTotal = 0;
+            $graph_iglesias[] = $distrito->nombre;
+            foreach ($distrito->iglesias as $key2 => $iglesia) {
+                foreach($iglesia->informes as $key3 => $informe){
+                    if($informe->anio_informe == $anioAnterior){
+                        $importeTotalAnterior += $informe->importe;
+                        $importeAnioAnterior += $informe->importe;
+                    }
+                    if($informe->anio_informe == $anio){
+                        $importeTotal += $informe->importe;
+                        $importeAnio += $informe->importe;
+                    }
+                }
+            }
+
+            $graph_importeAnioAnterior[] = $importeTotalAnterior;
+            $graph_importeAnio[] = $importeTotal;
+
+            $v1 = $importeTotalAnterior;
+            $v2 = $importeTotal;
+            if(($v1-$v2) < 0){
+                $icon = 'caret-up';
+                $type = 'is-success';
+            }else{
+                $icon = 'caret-down';
+                $type = 'is-danger';
+            }
+            $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
+            if($importeTotalAnterior != 0)
+                $porcentaje = ( ($importeTotal * 100) / $importeTotalAnterior ) - 100;
+            else
+                $porcentaje = 0;
+            
+            $points[] = [
+                "x" => $distrito->nombre,
+                "seriesIndex" => 0,
+                "label" => [
+                    "borderColor" => '#775DD0',
+                    "offsetY" => 0,
+                    "style" => [
+                        "color" => "#fff",
+                        "background" => "#775DD0",
+                        "fontSize" => 12
+                    ],
+                    "text"  => "Dif ".number_format($porcentaje,2)."%"
+                ]
+            ];
+
+            $distritos[$key]->comparativo = [
+                "anio" => $importeTotal,
+                "anioAnterior" => $importeTotalAnterior
+            ];
+            
+            $distritos[$key]->analytics = [
+                "dif" => $dif,
+                "porcentaje" => $porcentaje,
+                "icon" => $icon,
+                "type" => $type
+            ];
+        }
+
+        $totales[] = [
+            "anio" => $anio,
+            "suma" => $importeAnio
+        ];
+        $totales[] = [
+            "anio" => $anioAnterior,
+            "suma" => $importeAnioAnterior
+        ];
+        
+        $v1 = $importeAnio;
+        $v2 = $importeAnioAnterior;
+        if(($v1-$v2) < 0){
+            $icon = 'caret-down';
+            $type = 'is-danger';
+        }else{
+            $icon = 'caret-up';
+            $type = 'is-success';
+        }
+        $dif = ($v1-$v2) < 0 ? (-1)*($v1-$v2) : ($v1-$v2);
+        if($importeAnioAnterior > 0)
+            $porcentaje = ( ($importeAnio * 100) / $importeAnioAnterior ) - 100;
+        $analitycs = [
+            "dif" => $dif,
+            "porcentaje" => $porcentaje,
+            "icon" => $icon,
+            "type" => $type
+        ];
+        
+        // Gráfica
+        $series[] = [
+                "name" => $anioAnterior,
+                "type" => "column",
+                "data" => $graph_importeAnioAnterior
+        ];
+
+        $series[] = [
+                "name" => $anio,
+                "type" => "column",
+                "data" => $graph_importeAnio
+        ];
+        
+        return response()->json([
+            'anios' => [$anioAnterior, $anio],
+            'totales' => $totales,
+            'analitycs' => $analitycs,
+            'results' => $distritos,
+            'graph' => [
+                'options' => [
+                    "xaxis" => ["categories" => $graph_iglesias]
+                ],
+                'series' => $series,
+                "annotations" => ["points" => $points]
+            ]
+        ]);
+
     }
 }

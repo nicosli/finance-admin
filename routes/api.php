@@ -31,4 +31,6 @@ Route::group(['middleware' => 'auth:api'], function(){
 
     # ---- DASHBOARD
     Route::get('dashboard/{mes}/{anio}', 'API\DashboardController@resumen');
+
+    Route::get('/reports/niveldistrito/{mes}/{anio}/{tipo_reporte}/{id_remesa}', 'API\ReportsController@nivelDistrito');
 });

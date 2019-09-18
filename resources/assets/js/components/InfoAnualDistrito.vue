@@ -85,7 +85,7 @@
                 id_remesa: '',
                 loading: false,
                 loadingChart: false,
-                mes: new Date().getMonth()+1,
+                mes: new Date().getMonth(),
                 anio: new Date().getFullYear(),
                 monthPicker: new Date(),
                 tipo_reporte: 2

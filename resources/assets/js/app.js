@@ -73,6 +73,11 @@ Vue.component(
     require('./components/NivelAsociacion.vue')
 );
 
+Vue.component(
+    'tabla-nivelDistrito',
+    require('./components/TablaNivelDistrito.vue')
+);
+
 Vue.use(Buefy, {
     defaultIconPack: 'fa'
 })
