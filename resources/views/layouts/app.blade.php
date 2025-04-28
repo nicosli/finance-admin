@@ -90,7 +90,7 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-            <strong>{{ config('app.name', 'Arca System') }} System</strong> by devcomer. Ver <a href="{{asset('licencia')}}" class="lc">Licencia</a>
+            <strong>{{ config('app.name', 'Arca System') }} System</strong> by Montaria Software. Ver <a href="{{asset('licencia')}}" class="lc">Licencia</a>
             </p>
         </div>
     </footer>

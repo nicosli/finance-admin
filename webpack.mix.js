@@ -11,16 +11,28 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js').extract(['vue','buefy']);
-mix.sass('resources/assets/sass/app.scss', 'public/css');
-
-mix.copy('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/webfonts');
-
-mix.browserSync({
-   open: 'external',
-   host: 'local.mayordomia.nicosli.com',
-   proxy: 'local.mayordomia.nicosli.com',
-   port: 8585
-});
+mix.js('resources/assets/js/app.js', 'public/js')
+   .vue({ version: 2 })
+   .sass('resources/assets/sass/app.scss', 'public/css')
+   .copy('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/webfonts')
+   .browserSync({
+      proxy: 'laravel-nginx',
+      host: 'localhost',
+      port: 8080,
+      open: false,
+      files: [
+         'resources/views/**/*.php',
+         'resources/assets/js/**/*.js',
+         'resources/assets/sass/**/*.scss',
+         'public/js/**/*.js',
+         'public/css/**/*.css'
+      ]
+   })
+   .options({
+      polling: true,
+      usePolling: true,
+      interval: 500
+   })
+   .version();
 
 mix.disableNotifications();

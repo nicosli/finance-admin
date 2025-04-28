@@ -1,0 +1,28 @@
+// Bulma base
+@import "~bulma/sass/utilities/functions";
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/derived-variables";
+
+// Mixins que Buefy espera pero no existen en Bulma
+@mixin control-small {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+@mixin control-medium {
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+}
+@mixin control-large {
+  font-size: 1.25rem;
+  padding: 0.75rem 1rem;
+}
+
+// Variables necesarias para Buefy
+$dropdown-item-hover-background-color: $grey-lighter !default;
+$dropdown-item-hover-color: $text-strong !default;
+
+// Bulma completo
+@import "~bulma/bulma";
+
+// Buefy
+@import "~buefy/src/scss/buefy";

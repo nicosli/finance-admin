@@ -1,6 +1,21 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/js/vendor.js": "/js/vendor.js",
-    "/js/manifest.js": "/js/manifest.js"
+    "/js/app.js": "/js/app.js?id=32145fc375643e8e1925a65758593748",
+    "/css/app.css": "/css/app.css?id=a652486104865f841b9b9677db36651a",
+    "/webfonts/fa-brands-400.eot": "/webfonts/fa-brands-400.eot?id=485cea0e2822e8bef88ff2c9b1336e93",
+    "/webfonts/fa-brands-400.svg": "/webfonts/fa-brands-400.svg?id=bfa9c38bd6081dafe7278dedc4aad1d9",
+    "/webfonts/fa-brands-400.ttf": "/webfonts/fa-brands-400.ttf?id=7c8d1eaa468e8de72642d3fc43ee5ed2",
+    "/webfonts/fa-brands-400.woff": "/webfonts/fa-brands-400.woff?id=d099dd459809f6f7a09b27086f363bd5",
+    "/webfonts/fa-brands-400.woff2": "/webfonts/fa-brands-400.woff2?id=552e767fb6056f7f34a4783c2933556e",
+    "/webfonts/fa-regular-400.eot": "/webfonts/fa-regular-400.eot?id=770c85e5db3858a3ce6bab085c1d8a8f",
+    "/webfonts/fa-regular-400.svg": "/webfonts/fa-regular-400.svg?id=95f13e0be408d117bd3d9b366084a3ef",
+    "/webfonts/fa-regular-400.ttf": "/webfonts/fa-regular-400.ttf?id=96c3064e8868339b4aa6473968bdd464",
+    "/webfonts/fa-regular-400.woff": "/webfonts/fa-regular-400.woff?id=b5eed2c47d87b9e65b77328cbd6080b9",
+    "/webfonts/fa-regular-400.woff2": "/webfonts/fa-regular-400.woff2?id=25bde24dc00e5dce8f1bfa8164b3b7b1",
+    "/webfonts/fa-solid-900.eot": "/webfonts/fa-solid-900.eot?id=e8512d744f40ac72c18f12acfb34f116",
+    "/webfonts/fa-solid-900.svg": "/webfonts/fa-solid-900.svg?id=6ed5e3bc9018d2a03e2f1fadbf8a0a4a",
+    "/webfonts/fa-solid-900.ttf": "/webfonts/fa-solid-900.ttf?id=8218477819a31609afa351933eebcdb4",
+    "/webfonts/fa-solid-900.woff": "/webfonts/fa-solid-900.woff?id=09a0a6df9dd640569fd6845049006d28",
+    "/webfonts/fa-solid-900.woff2": "/webfonts/fa-solid-900.woff2?id=109ad919b74a62a8a223361da1651bbc",
+    "/webfonts/fa-v4compatibility.ttf": "/webfonts/fa-v4compatibility.ttf?id=53c2e50ef821f7b8dd514611d5e0772c",
+    "/webfonts/fa-v4compatibility.woff2": "/webfonts/fa-v4compatibility.woff2?id=331c85bd61ffa93af09273d1bc2add5a"
 }

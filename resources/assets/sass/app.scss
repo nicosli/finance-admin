@@ -1,18 +1,14 @@
-
-// Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
-// Variables
 @import "variables";
-
-// spacing - no bootstrap
 @import "spacing";
 
-// font-awesome
-@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
-@import "node_modules/@fortawesome/fontawesome-free/scss/regular";
-@import "node_modules/@fortawesome/fontawesome-free/scss/solid";
-@import "node_modules/@fortawesome/fontawesome-free/scss/brands";
+// Font Awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
 
-// Buefy
-@import "node_modules/buefy/src/scss/buefy-build";
+// Bulma + Buefy (completo y en orden)
+@import "~bulma/bulma";
+@import "~buefy/src/scss/buefy";

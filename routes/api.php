@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 
-Route::group(['middleware' => 'auth:api'], function(){
+// Route::group(['middleware' => 'auth:api'], function(){
     Route::post('details', 'API\UserController@details');
     Route::get('/list/pastores', 'API\ListsController@pastores');    
     Route::get('/list/iglesias', 'API\ListsController@iglesias');
@@ -33,4 +33,4 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('dashboard/{mes}/{anio}', 'API\DashboardController@resumen');
 
     Route::get('/reports/niveldistrito/{mes}/{anio}/{tipo_reporte}/{id_remesa}', 'API\ReportsController@nivelDistrito');
-});
+// });

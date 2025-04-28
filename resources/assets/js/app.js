@@ -5,78 +5,31 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-window.Vue = require('vue');
-import Buefy from 'buefy'
+import Vue from 'vue';
+import Buefy from 'buefy';
+import VueApexCharts from 'vue-apexcharts';
 
-import VueApexCharts from 'vue-apexcharts'
+window.Vue = Vue;
+
 Vue.component('apexchart', VueApexCharts)
 
 import { config } from './config';
 Vue.prototype.appConfig = config
 
-Vue.component(
-    'tabla-pastores',
-    require('./components/TablaPastores.vue')
-);
+Vue.component('tabla-iglesias', require('./components/TablaIglesias.vue').default);
+Vue.component('tabla-distritos', require('./components/TablaDistritos.vue').default);
+Vue.component('tabla-pastores', require('./components/TablaPastores.vue').default);
+Vue.component('informe-mensual-distrito', require('./components/InfoMensualDistrito.vue').default);
+Vue.component('info-iglesia', require('./components/InfoIglesia.vue').default);
+Vue.component('chart-compara', require('./components/ChartCompara.vue').default);
+Vue.component('tabla-informes', require('./components/TablaInformes.vue').default);
+Vue.component('tabla-remesa', require('./components/TablaRemesa.vue').default);
+Vue.component('info-anual-distrito', require('./components/InfoAnualDistrito.vue').default);
+Vue.component('info-pdocd', require('./components/InfoPdocd.vue').default);
+Vue.component('dashboard', require('./components/Dashboard.vue').default);
+Vue.component('reporte-nivelasociacion', require('./components/NivelAsociacion.vue').default);
+Vue.component('tabla-nivelDistrito', require('./components/TablaNivelDistrito.vue').default);
 
-Vue.component(
-    'tabla-iglesias',
-    require('./components/TablaIglesias.vue')
-);
-Vue.component(
-    'tabla-distritos',
-    require('./components/TablaDistritos.vue')
-);
-
-Vue.component(
-    'informe-mensual-distrito',
-    require('./components/InfoMensualDistrito.vue')
-);
-
-Vue.component(
-    'info-iglesia',
-    require('./components/InfoIglesia.vue')
-);
-
-Vue.component(
-    'chart-compara',
-    require('./components/ChartCompara.vue')
-);
-
-Vue.component(
-    'tabla-informes',
-    require('./components/TablaInformes.vue')
-);
-
-Vue.component(
-    'tabla-remesa',
-    require('./components/TablaRemesa.vue')
-);
-
-Vue.component(
-    'info-anual-distrito',
-    require('./components/InfoAnualDistrito.vue')
-);
-
-Vue.component(
-    'info-pdocd',
-    require('./components/InfoPdocd.vue')
-);
-
-Vue.component(
-    'dashboard',
-    require('./components/Dashboard.vue')
-);
-
-Vue.component(
-    'reporte-nivelasociacion',
-    require('./components/NivelAsociacion.vue')
-);
-
-Vue.component(
-    'tabla-nivelDistrito',
-    require('./components/TablaNivelDistrito.vue')
-);
 
 Vue.use(Buefy, {
     defaultIconPack: 'fa'

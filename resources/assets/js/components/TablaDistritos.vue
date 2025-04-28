@@ -42,21 +42,21 @@
                 :striped=true
                 :hoverable=true
                 :default-sort-direction="defaultSortOrder">
-                <template slot-scope="props">
-                    <b-table-column sortable field="nombre" label="Nombre">
+                <template>
+                    <b-table-column sortable field="nombre" label="Nombre" v-slot="props">
                         {{ props.row.nombre }}
                     </b-table-column>
-                    <b-table-column sortable field="iglesias" label="Iglesias">
+                    <b-table-column sortable field="iglesias" label="Iglesias" v-slot="props">
                         {{ props.row.iglesias.length }}
                     </b-table-column>
-                    <b-table-column sortable field="pastor" label="Pastor">
+                    <b-table-column sortable field="pastor" label="Pastor" v-slot="props">
                         {{ props.row.pastor.user.name }}
                         {{ props.row.pastor.user.last_name }}
                     </b-table-column>
-                    <b-table-column sortable field="entrega" label="Entrega">
+                    <b-table-column sortable field="entrega" label="Entrega" v-slot="props">
                         45%
                     </b-table-column>
-                    <b-table-column field="ac_iglesias" label="">
+                    <b-table-column field="ac_iglesias" label="" v-slot="props">
                         <b-tooltip label="Mostrar Informe Mensual de Remesas del Distrito"
                         position="is-top"
                         type="is-link"
@@ -79,7 +79,7 @@
                         position="is-top"
                         type="is-info"
                         multilined
-                        animated>
+                        animated v-slot="props">
                             <a class="has-text-info" 
                             :href="'/informes/anual/distrito/'
                             +props.row.id">

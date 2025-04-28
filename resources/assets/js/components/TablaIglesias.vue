@@ -36,22 +36,21 @@
                 :data="filteredData"
                 :loading="loading"
                 paginated
-                            
                 :per-page="perPage"
                 :striped=true
                 :hoverable=true
                 :default-sort-direction="defaultSortOrder"
                 :focusable=true>
-                <template slot-scope="props">
-                    <b-table-column field="nombre" label="Nombre" sortable>
+                <template>
+                    <b-table-column field="nombre" label="Nombre" sortable v-slot="props">
                         {{ props.row.nombre }}
                     </b-table-column>
-                    <b-table-column field="distrito" label="Distrito" sortable>
-                        {{ props.row.distrito.nombre }}
+                    <b-table-column field="distrito" label="Distrito" sortable v-slot="props">
+                        {{ props.row.distrito?.nombre }}
                     </b-table-column>
-                    <b-table-column field="pastor" label="Pastor" sortable>
-                        {{ props.row.distrito.pastor.user.name }}
-                        {{ props.row.distrito.pastor.user.last_name }}
+                    <b-table-column field="pastor" label="Pastor" sortable v-slot="props">
+                        {{ props.row.distrito?.pastor?.user?.name }}
+                        {{ props.row.distrito?.pastor?.user?.last_name }}
                     </b-table-column>
                     <b-table-column>
                         <b-tooltip label="Reporte Que Muestra el 
@@ -60,10 +59,10 @@
                         position="is-top"
                         type="is-link"
                         multilined
-                        animated>
+                        animated v-slot="props">
                             <a class="" 
                             :href="'/informes/iglesia/'
-                            +props.row.id">
+                            +props.row?.id">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
@@ -71,9 +70,9 @@
                             </a>
                         </b-tooltip>
                     </b-table-column>
-                    <b-table-column field="" label="">
+                    <b-table-column field="" label="" v-slot="props">
                         <b-tooltip label="Porcentaje de Diferencia de
-                         Ofrendas en Comparación con el Diezmo (PDOCD)"
+                            Ofrendas en Comparación con el Diezmo (PDOCD)"
                         position="is-top"
                         type="is-info"
                         multilined
@@ -152,15 +151,15 @@
             }
         },
         computed: {
-            filteredData(){
+            filteredData() {
+                const keyword = this.searchKeyword.toLowerCase();
                 return this.data.filter((item) => {
-                    this.filtered = item.codigo_t.toLowerCase().includes(this.searchKeyword.toLowerCase()) ||
-                    item.nombre.toLowerCase().includes(this.searchKeyword.toLowerCase()) ||
-                    item.distrito.nombre.toLowerCase().includes(this.searchKeyword.toLowerCase()) ||
-                    item.distrito.pastor.user.name.toLowerCase().includes(this.searchKeyword.toLowerCase())
-
-                    return this.filtered
-                })
+                    return (item.codigo_t || '').toLowerCase().includes(keyword) ||
+                        (item.nombre || '').toLowerCase().includes(keyword) ||
+                        (item.distrito?.nombre || '').toLowerCase().includes(keyword) ||
+                        (item.distrito?.pastor?.user?.name || '').toLowerCase().includes(keyword) ||
+                        (item.distrito?.pastor?.user?.last_name || '').toLowerCase().includes(keyword);
+                });
             }
         },
         mounted() {

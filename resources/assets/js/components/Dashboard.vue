@@ -101,7 +101,7 @@
           <div class="box">
             <article class="message is-info">
                 <div class="message-body">
-                    Resumen de <strong>Diezmos y Ofrendas</strong>
+                  Resumen de <strong>Diezmos y Ofrendas</strong>
                 </div>
             </article>
             <div class="level">
@@ -216,7 +216,7 @@
             formatNumber(value){
 				if(value != null || value == 0){
 					let val = (value/1).toFixed(0).replace(',', '')
-                	return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 				}else{
 					return 0
 				}
